@@ -1,15 +1,25 @@
-/* Variables globales basadas en la guía de estilos de SismoListo */
+/* =========================================
+   1. VARIABLES GLOBALES Y RESETEO BÁSICO
+   ========================================= */
 :root {
-    --color-azul-oscuro: #142A3D;
-    --color-azul-petroleo: #215175;
-    --color-azul-acero: #4a5568;
-    --color-naranja: #F57A2D;
-    --color-naranja-hover: #CD5B16;
-    --color-fondo: #F8F9FA;
-    --color-blanco: #FFFFFF;
+    --azul-oscuro: #142A3D;
+    --azul-petroleo: #215175;
+    --azul-cielo: #4A90E2;
+    --azul-neutro: #3d5e98;
+    --azul-acero: #4a5568;
+    --naranja-acento: #F57A2D;
+    --naranja-hover: #CD5B16;
+    --naranja-claro: #ff5c10;
+    --naranja-suave: #FFE5D1;
+    --naranja-neutro: #F57A2D;
+    --fondo-claro: #eff5fc;
+    --fondo: #ffffff;
+    --fondo-blanco: #F7FAFC;
+    --blanco: #FFFFFF;
+    --gris-borde: #E2E8F0;
 }
 
-/* Estilos base reseteados */
+/* El selector universal (*) limpia los márgenes por defecto de los navegadores */
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +28,402 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--color-fondo);
-    color: var(--color-azul-oscuro);
-    line-height: 1.5;
+    background-color: var(--fondo-claro);
+    color: var(--azul-oscuro);
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. CABECERA Y NAVEGACIÓN
+   ========================================= */
+.header-principal {
+    background-color: var(--naranja-acento);
+    border-bottom: 1px solid var(--gris-borde);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--azul-oscuro);
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--azul-acero);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--blanco);
+}
+
+/* Botón de Emergencia global en el Header */
+.btn-emergencia-alerta {
+    background-color: #E53E3E;
+    color: var(--blanco);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-emergencia-alerta:hover {
+    background-color: #C53030;
+}
+
+/* =========================================
+   3. ESTILO GENERAL DE LAS SECCIONES
+   ========================================= */
+.landing-section {
+    padding: 5px 5px;
+    background-color: var(--fondo);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.02);
+}
+
+/* =========================================
+   4. SECCIÓN HERO (Problemática vs Solución)
+   ========================================= */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide en dos columnas iguales */
+    align-items: center;
+}
+
+.hero-col {
+    display: flex;
+    flex-direction: column;
+}
+.solucion-col {
+    height: 100%;
+    background-color: var(--fondo-blanco);
+    padding: 20px;
+    border: 1px solid var(--azul-petroleo);
+}
+.problematica-col {
+    height: 100%;
+    background-color: var(--naranja-suave);
+    padding: 20px;
+    border: 1px solid var(--naranja-neutro);
+}
+
+
+.badge {
+    background-color: var(--fondo-claro);
+    color: var(--azul-petroleo);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    width: fit-content;
+}
+
+.badge-solucion {
+    background-color: #D1E8FF;
+    color: #215175;
+}
+.badge-alerta {
+    background-color: #fedcdc;
+    color: #911919;
+}
+
+.hero-img {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid var(--azul-acero);
+}
+
+/* =========================================
+   4.1. SECCION 1: CONFIGURACION Y GESTION
+   ========================================= */
+
+.seccion1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.funcionalidad-wrapper {
+    background-color: var(--naranja-suave);
+}
+
+.info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--fondo-claro);
+    padding: 20px;
+}
+
+/* =========================================
+   4.2. SECCION 2: LOGISTICA Y PREPARACION
+   ========================================= */
+
+.columna-centro {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-hu15 {
+    background-color: var(--fondo-claro);
+    padding: 20px;
+    border: 1px solid var(--azul-acero);
+    border-left: 5px solid var(--azul-petroleo);
+    transition: all 0.3s ease;
+}
+.info-hu15:hover {
+    background-color: var(--azul-oscuro);
+    color: var(--fondo-claro);
+}
+
+.info-hu20 {
+    background-color: var(--fondo-claro);
+    padding: 20px;
+    border: 1px solid var(--azul-acero);
+    border-right: 5px solid var(--azul-petroleo);
+    transition: all 0.3s ease;
+}
+.info-hu20:hover {
+    background-color: var(--azul-oscuro);
+    color: var(--fondo-claro);
+}
+
+.columna-hu15 {
+    background-color: var(--fondo-claro);
+    padding: 20px;
+    border: 1px solid var(--azul-acero);
+    border-left: 5px solid var(--azul-petroleo);
+}
+.grid-3-cols:has(.columna-hu15:hover) .info-hu15 {
+    background-color: var(--azul-oscuro);
+    color: var(--fondo-claro);
+}
+
+.columna-hu20 {
+    background-color: var(--fondo-claro);
+    padding: 20px;
+    border: 1px solid var(--azul-acero);
+    border-right: 5px solid var(--azul-petroleo);
+}
+.grid-3-cols:has(.columna-hu20:hover) .info-hu20 {
+    background-color: var(--azul-oscuro);
+    color: var(--fondo-claro);
+}
+
+
+/* =========================================
+   5. SECCIONES DE CONTENIDO (Grids 2/3, 3 y 1/3)
+   ========================================= */
+.grid-2-3 {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Una columna grande y otra lateral */
+    gap: 5px;
+}
+
+.grid-3-cols {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Tres columnas */
+}
+
+.grid-1-3 {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Lateral pequeña y principal grande */
+    gap: 5px;
+}
+
+/* Banner de importancia (Sección 2) */
+.banner-importancia {
+    grid-column: 1 / -1; /* Ocupa todo el ancho del grid superior */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #FFF7ED;
+    border-left: 5px solid var(--naranja-acento);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+/* =========================================
+   6. SECCIÓN 4: ACCESIBILIDAD E INCLUSIÓN (Pestañas)
+   ========================================= */
+.split-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.viñetas-lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    margin: 5px;
+}
+
+.tab-btn {
+    padding: 12px 16px;
+    background-color: var(--fondo-claro);
+    border: 1px solid var(--gris-borde);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+    background-color: var(--gris-borde);
+}
+
+.tab-btn.active {
+    background-color: var(--azul-petroleo);
+    color: var(--blanco);
+    border-color: var(--azul-petroleo);
+}
+
+.tabs-content-display {
+    background-color: var(--fondo-claro);
+    border: 1px solid var(--gris-borde);
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 250px;
+}
+
+/* =========================================
+   7. SECCIÓN PRE-FOOTER (Testimonios y Contacto)
+   ========================================= */
+.pre-footer-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.container-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.testimonios-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.testimonios-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    height: 100%;
+}
+
+.testimonio-card {
+    height: 100%;
+    background-color: var(--fondo-claro);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--azul-petroleo);
+}
+
+.testimonio-card cite {
+    height: 100%;
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--azul-acero);
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* Formulario de contacto */
+.form-landing {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid var(--gris-borde);
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+.btn-enviar {
+    background-color: var(--naranja-acento);
+    color: var(--blanco);
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-enviar:hover {
+    background-color: var(--naranja-hover);
+}
+
+/* Información directa inferior */
+.contacto-info-directa {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    border-top: 1px solid var(--gris-borde);
+    align-items: center;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--azul-acero);
+}
+
+/* =========================================
+   8. PIE DE PÁGINA (Footer)
+   ========================================= */
+.footer-principal {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    font-size: 0.9rem;
 }

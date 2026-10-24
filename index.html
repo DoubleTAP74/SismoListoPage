@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SismoListo — Asistente de Preparación y Respuesta Sísmica</title>
     <!-- Hoja de estilos principal -->
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <!-- Google Material Symbols para la iconografía -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24..48,100..700,0..1,-50..200" />
 </head>
@@ -29,6 +29,38 @@
             <a href="#seccion-accesibilidad-inclusion" class="nav-link">Accesibilidad</a>
         </nav>
     </header>
+
+    <!-- SECCIÓN HERO: Problemática y Solución -->
+    <section id="seccion-hero" class="landing-section hero-grid">
+
+        <!-- Lado Izquierdo: La Solución -->
+        <div class="hero-col solucion-col">
+            <span class="badge">Nuestra Solución</span>
+            <h1>SismoListo: Tu asistente de preparación y respuesta sísmica</h1>
+            <p>
+                Convertimos la información dispersa sobre sismos en un plan familiar concreto, verificable y con baja carga
+                cognitiva para actuar con seguridad en calma o durante una emergencia.
+            </p>
+            <div class="hero-imagen-wrapper">
+                <img src="../assets/images/prototipo-preview.png" alt="Vista previa del prototipo interactivo de SismoListo"
+                    class="hero-img">
+            </div>
+        </div>
+    
+        <!-- Lado Derecho: La Problemática -->
+        <div class="hero-col problematica-col">
+            <span class="badge badge-alerta">La Problemática</span>
+            <h2>¿Por qué es difícil prepararnos ante un sismo?</h2>
+            <p>
+                Lima enfrenta un alto riesgo sísmico. La desorganización familiar, la falta de rutinas y materiales no
+                adaptados al estrés o sin conexión a internet impiden reaccionar a tiempo.
+            </p>
+            <div class="hero-imagen-wrapper">
+                <img src="../assets/images/problematica-sismo.png"
+                    alt="Ilustración del impacto del riesgo sísmico en los hogares" class="hero-img">  <!-- Cambiar la imagen de problematica por un video -->
+            </div>
+        </div>
+    </section>
 
     <!-- CONTENIDO PRINCIPAL FUNCIONALIDADES -->
     <main>
@@ -118,6 +150,70 @@
         </section>
 
     </main>
+    
+    <!-- SECCIÓN PRE-FOOTER: Testimonios y Formulario de Contacto -->
+    <section id="seccion-contacto-testimonios" class="landing-section pre-footer-grid">
+        <div class="container-split">
+            <!-- Lado Izquierdo: Testimonios con blockquote -->
+            <div class="testimonios-col">
+                <h2>Lo que dicen nuestras familias</h2>
+                <p>Experiencias de usuarios que organizaron su hogar con SismoListo:</p>
+
+                <div class="testimonios-lista">
+                    <blockquote class="testimonio-card">
+                        <p>“Organizar los roles con mis hijos fue sencillísimo. Ahora sé exactamente qué debe hacer cada uno
+                            sin ponernos a gritar durante un temblor.”</p>
+                        <cite>— Rosa Huamán, Jefa de hogar (44 años)</cite>
+                    </blockquote>
+
+                    <blockquote class="testimonio-card">
+                        <p>“Como adulto mayor, me daba miedo no saber usar la app. El botón 'Estoy bien' en alto contraste
+                            es tan claro que puedo avisar a mis hijas en un toque.”</p>
+                        <cite>— Julio Cárdenas, Adulto mayor (68 años)</cite>
+                    </blockquote>
+                </div>
+            </div>
+
+            <!-- Lado Derecho: Formulario para contactar con la Startup -->
+            <div class="contacto-col">
+                <h2>Contacta con la Startup</h2>
+                <p>¿Tienes dudas o deseas coordinar una alianza con SismoListo?</p>
+
+                <form id="form-contacto" class="form-landing">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana Torres" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje o consulta..."
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn-enviar">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- ÁREA INFERIOR: Información directa de contacto -->
+        <div class="contacto-info-directa">
+            <div class="info-item">
+                <span class="material-symbols-outlined">mail</span>
+                <span>contacto@sismolisto.pe</span>
+            </div>
+            <div class="info-item">
+                <span class="material-symbols-outlined">location_on</span>
+                <span>Lima Metropolitana, Perú</span>
+            </div>
+            <div class="info-item">
+                <span class="material-symbols-outlined">school</span>
+                <span>Proyecto Académico UPC — HCI for UX Design</span>
+            </div>
+        </div>
+    </section>
 
     <!-- PIE DE PÁGINA -->
     <footer class="footer-principal">
@@ -125,6 +221,6 @@
     </footer>
 
     <!-- Script principal de JavaScript -->
-    <script src="../js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

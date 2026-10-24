@@ -1,1 +1,24 @@
-  
+/* Variables globales basadas en la guía de estilos de SismoListo */
+:root {
+    --color-azul-oscuro: #142A3D;
+    --color-azul-petroleo: #215175;
+    --color-azul-acero: #4a5568;
+    --color-naranja: #F57A2D;
+    --color-naranja-hover: #CD5B16;
+    --color-fondo: #F8F9FA;
+    --color-blanco: #FFFFFF;
+}
+
+/* Estilos base reseteados */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-azul-oscuro);
+    line-height: 1.5;
+}

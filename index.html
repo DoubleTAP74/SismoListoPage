@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,19 @@
     <!-- Hoja de estilos principal -->
     <link rel="stylesheet" href="css/styles.css">
     <!-- Google Material Symbols para la iconografía -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24..48,100..700,0..1,-50..200" />
 </head>
+
 <body>
     <!--
     Textos descriptivos más conectados con el problema real (Needfinding):
     Tus descripciones actuales son buenas y técnicas, pero puedes enriquecerlas conectándolas con los dolores de los usuarios que investigaron (por ejemplo, mencionar la baja carga cognitiva, el funcionamiento sin conexión o los adultos mayores). Esto le da un plus académico y de diseño UX muy fuerte a tu entrega.
     -->
+
+    <!-- Iframe de subida oculta (prevencion de desviacion de la posicion del usuario) -->
+    <iframe name="subida_oculta" style="display:none;"></iframe>
+
     <!-- CABECERA Y NAVEGACIÓN -->
     <header class="header-principal">
         <nav class="nav-container">
@@ -22,10 +29,11 @@
                 <span>SismoListo</span>
             </div>
             <!-- Botón de acceso rápido al Modo Emergencia exigido por la HU-026 -->
-            <button id="btn-emergencia-global" class="btn-emergencia-alerta">Modo Emergencia</button>
             <a href="#seccion-configuracioninicial-gestionhogar" class="nav-link">Configuración</a>
             <a href="#seccion-logistica-preparacionpreventiva" class="nav-link">Logística</a>
-            <a href="#seccion-emergencia-respuestainmediata" class="nav-link">Emergencia</a>
+            <button id="btn-emergencia-global" class="btn-emergencia-alerta">
+                <a href="#seccion-emergencia-respuestainmediata" class="nav-link">Modo Emergencia</a>
+            </button>
             <a href="#seccion-accesibilidad-inclusion" class="nav-link">Accesibilidad</a>
         </nav>
     </header>
@@ -38,15 +46,16 @@
             <span class="badge badge-solucion">Nuestra Solución</span>
             <h1>SismoListo: Tu asistente de preparación y respuesta sísmica</h1>
             <p>
-                Convertimos la información dispersa sobre sismos en un plan familiar concreto, verificable y con baja carga
+                Convertimos la información dispersa sobre sismos en un plan familiar concreto, verificable y con baja
+                carga
                 cognitiva para actuar con seguridad en calma o durante una emergencia.
             </p>
             <div class="hero-imagen-wrapper">
-                <img src="../assets/images/prototipo-preview.png" alt="Vista previa del prototipo interactivo de SismoListo"
-                    class="hero-img">
+                <img src="../assets/images/prototipo-preview.png"
+                    alt="Vista previa del prototipo interactivo de SismoListo" class="hero-img">
             </div>
         </div>
-    
+
         <!-- Lado Derecho: La Problemática -->
         <div class="hero-col problematica-col">
             <span class="badge badge-alerta">La Problemática</span>
@@ -57,23 +66,252 @@
             </p>
             <div class="hero-imagen-wrapper">
                 <img src="../assets/images/problematica-sismo.png"
-                    alt="Ilustración del impacto del riesgo sísmico en los hogares" class="hero-img">  <!-- Cambiar la imagen de problematica por un video -->
+                    alt="Ilustración del impacto del riesgo sísmico en los hogares" class="hero-img">
+                <!-- Cambiar la imagen de problematica por un video -->
             </div>
         </div>
     </section>
 
     <!-- CONTENIDO PRINCIPAL FUNCIONALIDADES -->
     <main>
-        
+
         <!-- SECCIÓN 1: Configuración Inicial y Gestión del Hogar -->
         <section id="seccion-configuracioninicial-gestionhogar" class="landing-section grid-2-3">
             <div class="seccion1 funcionalidad-wrapper">
-                <!-- Aquí irá la simulación interactiva de las HUs de configuración (HU-001 al HU-010) -->
+                <div class="dispositivo-marco">
+
+                    <!-- Barra de progreso superior con los pasos de las 10 HUs -->
+                    <div class="pasos-barra">
+                        <span class="paso-item active">1. Cuenta</span>
+                        <span class="paso-item">2. Vivienda</span>
+                        <span class="paso-item">3. Integrantes</span>
+                        <span class="paso-item">4. Código</span>
+                        <span class="paso-item">5. Roles</span>
+                        <span class="paso-item">6. Acciones</span>
+                        <span class="paso-item">7. Encuentro</span>
+                        <span class="paso-item">8. Zonas</span>
+                        <span class="paso-item">9. Resumen</span>
+                    </div>
+
+                    <!-- Contenedor de los formularios de los pasos (Simulación visual) -->
+                    <div class="pasos-contenido">
+
+                        <!-- PASO 1: Registro de cuenta (HU-001, HU-002) -->
+                        <div class="step-form active" id="step-1">
+                            <h3>1. Registro de cuenta</h3>
+                            <form action="/tu-endpoint" method="POST" target="subida_oculta" id="form-registro"
+                                class="form-landing">
+                                <div class="form-group">
+                                    <label for="reg-celular">Número de celular (9 dígitos):</label>
+                                    <input type="tel" id="reg-celular" placeholder="Ej. 987654321" required
+                                        pattern="[0-9]{9}">
+                                    <label for="reg-nombre">Nombre completo:</label>
+                                    <input type="text" id="reg-nombre" placeholder="Ej. Mateo Lazaro" required>
+                                    <label for="reg-pass">Contraseña:</label>
+                                    <input type="password" id="reg-pass" placeholder="••••••••" required>
+                                </div>
+                                <p class="nota-sesion">ℹ️ La sesión se mantendrá activa de forma persistente para
+                                    emergencias (HU-002).</p>
+                                <button type="submit" class="btn-enviar">Registrar cuenta</button>
+                            </form>
+                        </div>
+
+                        <!-- PASO 2: Características de la Vivienda (HU-003) !!!!!! -->
+                        <div class="step-form" id="step-2">
+                            <h3>2. Datos de la Vivienda</h3>
+                            <form action="/tu-endpoint" method="POST" target="subida_oculta" id="form-vivienda"
+                                class="form-landing">
+                                <div class="form-group">
+                                    <label for="reg-distrito">Distrito (Lima y Callao):</label>
+                                    <select id="reg-distrito" required>
+                                        <option>Seleccione su distrito...</option>
+                                        <option>San Miguel</option>
+                                        <option>Callao</option>
+                                        <option>Ventanilla</option>
+                                        <option>San Martín de Porres</option>
+                                    </select>
+                                    <label>Características del hogar:</label>
+                                    <div class="checkbox-group">
+                                        <label><input type="checkbox" required> Tiene escaleras</label>
+                                        <label><input type="checkbox" required> Única salida</label>
+                                        <label><input type="checkbox" required> Pasajes estrechos</label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn-enviar">Registrar hogar</button>
+                            </form>
+                        </div>
+
+                        <!-- PASO 3: Registro de integrantes (HU-004) -->
+                        <div class="step-form" id="step-3">
+                            <h3>3. Registro de integrantes</h3>
+                            <form action="/tu-endpoint" method="POST" target="subida_oculta" id="form-integrantes"
+                                class="form-landing">
+                                <div class="form-group">
+                                    <label>Nombre del familiar:</label>
+                                    <input type="text" placeholder="Ej. Rosa Huamán">
+                                    <label>Parentesco:</label>
+                                    <input type="text" placeholder="Ej. Madre">
+                                    <label>Edad (años):</label>
+                                    <input type="number" placeholder="Ej. 55">
+                                </div>
+                                <button type="submit" class="btn-enviar">Registrar integrante</button>
+                            </form>
+                        </div>
+
+                        <!-- PASO 4: Código de vinculación familiar (HU-006) -->
+                        <div class="step-form" id="step-4">
+                            <h3>4. Código de vinculación familiar</h3>
+                            <p>Comparte este código con los celulares de tu familia para sincronizar la aplicación:</p>
+                            <div class="codigo-box">
+                                <span class="codigo-badge">SIS-8821</span>
+                            </div>
+                            <button type="button" class="btn-enviar">Continuar</button>
+                        </div>
+
+                        <!-- PASO 5: Asignación de Roles con integrantes predefinidos (HU-007) -->
+                        <div class="step-form" id="step-5">
+                            <h3>5. Asignación de Roles</h3>
+                            <p>Selecciona un integrante para asignarle una tarea crítica:</p>
+
+                            <!-- Lista de 3 integrantes predefinidos -->
+                            <div class="integrantes-lista-simulacion">
+                                <div class="integrante-item" data-integrante="Rosa">
+                                    <span class="material-symbols-outlined">person</span>
+                                    <div>
+                                        <strong>Rosa Huamán</strong>
+                                        <p>Madre (30 años)</p>
+                                    </div>
+                                </div>
+                                <div class="integrante-item" data-integrante="Julio">
+                                    <span class="material-symbols-outlined">person</span>
+                                    <div>
+                                        <strong>Julio Cárdenas</strong>
+                                        <p>Abuelo (65 años)</p>
+                                    </div>
+                                </div>
+                                <div class="integrante-item" data-integrante="Ana">
+                                    <span class="material-symbols-outlined">person</span>
+                                    <div>
+                                        <strong>Ana Lazaro</strong>
+                                        <p>Hija (7 años)</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Formulario inferior para asignar el rol al integrante seleccionado -->
+                            <div class="form-rol-asignacion">
+                                <form action="/tu-endpoint" method="POST" target="subida_oculta" id="form-rol"
+                                    class="form-landing">
+                                    <div class="form-group">
+                                        <label>Rol o tarea de emergencia:</label>
+                                        <input type="text" placeholder="Ej. Encargado de mochila de emergencia"
+                                            required>
+                                    </div>
+                                    <button type="submit" class="btn-enviar">Guardar y Continuar</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- PASO 6: Acciones en caso de sismo dentro/fuera de casa (HU-008) -->
+                        <div class="step-form" id="step-6">
+                            <h3>6. Protocolo de acciones rápidas</h3>
+                            <p>Guía visual de actuación rápida según tu ubicación:</p>
+                            <div class="tarjetas-acciones-grid">
+                                <div class="accion-card">
+                                    <span class="material-symbols-outlined">home</span>
+                                    <h4>Dentro de casa</h4>
+                                    <p>Ubicarse en zona segura interna, alejarse de ventanas y muebles altos.</p>
+                                </div>
+                                <div class="accion-card">
+                                    <span class="material-symbols-outlined">directions_walk</span>
+                                    <h4>Durante la evacuación</h4>
+                                    <p>Mantener la calma, usar escaleras y no utilizar ascensores.</p>
+                                </div>
+                                <div class="accion-card">
+                                    <span class="material-symbols-outlined">location_city</span>
+                                    <h4>Fuera de casa</h4>
+                                    <p>Dirigirse al punto de encuentro externo acordado con el hogar.</p>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-enviar">Continuar</button>
+                        </div>
+
+                        <!-- PASO 7: Registro del Punto de Encuentro Externo (HU-009) -->
+                        <div class="step-form" id="step-7">
+                            <h3>7. Punto de encuentro externo</h3>
+                            <form action="/tu-endpoint" method="POST" target="subida_oculta" id="form-encuentro"
+                                class="form-landing">
+                                <div class="form-group">
+                                    <label for="encuentro-nombre">Lugar de encuentro acordado:</label>
+                                    <input type="text" id="encuentro-nombre"
+                                        placeholder="Ej. Parque Principal de San Miguel" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="encuentro-ref">Referencia o descripción:</label>
+                                    <input type="text" id="encuentro-ref"
+                                        placeholder="Ej. Frente a la puerta principal del mercado" required>
+                                </div>
+                                <div class="mapa-simulado">
+                                    <img src="../assets/images/mapa-referencia.png" alt="Mapa de ubicación"
+                                        class="mapa-img">
+                                    <span class="material-symbols-outlined pin-ubicacion">location_on</span>
+                                </div>
+                                <button type="submit" class="btn-enviar">Guardar Punto de Encuentro</button>
+                            </form>
+                        </div>
+
+                        <!-- PASO 8: Registro de Zonas Seguras dentro del Hogar (HU-010) -->
+                        <div class="step-form" id="step-8">
+                            <h3>8. Zonas seguras del hogar</h3>
+                            <form action="/tu-endpoint" method="POST" target="subida_oculta" id="form-zonas"
+                                class="form-landing">
+                                <div class="form-group">
+                                    <label for="zona-desc">Ubicación de la zona segura interna:</label>
+                                    <input type="text" id="zona-desc"
+                                        placeholder="Ej. Al costado de la columna del tragaluz en la sala" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Referencia visual o croquis de un espacio seguro:</label>
+                                    <div class="upload-simulado">
+                                        <img src="../assets/images/upload-placeholder.png"
+                                            alt="Imagen cartoon de un espacio seguro en una vivienda"
+                                            class="upload-icon">
+                                        <p>Imagen o croquis de un espacio seguro de vivienda</p>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn-enviar">Guardar Zona Segura</button>
+                            </form>
+                        </div>
+
+                        <!-- PASO 9: Dashboard / Ficha Resumen del Plan Familiar -->
+                        <div class="step-form" id="step-9">
+                            <h3>9. Resumen del Plan Familiar</h3>
+                            <div class="resumen-dashboard">
+                                <div class="resumen-card">
+                                    <h4>👥 Integrantes y Roles</h4>
+                                    <ul style="list-style-type: none;">
+                                        <li><strong>Rosa Huamán:</strong> Cortar luz y gas</li>
+                                        <li><strong>Julio Cárdenas:</strong> Mochila de emergencia</li>
+                                    </ul>
+                                </div>
+                                <div class="resumen-card">
+                                    <h4>📍 Puntos Clave</h4>
+                                    <p><strong>Punto de encuentro:</strong> Parque Principal</p>
+                                    <p><strong>Zona segura interna:</strong> Columna principal del tragaluz</p>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-enviar">Finalizar Configuración</button>
+                        </div>
+
+                    </div>
+                </div>
             </div>
             <aside class="seccion1 info-wrapper">
                 <h1>Configuración Inicial y Gestión del Hogar</h1>
                 <p>
-                    Esta sección permite a los usuarios configurar su hogar y gestionar la información crítica para la preparación ante sismos. Incluye funcionalidades como registro de miembros del hogar, ubicación de recursos de emergencia, y personalización de alertas.
+                    Esta sección permite a los usuarios configurar su hogar y gestionar la información crítica para la
+                    preparación ante sismos. Incluye funcionalidades como registro de miembros del hogar, ubicación de
+                    recursos de emergencia, y personalización de alertas.
                 </p>
             </aside>
         </section>
@@ -84,15 +322,21 @@
                 <!-- Funcionalidad HU-015: Mochila de emergencia -->
             </div>
             <div class="columna-centro">
-                <div class="info-hu15">
+                <div class="title-section2">
                     <h1>Logística y Preparación Preventiva</h1>
+                </div>
+                <div class="info-hu15">
                     <strong>Lista sugerida para la mochila:</strong> <br>
-                    Generamos automaticamente una recomendación de los elementos esenciales para la mochila de emergencia, adaptada a las necesidades del hogar y siguiendo las directrices del INDECI. <br>
-                    Ademas, permite al usuario personalizar la lista según sus preferencias y necesidades específicas, señalando a su vez la cantidad de agua requerida en funcion de los integrantes del hogar.
+                    Generamos automaticamente una recomendación de los elementos esenciales para la mochila de
+                    emergencia, adaptada a las necesidades del hogar y siguiendo las directrices del INDECI. <br>
+                    Ademas, permite al usuario personalizar la lista según sus preferencias y necesidades específicas,
+                    señalando a su vez la cantidad de agua requerida en funcion de los integrantes del hogar.
                 </div>
                 <div class="info-hu20"><strong>Simulacro exprés cronometrado:</strong> <br>
-                    Funcionalidad que permite a los usuarios realizar un simulacro exprés de evacuación en caso de sismo, mostrando los pasos a seguir junto a un cronometro que señale el tiempo que transcrurre. <br>
-                    Ademas, permite al usuario finalizarlo en cuanto señale que se completo el simulacro, o cancelarlo sin registrar el tiempo transcurrido. <br>
+                    Funcionalidad que permite a los usuarios realizar un simulacro exprés de evacuación en caso de
+                    sismo, mostrando los pasos a seguir junto a un cronometro que señale el tiempo que transcrurre. <br>
+                    Ademas, permite al usuario finalizarlo en cuanto señale que se completo el simulacro, o cancelarlo
+                    sin registrar el tiempo transcurrido. <br>
                 </div>
             </div>
             <div class="columna-hu20">
@@ -106,7 +350,10 @@
                 <div class="banner-contenido">
                     <h2>Importancia de la Preparación</h2>
                     <p>
-                        Las capacidades de plantear una mochila de emergencia y realizar simulacros exprés son fundamentales para garantizar la seguridad y la eficiencia en la respuesta ante sismos. Estas funcionalidades permiten a los usuarios estar mejor preparados, reduciendo riesgos y aumentando la resiliencia de sus hogares.
+                        Las capacidades de plantear una mochila de emergencia y realizar simulacros exprés son
+                        fundamentales para garantizar la seguridad y la eficiencia en la respuesta ante sismos. Estas
+                        funcionalidades permiten a los usuarios estar mejor preparados, reduciendo riesgos y aumentando
+                        la resiliencia de sus hogares.
                     </p>
                 </div>
             </div>
@@ -118,7 +365,11 @@
                 <!-- Apartado informativo lateral (1/3) -->
                 <h1>Respuesta Inmediata y Modo Emergencia</h1>
                 <p>
-                    Esta sección está diseñada para proporcionar a los usuarios herramientas y recursos esenciales durante una emergencia sísmica. Incluye funcionalidades críticas como el Modo Emergencia, que permite activar alertas y protocolos de seguridad de manera rápida y eficiente. Ademas reportes a los integrantes del hogar sobre la situación actual, acciones recomendadas y la posibilidad contactar con otros integrantes del hogar.
+                    Esta sección está diseñada para proporcionar a los usuarios herramientas y recursos esenciales
+                    durante una emergencia sísmica. Incluye funcionalidades críticas como el Modo Emergencia, que
+                    permite activar alertas y protocolos de seguridad de manera rápida y eficiente. Ademas reportes a
+                    los integrantes del hogar sobre la situación actual, acciones recomendadas y la posibilidad
+                    contactar con otros integrantes del hogar.
                 </p>
             </aside>
             <div class="funcionalidad-wrapper">
@@ -138,8 +389,7 @@
                     <li class="tab-btn" data-target="hu-012">Resumen del plan familiar</li>
                     <li class="tab-btn" data-target="hu-013">Progreso del plan familiar</li>
                     <li class="tab-btn" data-target="hu-032">Modo de ahorro de batería en emergencia</li>
-                    <li class="tab-btn" data-target="hu-042">Texto Ampliado</li>
-                    <li class="tab-btn" data-target="hu-043">Alto Contraste</li>
+                    <li class="tab-btn" data-target="hu-042-043">Texto Ampliado y Alto Contraste</li>
                     <li class="tab-btn" data-target="hu-045">Guías breves</li>
                     <!-- ... demás viñetas ... -->
                 </ul>
@@ -150,7 +400,7 @@
         </section>
 
     </main>
-    
+
     <!-- SECCIÓN PRE-FOOTER: Testimonios y Formulario de Contacto -->
     <section id="seccion-contacto-testimonios" class="landing-section pre-footer-grid">
         <div class="container-split">
@@ -161,13 +411,15 @@
 
                 <div class="testimonios-lista">
                     <blockquote class="testimonio-card">
-                        <p>“Organizar los roles con mis hijos fue sencillísimo. Ahora sé exactamente qué debe hacer cada uno
+                        <p>“Organizar los roles con mis hijos fue sencillísimo. Ahora sé exactamente qué debe hacer cada
+                            uno
                             sin ponernos a gritar durante un temblor.”</p>
                         <cite>— Rosa Huamán, Jefa de hogar (44 años)</cite>
                     </blockquote>
 
                     <blockquote class="testimonio-card">
-                        <p>“Como adulto mayor, me daba miedo no saber usar la app. El botón 'Estoy bien' en alto contraste
+                        <p>“Como adulto mayor, me daba miedo no saber usar la app. El botón 'Estoy bien' en alto
+                            contraste
                             es tan claro que puedo avisar a mis hijas en un toque.”</p>
                         <cite>— Julio Cárdenas, Adulto mayor (68 años)</cite>
                     </blockquote>
@@ -177,8 +429,9 @@
             <!-- Lado Derecho: Formulario para contactar con la Startup -->
             <div class="contacto-col">
                 <h2>Contacta con la Startup</h2>
-                    <h4><strong>¿Tienes dudas o deseas coordinar una alianza con SismoListo? Contactanos</strong></h4>
-                <form id="form-contacto" class="form-landing">
+                <h4><strong>¿Tienes dudas o deseas coordinar una alianza con SismoListo? Contactanos</strong></h4>
+                <form action="/tu-endpoint" method="POST" target="subida_oculta" id="form-contacto"
+                    class="form-landing">
                     <div class="form-group">
                         <label for="nombre">Nombre completo:</label>
                         <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana Torres" required>
@@ -192,7 +445,8 @@
                         <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje o consulta..."
                             required></textarea>
                     </div>
-                    <button type="submit" class="btn-enviar">Enviar mensaje</button>
+                    <button type="submit" class="btn-enviar" onclick="setTimeout(()=>{this.form.reset();}, 100);">Enviar
+                        mensaje</button>
                 </form>
             </div>
         </div>
@@ -223,4 +477,5 @@
     <!-- Script principal de JavaScript -->
     <script src="js/main.js"></script>
 </body>
+
 </html>

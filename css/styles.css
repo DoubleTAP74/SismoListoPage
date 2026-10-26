@@ -27,7 +27,7 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family:'Times New Roman', Times, serif;
     background-color: var(--fondo-claro);
     color: var(--azul-oscuro);
     line-height: 1.6;
@@ -40,14 +40,14 @@ body {
     background-color: var(--naranja-acento);
     border-bottom: 1px solid var(--gris-borde);
     position: sticky;
-    top: 0;
+    top: 0px;
     z-index: 1000;
 }
 
 
 .nav-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
     padding: 15px 20px;
     display: flex;
     align-items: center;
@@ -96,9 +96,10 @@ body {
    3. ESTILO GENERAL DE LAS SECCIONES
    ========================================= */
 .landing-section {
-    padding: 5px 5px;
+    padding: 5px;
     background-color: var(--fondo);
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.02);
+    scroll-margin-top: 60px;
 }
 
 /* =========================================
@@ -115,16 +116,15 @@ body {
     flex-direction: column;
 }
 .solucion-col {
-    height: 100%;
     background-color: var(--fondo-blanco);
     padding: 20px;
     border: 1px solid var(--azul-petroleo);
 }
 .problematica-col {
-    height: 100%;
     background-color: var(--naranja-suave);
     padding: 20px;
     border: 1px solid var(--naranja-neutro);
+    height: 100%; /*usar en el javascript: const altura = window.getComputedStyle(elementoOrigen).height; y luego eliminar esta linea*/
 }
 
 
@@ -230,6 +230,13 @@ body {
     color: var(--fondo-claro);
 }
 
+.title-section2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--azul-oscuro);
+    color: var(--fondo-claro);
+}
 
 /* =========================================
    5. SECCIONES DE CONTENIDO (Grids 2/3, 3 y 1/3)
@@ -260,7 +267,6 @@ body {
     background-color: #FFF7ED;
     border-left: 5px solid var(--naranja-acento);
     padding: 20px;
-    border-radius: 8px;
     margin-top: 5px;
 }
 
@@ -278,7 +284,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-top: 15px;
     margin: 5px;
 }
 
@@ -286,7 +291,6 @@ body {
     padding: 12px 16px;
     background-color: var(--fondo-claro);
     border: 1px solid var(--gris-borde);
-    border-radius: 6px;
     cursor: pointer;
     font-weight: 500;
     transition: all 0.2s ease;
@@ -305,7 +309,6 @@ body {
 .tabs-content-display {
     background-color: var(--fondo-claro);
     border: 1px solid var(--gris-borde);
-    border-radius: 8px;
     padding: 20px;
     min-height: 250px;
 }
@@ -343,7 +346,6 @@ body {
     height: 100%;
     background-color: var(--fondo-claro);
     padding: 20px;
-    border-radius: 8px;
     border-left: 4px solid var(--azul-petroleo);
 }
 
@@ -369,6 +371,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    padding: 5px 0;
 }
 
 .form-group label {
@@ -380,7 +383,6 @@ body {
 .form-group textarea {
     padding: 10px;
     border: 1px solid var(--gris-borde);
-    border-radius: 6px;
     font-family: inherit;
 }
 
@@ -426,4 +428,177 @@ body {
     background-color: var(--azul-oscuro);
     color: var(--blanco);
     font-size: 0.9rem;
+}
+
+
+/* =========================================
+   ESTILOS ESPECÍFICOS PARA LA SECCIÓN 1
+   ========================================= */
+
+/* Contenedor tipo marco de dispositivo (PC/Celular) */
+.dispositivo-marco {
+    background-color: var(--blanco);
+    border: 4px solid var(--azul-oscuro);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Barra superior de pasos */
+.pasos-barra {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--fondo-claro);
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--azul-acero);
+    overflow-x: auto;
+    gap: 6px;
+}
+
+.pasos-barra .paso-item {
+    white-space: nowrap;
+    padding: 4px 6px;
+    border-radius: 4px;
+}
+
+.pasos-barra .paso-item.active {
+    background-color: var(--azul-petroleo);
+    color: var(--blanco);
+}
+
+/* Manejo de visibilidad de los formularios internos del simulador */
+.step-form {
+    display: none; /* Oculta los pasos por defecto */
+    flex-direction: column;
+    gap: 12px;
+}
+
+.step-form.active {
+    display: flex; /* Muestra el paso activo actual */
+}
+
+.step-form h3 {
+    font-size: 1.1rem;
+    color: var(--azul-petroleo);
+    margin-bottom: 5px;
+}
+
+/* Estilos visuales para los elementos internos de simulación */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background-color: var(--fondo-claro);
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--gris-borde);
+    font-size: 0.9rem;
+}
+
+.codigo-box {
+    background-color: var(--naranja-suave);
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.codigo-badge {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--naranja-acento);
+}
+
+.badge-chip-container {
+    display: flex;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.chip {
+    background-color: var(--fondo-claro);
+    border: 1px solid var(--azul-petroleo);
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+.mapa-simulado {
+    position: relative; /* Clave para que el icono absoluto se posicione dentro de este cuadro */
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.mapa-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+}
+
+.pin-ubicacion {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el icono exactamente en medio */
+    color: #E53E3E; /* Rojo de alerta para destacar */
+    font-size: 2.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Sombra para darle profundidad */
+}
+
+/* Tarjetas de acciones del Paso 6 */
+.tarjetas-acciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.accion-card {
+    background-color: var(--fondo-claro);
+    border: 1px solid var(--gris-borde);
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.accion-card .material-symbols-outlined {
+    color: var(--azul-petroleo);
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+/* Área de carga simulada del Paso 8 */
+.upload-simulado {
+    background-color: var(--fondo-claro);
+    border: 2px dashed var(--azul-acero);
+    padding: 15px;
+    text-align: center;
+    border-radius: 6px;
+    color: var(--azul-acero);
+    font-size: 0.85rem;
+}
+
+/* Resumen Dashboard del Paso 9 */
+.resumen-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.resumen-card {
+    background-color: var(--fondo-claro);
+    border-left: 4px solid var(--azul-petroleo);
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.resumen-card h4 {
+    color: var(--azul-oscuro);
+    margin-bottom: 5px;
 }

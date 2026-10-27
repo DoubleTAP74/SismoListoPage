@@ -31,9 +31,8 @@
             <!-- Botón de acceso rápido al Modo Emergencia exigido por la HU-026 -->
             <a href="#seccion-configuracioninicial-gestionhogar" class="nav-link">Configuración</a>
             <a href="#seccion-logistica-preparacionpreventiva" class="nav-link">Logística</a>
-            <button id="btn-emergencia-global" class="btn-emergencia-alerta">
-                <a href="#seccion-emergencia-respuestainmediata" class="nav-link">Modo Emergencia</a>
-            </button>
+            <a href="#seccion-emergencia-respuestainmediata" class="nav-link btn-emergencia-alerta principal">Modo
+                Emergencia</a>
             <a href="#seccion-accesibilidad-inclusion" class="nav-link">Accesibilidad</a>
         </nav>
     </header>
@@ -111,7 +110,7 @@
                                     <input type="password" id="reg-pass" placeholder="••••••••" required>
                                 </div>
                                 <p class="nota-sesion">ℹ️ La sesión se mantendrá activa de forma persistente para
-                                    emergencias (HU-002).</p>
+                                    emergencias.</p>
                                 <button type="submit" class="btn-enviar">Registrar cuenta</button>
                             </form>
                         </div>
@@ -372,9 +371,294 @@
                     contactar con otros integrantes del hogar.
                 </p>
             </aside>
+
+            <!-- LADO DERECHO: Simulador interactivo con marco de dispositivo y flujo del Modo Emergencia (2/3) -->
             <div class="funcionalidad-wrapper">
-                <!-- Funcionalidades críticas (HU-025 a HU-036) -->
-            </div>
+                <div class="dispositivo-marco marco-emergencia">
+
+                    <!-- CONTENEDOR DE PASOS HU-ZONE -->
+                    <div class="hu-zone-container">
+
+                        <!-- PASO 1: Inicio y Activación del Modo Emergencia -->
+                        <div class="step-emergencia active" id="emergencia-step-1">
+                            <div class="pantalla-activacion">
+                                <span class="material-symbols-outlined icono-alerta-grande">warning</span>
+                                <h2>Modo Emergencia</h2>
+                                <p>Activa este modo únicamente durante un evento sísmico o en situaciones de riesgo
+                                    inminente para guiar tu evacuación y emitir reportes de estado.</p>
+                                <button type="button" class="btn-emergencia-activar">
+                                    <span class="material-symbols-outlined">sos</span>
+                                    Activar Modo Emergencia
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- PASO 2: Guía de Evacuación / Protocolo de 3 pasos de alto contraste -->
+                        <div class="step-emergencia" id="emergencia-step-2">
+
+                            <!-- Sub-paso 2.1 (Paso 1 de la guía) -->
+                            <div class="step-emergencia active" id="emergencia-substep-1">
+                                <div class="protocolo-evacuacion">
+                                    <span class="badge badge-alerta">Paso 1 de 3: Durante el sismo</span>
+                                    <h3>1. Mantén la calma y ubícate en Zona Segura</h3>
+                                    <p>Cúbrete la cabeza, aléjate de ventanas, espejos y muebles altos o estantes que
+                                        puedan colapsar.</p>
+                                    <div class="hero-imagen-wrapper">
+                                        <div class="upload-simulado">
+                                            <img src="../assets/images/ilustracion-zona-segura.png"
+                                                alt="Ilustración: Zona segura interna" class="upload-icon">
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn-enviar completo-ancho"
+                                        data-next="emergencia-substep-2">Siguiente paso (Evacuación)</button>
+                                </div>
+                            </div>
+
+                            <!-- Sub-paso 2.2 (Paso 2 de la guía) -->
+                            <div class="step-emergencia" id="emergencia-substep-2">
+                                <div class="protocolo-evacuacion">
+                                    <span class="badge badge-alerta">Paso 2 de 3: Evacuación</span>
+                                    <h3>2. Evacúa ordenadamente sin correr</h3>
+                                    <p>Usa las rutas señalizadas, desciende por las escaleras de emergencia y no
+                                        utilices los ascensores bajo ninguna circunstancia.</p>
+                                    <div class="hero-imagen-wrapper">
+                                        <div class="upload-simulado">
+                                            <img src="../assets/images/ilustracion-evacuacion.png"
+                                                alt="Ilustración: Uso de escaleras" class="upload-icon">
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn-enviar completo-ancho"
+                                        data-next="emergencia-substep-3">Siguiente paso (Punto externo)</button>
+                                </div>
+                            </div>
+
+                            <!-- Sub-paso 2.3 (Paso 3 de la guía - Con cambio de texto en el botón) -->
+                            <div class="step-emergencia" id="emergencia-substep-3">
+                                <div class="protocolo-evacuacion">
+                                    <span class="badge badge-alerta">Paso 3 de 3: Exterior</span>
+                                    <h3>3. Dirígete al punto de encuentro externo</h3>
+                                    <p>Al llegar a la zona segura exterior, mantente alejado de postes de luz, cables
+                                        caídos y fachadas con riesgo de desprendimiento.</p>
+                                    <div class="hero-imagen-wrapper">
+                                        <div class="upload-simulado">
+                                            <img src="../assets/images/ilustracion-punto-encuentro.png"
+                                                alt="Ilustración: Llegada al punto de encuentro" class="upload-icon">
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn-emergencia-activar completo-ancho"
+                                        data-next="emergencia-step-3">Reporte de estado</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- PASO 3: Reporte de Estado Inicial ("¿Cómo estás?") -->
+                        <div class="step-emergencia" id="emergencia-step-3">
+                            <div class="reporte-estado-inicial">
+                                <h2>¿Cómo estás?</h2>
+                                <p>Selecciona tu estado actual para informarlo de inmediato a tu hogar:</p>
+
+                                <div class="botones-estado-grupo">
+                                    <button type="button" class="btn-estado btn-estoy-bien">
+                                        <!-- Boton que salta al paso 5 -->
+                                        <span class="material-symbols-outlined">check_circle</span>
+                                        <span>Estoy bien</span>
+                                    </button>
+                                    <button type="button" class="btn-estado btn-necesito-ayuda">
+                                        <!-- Boton que salta al paso 4 -->
+                                        <span class="material-symbols-outlined">emergency</span>
+                                        <span>Necesito ayuda</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PASO 4: Formulario de Requerimiento de Ayuda y Mensaje Offline -->
+                        <div class="step-emergencia" id="emergencia-step-4">
+                            <div class="form-ayuda-container">
+                                <h3>Solicitar Ayuda Urgente</h3>
+                                <form action="/tu-endpoint" method="POST" target="subida_oculta"
+                                    id="form-solicitud-ayuda">
+                                    <div class="form-group">
+                                        <label for="tipo-ayuda">Tipo de asistencia requerida:</label>
+                                        <select id="tipo-ayuda" class="tipo-ayuda" required>
+                                            <option value="">Selecciona el tipo de ayuda...</option>
+                                            <option value="medica">Primeros Auxilios / Atención Médica</option>
+                                            <option value="atrapado">Atrapamiento / Estructura bloqueada</option>
+                                            <option value="evacuacion">Dificultad de movilidad para evacuar</option>
+                                            <option value="otra">Otra urgencia grave</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="alerta-offline-box">
+                                        <span class="material-symbols-outlined">wifi_off</span>
+                                        <p><strong>Cola de envío offline activa:</strong> Sin conexión a internet
+                                            detectada. Tu reporte se guardará localmente y se enviará automáticamente al
+                                            restablecerse la señal movil/WiFi.</p>
+                                    </div>
+
+                                    <button type="submit" onclick="setTimeout(()=>{this.form.reset();}, 100);"
+                                        class="btn-emergencia-alerta completo-ancho">Enviar Reporte de Ayuda</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- PASO 5: Lista y Estado del Hogar -->
+                        <div class="step-emergencia" id="emergencia-step-5">
+                            <div class="estado-hogar-container">
+                                <h3>Estado del Hogar</h3>
+                                <p>Monitoreo en tiempo real del reporte de los integrantes:</p>
+
+                                <div class="integrantes-estado-lista">
+                                    <!-- Integrante 1: Estoy bien -->
+                                    <div class="integrante-estado-item">
+                                        <div class="integrante-info">
+                                            <strong>Rosa Huamán</strong>
+                                            <span>Madre (44 años)</span>
+                                        </div>
+                                        <span class="badge-estado badge-bien">
+                                            <span class="material-symbols-outlined">check</span>
+                                            Estoy bien
+                                        </span>
+                                    </div>
+
+                                    <!-- Integrante 2: Estoy bien -->
+                                    <div class="integrante-estado-item">
+                                        <div class="integrante-info">
+                                            <strong>Mateo Lazaro</strong>
+                                            <span>Hijo (20 años)</span>
+                                        </div>
+                                        <span class="badge-estado badge-bien">
+                                            <span class="material-symbols-outlined">check</span>
+                                            Estoy bien
+                                        </span>
+                                    </div>
+
+                                    <!-- Integrante 3: Necesito ayuda -->
+                                    <div class="integrante-estado-item">
+                                        <div class="integrante-info">
+                                            <strong>Julio Cárdenas</strong>
+                                            <span>Abuelo (68 años)</span>
+                                        </div>
+                                        <span class="badge-estado badge-ayuda">
+                                            <span class="material-symbols-outlined">warning</span>
+                                            Necesito ayuda
+                                        </span>
+                                    </div>
+
+                                    <!-- Integrante 4: Esperando -->
+                                    <div class="integrante-estado-item">
+                                        <div class="integrante-info">
+                                            <strong>Ana Lazaro</strong>
+                                            <span>Hija (14 años)</span>
+                                        </div>
+                                        <span class="badge-estado badge-esperando">
+                                            <span class="material-symbols-outlined">hourglass_empty</span>
+                                            Esperando
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <button type="button" class="btn-enviar btn-contactar-pendiente">
+                                    <span class="material-symbols-outlined">sms</span>
+                                    <label style="margin-left: 5px;">Contactar a integrante sin reporte (Ana
+                                        Lazaro)</label>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- PASO 6: Mensaje Rápido Predefinido y Notificación PUSH Push-Notification -->
+                        <div class="step-emergencia" id="emergencia-step-6">
+                            <div class="mensaje-rapido-container">
+                                <h3>Contactar a Ana Lazaro</h3>
+                                <p>Selecciona un mensaje predefinido para envío rápido SMS/Mesh:</p>
+                                <!-- Investigar si es posible utilizar javascript para eliminar las multiples veces que se escribio en el html la siguiente linea en los form: action="/tu-endpoint" method="POST" target="subida_oculta"-->
+                                <form action="/tu-endpoint" method="POST" target="subida_oculta"
+                                    id="form-mensaje-rapido">
+                                    <div class="radio-mensajes-grupo">
+                                        <label class="radio-opcion">
+                                            <input type="radio" name="msg-predefinido" value="1" checked>
+                                            <span><strong>"¿Te encuentras bien? Por favor confirma tu estado."</strong></span>
+                                        </label>
+                                        <label class="radio-opcion">
+                                            <input type="radio" name="msg-predefinido" value="2">
+                                            <span><strong>"Dirígete al punto de encuentro en el Parque Principal."</strong></span>
+                                        </label>
+                                        <label class="radio-opcion">
+                                            <input type="radio" name="msg-predefinido" value="3">
+                                            <span><strong>"Voy en camino a buscarte a la zona segura."</strong></span>
+                                        </label>
+                                    </div>
+
+                                    <button type="submit" class="btn-enviar">Enviar Mensaje Rápido</button>
+                                </form>
+
+                                <!-- Notificación PUSH simulada al enviar -->
+                                <div class="notificacion-push-card">
+                                    <span class="material-symbols-outlined">notifications_active</span>
+                                    <div>
+                                        <strong>Notificación del Sistema</strong>
+                                        <p>✅ Tu reporte de estado fue transmitido exitosamente por red SMS de respaldo.
+                                            Mensaje enviado a Ana Lazaro.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PASO 7: Salida del Modo Emergencia y Protocolo Post-Sismo -->
+                        <div class="step-emergencia" id="emergencia-step-7">
+                            <div class="post-sismo-container">
+                                <div class="header-salida-emergencia">
+                                    <span class="material-symbols-outlined icono-ok">task_alt</span>
+                                    <h2>Retorno a Estado de Calma</h2>
+                                    <p>Has finalizado el reporte activo de emergencia.</p>
+                                </div>
+
+                                <h4>Protocolo de 4 pasos Post-Sismo:</h4>
+                                <ol class="lista-post-sismo">
+                                    <li class="card">Verifica si hay lesionados o daños estructurales antes de ingresar
+                                        al inmueble.
+                                    </li>
+                                    <li class="card">Cierra llaves de paso de gas y agua si percibes fugas u olor a gas.
+                                    </li>
+                                    <li class="card">Infórmate únicamente por canales oficiales (INDECI / COEN). Evita
+                                        difundir
+                                        rumores.</li>
+                                    <li class="card">Mantén la mochila de emergencia a la mano ante posibles réplicas.
+                                    </li>
+                                </ol>
+
+                                <button type="button" class="btn-enviar completo-ancho">Cerrar Modo Emergencia</button>
+                            </div>
+                        </div>
+
+                    </div> <!-- FIN HU-ZONE -->
+
+                    <!-- BARRA DE NAVEGACIÓN INFERIOR (Bottom Navigation Bar tipo App Móvil) -->
+                    <nav class="bottom-nav-emergencia">
+                        <button type="button" class="nav-item">
+                            <span class="material-symbols-outlined">home</span>
+                            <span>Inicio</span>
+                        </button>
+                        <button type="button" class="nav-item">
+                            <span class="material-symbols-outlined">timer</span>
+                            <span>Simulacros</span>
+                        </button>
+                        <button type="button" class="nav-item nav-emergencia-highlight active">
+                            <span class="material-symbols-outlined">e911_emergency</span>
+                            <span>EMERGENCIA</span>
+                        </button>
+                        <button type="button" class="nav-item">
+                            <span class="material-symbols-outlined">inventory_2</span>
+                            <span>Preparación</span>
+                        </button>
+                        <button type="button" class="nav-item">
+                            <span class="material-symbols-outlined">more_horiz</span>
+                            <span>Más</span>
+                        </button>
+                    </nav>
+
+                </div>
         </section>
 
         <!-- SECCIÓN 4: Accesibilidad e Inclusión -->

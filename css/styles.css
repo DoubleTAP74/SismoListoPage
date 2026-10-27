@@ -7,7 +7,6 @@
     --azul-cielo: #4A90E2;
     --azul-neutro: #3d5e98;
     --azul-acero: #4a5568;
-    --naranja-acento: #F57A2D;
     --naranja-hover: #CD5B16;
     --naranja-claro: #ff5c10;
     --naranja-suave: #FFE5D1;
@@ -27,7 +26,7 @@
 }
 
 body {
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
     background-color: var(--fondo-claro);
     color: var(--azul-oscuro);
     line-height: 1.6;
@@ -85,12 +84,40 @@ body {
     border-radius: 6px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
+}
+
+.principal {
+    transition: background-color 0.3s ease;
 }
 
 .btn-emergencia-alerta:hover {
-    background-color: #C53030;
+    background-color: rgb(141, 27, 27);
 }
+
+.principal:hover{
+    background-color: #C53030;
+    animation: pulsar 1s infinite ease-in-out;
+}
+
+/* Definición del efecto de pulso */
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+        /* Tamaño original */
+    }
+
+    50% {
+        transform: scale(1.08);
+        /* Se agranda un 8% */
+    }
+
+    100% {
+        transform: scale(1);
+        /* Vuelve al tamaño original */
+    }
+}
+
 
 /* =========================================
    3. ESTILO GENERAL DE LAS SECCIONES
@@ -107,7 +134,8 @@ body {
    ========================================= */
 .hero-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Divide en dos columnas iguales */
+    grid-template-columns: 1fr 1fr;
+    /* Divide en dos columnas iguales */
     align-items: center;
 }
 
@@ -115,16 +143,19 @@ body {
     display: flex;
     flex-direction: column;
 }
+
 .solucion-col {
     background-color: var(--fondo-blanco);
     padding: 20px;
     border: 1px solid var(--azul-petroleo);
 }
+
 .problematica-col {
     background-color: var(--naranja-suave);
     padding: 20px;
     border: 1px solid var(--naranja-neutro);
-    height: 100%; /*usar en el javascript: const altura = window.getComputedStyle(elementoOrigen).height; y luego eliminar esta linea*/
+    height: 100%;
+    /*usar en el javascript: const altura = window.getComputedStyle(elementoOrigen).height; y luego eliminar esta linea*/
 }
 
 
@@ -142,6 +173,7 @@ body {
     background-color: #D1E8FF;
     color: #215175;
 }
+
 .badge-alerta {
     background-color: #fedcdc;
     color: #911919;
@@ -161,10 +193,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-.funcionalidad-wrapper {
-    background-color: var(--naranja-suave);
 }
 
 .info-wrapper {
@@ -191,6 +219,7 @@ body {
     border-left: 5px solid var(--azul-petroleo);
     transition: all 0.3s ease;
 }
+
 .info-hu15:hover {
     background-color: var(--azul-oscuro);
     color: var(--fondo-claro);
@@ -203,6 +232,7 @@ body {
     border-right: 5px solid var(--azul-petroleo);
     transition: all 0.3s ease;
 }
+
 .info-hu20:hover {
     background-color: var(--azul-oscuro);
     color: var(--fondo-claro);
@@ -214,6 +244,7 @@ body {
     border: 1px solid var(--azul-acero);
     border-left: 5px solid var(--azul-petroleo);
 }
+
 .grid-3-cols:has(.columna-hu15:hover) .info-hu15 {
     background-color: var(--azul-oscuro);
     color: var(--fondo-claro);
@@ -225,6 +256,7 @@ body {
     border: 1px solid var(--azul-acero);
     border-right: 5px solid var(--azul-petroleo);
 }
+
 .grid-3-cols:has(.columna-hu20:hover) .info-hu20 {
     background-color: var(--azul-oscuro);
     color: var(--fondo-claro);
@@ -243,24 +275,28 @@ body {
    ========================================= */
 .grid-2-3 {
     display: grid;
-    grid-template-columns: 2fr 1fr; /* Una columna grande y otra lateral */
+    grid-template-columns: 2fr 1fr;
+    /* Una columna grande y otra lateral */
     gap: 5px;
 }
 
 .grid-3-cols {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr; /* Tres columnas */
+    grid-template-columns: 1fr 2fr 1fr;
+    /* Tres columnas */
 }
 
 .grid-1-3 {
     display: grid;
-    grid-template-columns: 1fr 2fr; /* Lateral pequeña y principal grande */
+    grid-template-columns: 1fr 2fr;
+    /* Lateral pequeña y principal grande */
     gap: 5px;
 }
 
 /* Banner de importancia (Sección 2) */
 .banner-importancia {
-    grid-column: 1 / -1; /* Ocupa todo el ancho del grid superior */
+    grid-column: 1 / -1;
+    /* Ocupa todo el ancho del grid superior */
     display: flex;
     align-items: center;
     gap: 20px;
@@ -440,8 +476,8 @@ body {
     background-color: var(--blanco);
     border: 4px solid var(--azul-oscuro);
     border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-color: black;
+    box-shadow: 0 10px 25px rgba(110, 110, 110, 0.08);
 }
 
 /* Barra superior de pasos */
@@ -472,13 +508,15 @@ body {
 
 /* Manejo de visibilidad de los formularios internos del simulador */
 .step-form {
-    display: none; /* Oculta los pasos por defecto */
+    display: none;
+    /* Oculta los pasos por defecto */
     flex-direction: column;
     gap: 12px;
 }
 
 .step-form.active {
-    display: flex; /* Muestra el paso activo actual */
+    display: flex;
+    /* Muestra el paso activo actual */
 }
 
 .step-form h3 {
@@ -527,7 +565,8 @@ body {
 }
 
 .mapa-simulado {
-    position: relative; /* Clave para que el icono absoluto se posicione dentro de este cuadro */
+    position: relative;
+    /* Clave para que el icono absoluto se posicione dentro de este cuadro */
     overflow: hidden;
     border-radius: 6px;
 }
@@ -543,10 +582,13 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centra el icono exactamente en medio */
-    color: #E53E3E; /* Rojo de alerta para destacar */
+    transform: translate(-50%, -50%);
+    /* Centra el icono exactamente en medio */
+    color: #E53E3E;
+    /* Rojo de alerta para destacar */
     font-size: 2.5rem;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Sombra para darle profundidad */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    /* Sombra para darle profundidad */
 }
 
 /* Tarjetas de acciones del Paso 6 */
@@ -601,4 +643,291 @@ body {
 .resumen-card h4 {
     color: var(--azul-oscuro);
     margin-bottom: 5px;
+}
+
+/* =========================================
+   ESTILOS ESPECÍFICOS PARA LA SECCIÓN 3 (MODO EMERGENCIA)
+   ========================================= */
+
+/* Marco del dispositivo adaptado al Modo Emergencia (Fondo rojo suave y bordes) */
+.marco-emergencia {
+    background-color: #1e2452;
+    border: 4px solid #000000;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 520px;
+}
+
+.hu-zone-container {
+    padding: 10px;
+    flex-grow: 1;
+    color: white;
+}
+
+/* Control de visibilidad de pasos de emergencia */
+.step-emergencia {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.step-emergencia.active {
+    display: flex;
+}
+
+/* Paso 1: Pantalla de Activación */
+.pantalla-activacion {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 10px;
+}
+
+.icono-alerta-grande {
+    font-size: 3.5rem;
+    color: #E53E3E;
+}
+
+.btn-emergencia-activar {
+    background-color: #E53E3E;
+    color: var(--blanco);
+    border: none;
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-emergencia-activar:hover {
+    background-color: #C53030;
+    transform: scale(1.02);
+}
+
+.completo-ancho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 12px;
+    width: 100%;
+}
+
+/* Paso 3: Botones del reporte "¿Cómo estás?" */
+.reporte-estado-inicial {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.botones-estado-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-estado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--blanco);
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-estado:hover {
+    opacity: 0.9;
+}
+
+.btn-estoy-bien {
+    background-color: #38A169; /* Verde éxito */
+}
+
+.btn-necesito-ayuda {
+    background-color: #E53E3E; /* Rojo alerta */
+}
+
+/* Paso 4: Alerta Offline */
+.alerta-offline-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background-color: #FEFCBF;
+    border-left: 4px solid #D69E2E;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #744210;
+    margin: 10px;
+}
+
+.tipo-ayuda {
+    padding: 5px;
+    border-radius: 6px;
+}
+
+/* Paso 5: Lista y badges de estado del hogar */
+.integrantes-estado-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.integrante-estado-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--blanco);
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--gris-borde);
+}
+
+.integrante-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    color: var(--azul-petroleo)
+}
+
+.badge-estado {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--blanco);
+}
+
+.badge-bien { background-color: #38A169; }
+.badge-ayuda { background-color: #E53E3E; }
+.badge-esperando { background-color: #D69E2E; }
+
+.btn-contactar-pendiente {
+    display: flex;
+    align-items: center;
+}
+
+/* Paso 6: Mensajes predefinidos y Notificación PUSH */
+.radio-mensajes-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.radio-opcion {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--blanco);
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--gris-borde);
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: var(--azul-petroleo)
+}
+
+.notificacion-push-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 0.85rem;
+}
+
+.notificacion-push-card .material-symbols-outlined {
+    color: var(--naranja-acento);
+}
+
+/* Paso 7: Protocolo Post-Sismo */
+.header-salida-emergencia {
+    text-align: center;
+    color: #0fa158;
+}
+
+.icono-ok {
+    font-size: 3rem;
+}
+
+.lista-post-sismo {
+    padding-left: 20px;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    list-style-type: none;
+    margin: 10px;
+    color: var(--azul-petroleo);
+    font-weight
+    : bold;
+}
+
+.card {
+    background-color: var(--fondo-claro);
+    padding: 10px;
+    border-radius: 6px;
+    border-left: 4px solid var(--azul-petroleo);
+}
+
+/* BARRA DE NAVEGACIÓN INFERIOR (Bottom Navigation Bar) */
+.bottom-nav-emergencia {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--blanco);
+    border-top: 1px solid var(--gris-borde);
+    padding: 8px 4px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.bottom-nav-emergencia .nav-item {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    font-size: 0.7rem;
+    color: var(--azul-acero);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.bottom-nav-emergencia .nav-emergencia-highlight {
+    color: #E53E3E;
+    font-weight: bold;
+}
+
+.bottom-nav-emergencia .nav-emergencia-highlight .material-symbols-outlined {
+    font-size: 1.6rem;
+    background-color: #FFF5F5;
+    padding: 4px 10px;
+    border-radius: 16px;
+    border: 1px solid #FEB2B2;
 }

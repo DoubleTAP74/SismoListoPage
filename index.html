@@ -667,7 +667,7 @@
                 <h2>Accesibilidad e Inclusión</h2>
                 <p>Selecciona una opción para probar la funcionalidad:</p>
                 <ul class="viñetas-lista">
-                    <!-- Botones/Viñetas para las 8 HUs de accesibilidad (HU-005, 011, 012, 013, 032, 042, 043, 045) -->
+                    <!-- Viñetas para las HUs de accesibilidad (HU-005, 011, 012, 013, 032, 042, 043, 045) -->
                     <li class="tab-btn active" data-target="hu-005">Integrantes que requieren asistencia</li>
                     <li class="tab-btn" data-target="hu-011">Contactos de emergencia externos</li>
                     <li class="tab-btn" data-target="hu-012">Resumen del plan familiar</li>
@@ -675,11 +675,238 @@
                     <li class="tab-btn" data-target="hu-032">Modo de ahorro de batería en emergencia</li>
                     <li class="tab-btn" data-target="hu-042-043">Texto Ampliado y Alto Contraste</li>
                     <li class="tab-btn" data-target="hu-045">Guías breves</li>
-                    <!-- ... demás viñetas ... -->
                 </ul>
             </div>
+
             <div class="tabs-content-display">
-                <!-- Panel derecho donde se renderizará dinámicamente la funcionalidad seleccionada -->
+
+                <!-- HU-005: Integrantes que requieren asistencia -->
+                <div class="tab-panel active" id="hu-005">
+                    <h3>Integrantes que requieren asistencia</h3>
+                    <p>Marca a quien necesita ayuda para ponerse a salvo, elige el tipo de apoyo y quién lo asiste.</p>
+
+                    <div class="fila-integrante">
+                        <strong class="nombre-integrante">Julio Cárdenas</strong>
+                        <label><input type="checkbox" class="check-asistencia"> Requiere asistencia</label>
+                        <select class="tipo-apoyo">
+                            <option>Movilidad reducida</option>
+                            <option>Niño pequeño</option>
+                            <option>Visión reducida</option>
+                            <option>Otro</option>
+                        </select>
+                        <select class="responsable">
+                            <option>Sin responsable</option>
+                            <option>Rosa Huamán</option>
+                            <option>Mateo Lazaro</option>
+                        </select>
+                    </div>
+
+                    <div class="fila-integrante">
+                        <strong class="nombre-integrante">Ana Lazaro</strong>
+                        <label><input type="checkbox" class="check-asistencia"> Requiere asistencia</label>
+                        <select class="tipo-apoyo">
+                            <option>Movilidad reducida</option>
+                            <option>Niño pequeño</option>
+                            <option>Visión reducida</option>
+                            <option>Otro</option>
+                        </select>
+                        <select class="responsable">
+                            <option>Sin responsable</option>
+                            <option>Rosa Huamán</option>
+                            <option>Mateo Lazaro</option>
+                        </select>
+                    </div>
+
+                    <div class="fila-integrante">
+                        <strong class="nombre-integrante">Rosa Huamán</strong>
+                        <label><input type="checkbox" class="check-asistencia"> Requiere asistencia</label>
+                        <select class="tipo-apoyo">
+                            <option>Movilidad reducida</option>
+                            <option>Niño pequeño</option>
+                            <option>Visión reducida</option>
+                            <option>Otro</option>
+                        </select>
+                        <select class="responsable">
+                            <option>Sin responsable</option>
+                            <option>Rosa Huamán</option>
+                            <option>Mateo Lazaro</option>
+                        </select>
+                    </div>
+
+                    <button type="button" class="btn-enviar" id="btn-guardar-asistencia">Guardar</button>
+                    <ul class="lista-sin-vinetas" id="lista-asistencia"></ul>
+                </div>
+
+                <!-- HU-011: Contactos de emergencia externos -->
+                <div class="tab-panel" id="hu-011">
+                    <h3>Contactos de emergencia externos</h3>
+                    <p>Registra hasta 5 personas que no viven contigo para avisarles en una emergencia.</p>
+
+                    <div class="form-group">
+                        <label for="contacto-nombre">Nombre:</label>
+                        <input type="text" id="contacto-nombre" placeholder="Ej. Carlos Lazaro">
+                        <label for="contacto-celular">Celular (9 dígitos):</label>
+                        <input type="tel" id="contacto-celular" placeholder="Ej. 987654321">
+                        <label for="contacto-relacion">Relación:</label>
+                        <input type="text" id="contacto-relacion" placeholder="Ej. Hermano">
+                    </div>
+
+                    <button type="button" class="btn-enviar" id="btn-agregar-contacto">Guardar contacto</button>
+                    <button type="button" class="btn-enviar" id="btn-quitar-contacto">Quitar último contacto</button>
+
+                    <p class="mensaje-estado" id="mensaje-contacto"></p>
+                    <p id="contador-contactos">Contactos registrados: 0 de 5</p>
+                    <ul class="lista-sin-vinetas" id="lista-contactos"></ul>
+                    <p class="nota-sesion">ℹ️ Los contactos se guardan en el dispositivo para consultarse sin internet.</p>
+                </div>
+
+                <!-- HU-012: Resumen del plan familiar -->
+                <div class="tab-panel" id="hu-012">
+                    <h3>Resumen del plan familiar</h3>
+                    <p>Todo tu plan en una sola pantalla y con frases cortas.</p>
+                    <button type="button" class="btn-enviar" id="btn-ver-plan">Ver plan</button>
+
+                    <div class="oculto" id="resumen-plan">
+                        <div class="resumen-dashboard">
+                            <div class="resumen-card">
+                                <h4>👥 Integrantes y roles</h4>
+                                <p><strong>Rosa Huamán:</strong> Cortar luz y gas.</p>
+                                <p><strong>Julio Cárdenas:</strong> Llevar la mochila.</p>
+                            </div>
+                            <div class="resumen-card">
+                                <h4>📍 Punto de encuentro</h4>
+                                <p>Parque Principal de San Miguel.</p>
+                            </div>
+                            <div class="resumen-card">
+                                <h4>🏠 Lugares de resguardo</h4>
+                                <p>Columna del tragaluz en la sala.</p>
+                            </div>
+                            <div class="resumen-card">
+                                <h4>📞 Contactos externos</h4>
+                                <p><strong>Carlos Lazaro</strong> (hermano): 987654321.</p>
+                            </div>
+                        </div>
+                        <div class="alerta-offline-box">
+                            <span class="material-symbols-outlined">wifi_off</span>
+                            <p>Este resumen está guardado en tu dispositivo y se puede ver sin internet.</p>
+                        </div>
+                        <button type="button" class="btn-enviar" id="btn-compartir-plan">Compartir como imagen</button>
+                        <p class="mensaje-estado" id="mensaje-compartir"></p>
+                    </div>
+                </div>
+
+                <!-- HU-013: Progreso del plan familiar -->
+                <div class="tab-panel" id="hu-013">
+                    <h3>Progreso del plan familiar</h3>
+                    <p>Avanza por partes. Cada paso pendiente se completa en menos de 5 minutos.</p>
+
+                    <div class="barra-progreso">
+                        <div class="barra-relleno" id="barra-relleno">50 %</div>
+                    </div>
+                    <p class="mensaje-estado" id="mensaje-progreso">Faltan 3 pasos pendientes.</p>
+
+                    <ul class="lista-sin-vinetas">
+                        <li class="card fila-seccion">
+                            <span class="nombre-seccion">Cuenta</span>
+                            <span class="estado-seccion">Completado ✔</span>
+                        </li>
+                        <li class="card fila-seccion">
+                            <span class="nombre-seccion">Datos de la vivienda</span>
+                            <span class="estado-seccion">Completado ✔</span>
+                        </li>
+                        <li class="card fila-seccion">
+                            <span class="nombre-seccion">Integrantes</span>
+                            <span class="estado-seccion">Completado ✔</span>
+                        </li>
+                        <li class="card fila-seccion">
+                            <span class="nombre-seccion">Asignar roles</span>
+                            <span class="estado-seccion">Pendiente</span>
+                            <button type="button" class="btn-enviar btn-ir">Ir a completar</button>
+                        </li>
+                        <li class="card fila-seccion">
+                            <span class="nombre-seccion">Definir punto de encuentro</span>
+                            <span class="estado-seccion">Pendiente</span>
+                            <button type="button" class="btn-enviar btn-ir">Ir a completar</button>
+                        </li>
+                        <li class="card fila-seccion">
+                            <span class="nombre-seccion">Registrar zonas seguras</span>
+                            <span class="estado-seccion">Pendiente</span>
+                            <button type="button" class="btn-enviar btn-ir">Ir a completar</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- HU-032: Modo de ahorro de batería en emergencia -->
+                <div class="tab-panel" id="hu-032">
+                    <h3>Modo de ahorro de batería en emergencia</h3>
+                    <p>Activa el modo para bajar el brillo y dejar solo lo esencial del Modo Emergencia.</p>
+
+                    <div class="pantalla-bateria" id="pantalla-bateria">
+                        <h4>Modo Emergencia</h4>
+                        <p class="texto-bateria">🔋 Batería estimada restante: 18 %</p>
+                        <ul class="lista-sin-vinetas">
+                            <li class="card">Estoy bien</li>
+                            <li class="card">Estado de los familiares</li>
+                            <li class="card">Protocolo de emergencia</li>
+                            <li class="card no-esencial">Actualización de mapas en segundo plano</li>
+                            <li class="card no-esencial">Animaciones y sonidos</li>
+                        </ul>
+                    </div>
+
+                    <button type="button" class="btn-enviar" id="btn-ahorro">Activar modo de ahorro de batería</button>
+                </div>
+
+                <!-- HU-042 y HU-043: Texto ampliado y Alto contraste -->
+                <div class="tab-panel" id="hu-042-043">
+                    <h3>Texto ampliado y Alto contraste</h3>
+                    <p>Activa cada opción y mira cómo cambia la pantalla de ejemplo:</p>
+
+                    <div class="botones-accesibilidad">
+                        <button type="button" class="btn-enviar" id="btn-texto">Texto ampliado: desactivado</button>
+                        <button type="button" class="btn-enviar" id="btn-contraste">Alto contraste: desactivado</button>
+                    </div>
+
+                    <div class="pantalla-demo" id="pantalla-demo">
+                        <h4>Modo Emergencia</h4>
+                        <p>¿Cómo estás? Toca un botón para avisar a tu familia.</p>
+                        <button type="button" class="btn-demo btn-demo-bien">Estoy bien</button>
+                        <button type="button" class="btn-demo btn-demo-ayuda">Necesito ayuda</button>
+                    </div>
+                </div>
+
+                <!-- HU-045: Guías breves -->
+                <div class="tab-panel" id="hu-045">
+                    <h3>Guías breves</h3>
+                    <p>Elige qué guía quieres consultar:</p>
+
+                    <div class="botones-accesibilidad">
+                        <button type="button" class="btn-enviar" id="btn-guia-durante">Guía: durante el sismo</button>
+                        <button type="button" class="btn-enviar" id="btn-guia-despues">Guía: después del sismo</button>
+                    </div>
+
+                    <div class="oculto" id="guia-durante">
+                        <h4>Durante el sismo</h4>
+                        <ol class="lista-sin-vinetas">
+                            <li class="card">Mantén la calma y ubícate en tu zona segura.</li>
+                            <li class="card">Cúbrete la cabeza y aléjate de ventanas y muebles altos.</li>
+                            <li class="card">Cuando pare el movimiento, sal sin correr.</li>
+                            <li class="card">No uses el ascensor. Baja por las escaleras.</li>
+                        </ol>
+                    </div>
+
+                    <div class="oculto" id="guia-despues">
+                        <h4>Después del sismo</h4>
+                        <ol class="lista-sin-vinetas">
+                            <li class="card">Revisa si hay heridos o daños antes de entrar a tu casa.</li>
+                            <li class="card">Cierra el gas y el agua si hay fugas u olor a gas.</li>
+                            <li class="card">Infórmate solo por canales oficiales (INDECI / COEN).</li>
+                            <li class="card">Ten la mochila de emergencia a la mano por si hay réplicas.</li>
+                        </ol>
+                    </div>
+
+                    <p class="nota-sesion">ℹ️ Las guías están guardadas en el dispositivo y se leen sin internet.</p>
+                </div> 
+
             </div>
         </section>
 

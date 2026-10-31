@@ -657,30 +657,151 @@
         </section>
 
         <!-- SECCIÓN 4: Accesibilidad e Inclusión -->
-        <section id="seccion-accesibilidad-inclusion" class="landing-section split-tabs">
-            <div class="tabs-navigation">
-                <h2>Accesibilidad e inclusión</h2>
-                <p>Elige una opción para probarla:</p>
-                <ul class="viñetas-lista" role="tablist" aria-label="Funcionalidades de accesibilidad">
-                    <!-- Botones/Viñetas para las 8 HUs de accesibilidad (HU-005, 011, 012, 013, 032, 042, 043, 045) -->
-                    <li role="tab" tabindex="0" class="tab-btn active" data-target="hu-005">Integrantes que requieren
-                        asistencia</li>
-                    <li role="tab" tabindex="0" class="tab-btn" data-target="hu-011">Contactos de emergencia externos
-                    </li>
-                    <li role="tab" tabindex="0" class="tab-btn" data-target="hu-012">Resumen del plan familiar</li>
-                    <li role="tab" tabindex="0" class="tab-btn" data-target="hu-013">Progreso del plan familiar</li>
-                    <li role="tab" tabindex="0" class="tab-btn" data-target="hu-032">Modo de ahorro de batería en
-                        emergencia</li>
-                    <li role="tab" tabindex="0" class="tab-btn" data-target="hu-042-043">Texto ampliado y alto contraste
-                    </li>
-                    <li role="tab" tabindex="0" class="tab-btn" data-target="hu-045">Guías breves</li>
-                    <!-- ... demás viñetas ... -->
-                </ul>
+        <section id="seccion-accesibilidad-inclusion" class="landing-section seccion4">
+
+            <!-- LADO IZQUIERDO: Pantalla de ejemplo con marco de dispositivo (2/3) -->
+            <div class="funcionalidad-wrapper">
+                <div class="dispositivo-marco marco-accesibilidad">
+
+                    <h2 class="acc-titulo-pantalla">Tu plan, adaptado a tu familia</h2>
+                    <p class="acc-subtitulo">Así se ven las ayudas de SismoListo para que todos puedan usarlo.</p>
+
+                    <div class="acc-tarjetas">
+
+                        <!-- Integrantes que requieren asistencia (HU-005) -->
+                        <div class="acc-tarjeta">
+                            <h3><span class="material-symbols-outlined">accessible</span> Integrantes que necesitan
+                                apoyo</h3>
+                            <p>Marca quién necesita ayuda para ponerse a salvo y qué tipo de apoyo requiere. Si nadie
+                                lo asiste, la app te avisa.</p>
+                            <div class="acc-item">
+                                <strong>Abuela</strong>
+                                <p><span class="acc-etiqueta">Movilidad reducida</span></p>
+                                <p>Responsable: hijo mayor</p>
+                            </div>
+                            <div class="acc-item">
+                                <strong>Hijo pequeño</strong>
+                                <p><span class="acc-etiqueta">Niño pequeño</span></p>
+                                <p><span class="acc-etiqueta acc-etiqueta-alerta">
+                                        <span class="material-symbols-outlined">warning</span> Sin responsable
+                                        asignado</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Contactos de emergencia externos (HU-011) -->
+                        <div class="acc-tarjeta">
+                            <h3><span class="material-symbols-outlined">contacts</span> Contactos de emergencia</h3>
+                            <p>Guarda hasta 5 contactos que no viven contigo. Quedan en tu celular y los puedes ver sin
+                                internet.</p>
+                            <div class="acc-item">
+                                <strong>Hermano</strong>
+                                <p>Celular: 987 654 321</p>
+                            </div>
+                            <div class="acc-item">
+                                <strong>Tía</strong>
+                                <p>Celular: 912 345 678</p>
+                            </div>
+                            <p class="acc-nota">2 de 5 contactos guardados. Cada celular debe tener 9 dígitos.</p>
+                        </div>
+
+                        <!-- Resumen del plan familiar (HU-012) -->
+                        <div class="acc-tarjeta">
+                            <h3><span class="material-symbols-outlined">fact_check</span> Resumen del plan</h3>
+                            <p>Todo tu plan en una sola pantalla, con frases cortas. Funciona sin internet y lo puedes
+                                compartir como imagen.</p>
+                            <div class="acc-item">
+                                <p><strong>Roles:</strong> 4 integrantes con tarea</p>
+                                <p><strong>Punto de encuentro:</strong> Parque Principal</p>
+                                <p><strong>Zona segura en casa:</strong> junto a la columna de la sala</p>
+                                <p><strong>Contactos externos:</strong> 2 guardados</p>
+                            </div>
+                            <button type="button" class="btn-enviar acc-boton">Compartir como imagen</button>
+                        </div>
+
+                        <!-- Progreso del plan familiar (HU-013) -->
+                        <div class="acc-tarjeta">
+                            <h3><span class="material-symbols-outlined">timeline</span> Avance del plan</h3>
+                            <p>Mira cuánto falta y avanza por partes. Cada paso pendiente toma menos de 5 minutos.</p>
+                            <div class="acc-barra">
+                                <div class="acc-barra-avance"></div>
+                            </div>
+                            <p class="acc-porcentaje">50 % completado (3 de 6 secciones)</p>
+                            <div class="acc-item">
+                                <p><span class="material-symbols-outlined">schedule</span> Definir el punto de
+                                    encuentro</p>
+                                <p><span class="material-symbols-outlined">schedule</span> Armar la mochila de
+                                    emergencia</p>
+                                <p><span class="material-symbols-outlined">schedule</span> Elegir la zona segura</p>
+                            </div>
+                        </div>
+
+                        <!-- Modo de ahorro de batería en emergencia (HU-032) -->
+                        <div class="acc-tarjeta">
+                            <h3><span class="material-symbols-outlined">battery_saver</span> Ahorro de batería</h3>
+                            <p>Si tu celular tiene poca carga, baja el brillo y deja solo lo esencial del Modo
+                                Emergencia. Lo activas o desactivas cuando quieras.</p>
+                            <div class="acc-item">
+                                <p><strong>Modo de ahorro:</strong>
+                                    <span class="acc-etiqueta acc-etiqueta-ok">
+                                        <span class="material-symbols-outlined">check</span> Activado</span>
+                                </p>
+                                <p><strong>Batería restante:</strong> 18 %</p>
+                                <p>Brillo reducido y solo funciones esenciales.</p>
+                            </div>
+                        </div>
+
+                        <!-- Texto ampliado y alto contraste (HU-042, HU-043) -->
+                        <div class="acc-tarjeta">
+                            <h3><span class="material-symbols-outlined">format_size</span> Texto ampliado y alto
+                                contraste</h3>
+                            <p>Lee mejor con letras más grandes y colores más fuertes, incluso con poca luz. Se
+                                mantienen cada vez que abres la app.</p>
+                            <div class="acc-muestra acc-muestra-normal">Normal: Estoy bien</div>
+                            <div class="acc-muestra acc-muestra-ampliado">Texto ampliado: Estoy bien</div>
+                            <div class="acc-muestra acc-muestra-contraste">Alto contraste: Estoy bien</div>
+                        </div>
+
+                        <!-- Guías breves durante y después de un sismo (HU-045) -->
+                        <div class="acc-tarjeta acc-tarjeta-ancha">
+                            <h3><span class="material-symbols-outlined">menu_book</span> Guías breves</h3>
+                            <p>Pasos cortos, en lenguaje simple y disponibles sin internet.</p>
+                            <div class="acc-guias">
+                                <div class="acc-guia">
+                                    <h4>Durante el sismo</h4>
+                                    <ul>
+                                        <li>Mantén la calma y cúbrete la cabeza.</li>
+                                        <li>Aléjate de ventanas y muebles que puedan caerse.</li>
+                                        <li>Ve a tu zona segura.</li>
+                                    </ul>
+                                </div>
+                                <div class="acc-guia">
+                                    <h4>Después del sismo</h4>
+                                    <ul>
+                                        <li>Revisa si hay personas heridas o daños.</li>
+                                        <li>Si hay fugas, cierra las llaves de gas y agua.</li>
+                                        <li>Infórmate solo por canales oficiales (INDECI, COEN).</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
-            <div class="tabs-content-display">
-
-            </div>
+            <!-- LADO DERECHO: Apartado informativo lateral (1/3) -->
+            <aside class="info-wrapper">
+                <h1>Accesibilidad e inclusión</h1>
+                <p>
+                    SismoListo está pensado para toda la familia: niñas y niños, personas adultas mayores, personas con
+                    movilidad o visión reducida y quienes no están acostumbrados a usar aplicaciones.
+                </p>
+                <p>
+                    Puedes indicar quién necesita apoyo, guardar contactos de emergencia, ver tu plan en una sola
+                    pantalla y avanzar por partes. En una emergencia, el texto ampliado, el alto contraste, el ahorro de
+                    batería y las guías breves te ayudan a actuar con calma, incluso sin internet.
+                </p>
+            </aside>
         </section>
 
     </main>

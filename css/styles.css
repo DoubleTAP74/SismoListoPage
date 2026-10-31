@@ -932,3 +932,187 @@ body {
     border-radius: 16px;
     border: 1px solid #FEB2B2;
 }
+
+/*SECCIÓN 4: ACCESIBILIDAD E INCLUSIÓN*/
+.seccion4 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.seccion4 .funcionalidad-wrapper {
+    width: 66%;
+    padding: 5px;
+}
+
+.seccion4 .info-wrapper {
+    width: 34%;
+}
+
+.marco-accesibilidad {
+    padding: 15px;
+}
+
+.acc-titulo-pantalla {
+    font-size: 1.4rem;
+    color: var(--azul-oscuro);
+}
+
+.acc-subtitulo {
+    font-size: 0.9rem;
+    color: var(--azul-acero);
+    margin-bottom: 10px;
+}
+
+.acc-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.acc-tarjeta {
+    width: 48%;
+    margin: 1%;
+    padding: 14px;
+    background-color: var(--fondo-claro);
+    border: 1px solid var(--gris-borde);
+    border-left: 5px solid var(--azul-petroleo);
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.acc-tarjeta-ancha {
+    width: 98%;
+}
+
+.acc-tarjeta h3 {
+    font-size: 1.1rem;
+    color: var(--azul-petroleo);
+    margin-bottom: 6px;
+}
+
+.acc-tarjeta .material-symbols-outlined {
+    font-size: 1.4rem;
+    color: var(--azul-petroleo);
+    vertical-align: bottom;
+}
+
+.acc-item {
+    background-color: var(--blanco);
+    border: 1px solid var(--gris-borde);
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-top: 8px;
+}
+
+.acc-nota {
+    font-size: 0.8rem;
+    color: var(--azul-acero);
+    margin-top: 8px;
+}
+
+.acc-boton {
+    margin-top: 10px;
+}
+
+.acc-etiqueta {
+    display: inline;
+    background-color: var(--azul-petroleo);
+    color: var(--blanco);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.acc-etiqueta-alerta {
+    background-color: #911919;
+}
+
+.acc-etiqueta-ok {
+    background-color: #276749;
+}
+
+.acc-etiqueta .material-symbols-outlined {
+    color: var(--blanco);
+    font-size: 1rem;
+}
+
+.acc-barra {
+    background-color: var(--gris-borde);
+    border: 1px solid var(--azul-acero);
+    border-radius: 10px;
+    height: 18px;
+    margin-top: 8px;
+}
+
+.acc-barra-avance {
+    background-color: var(--azul-petroleo);
+    width: 50%;
+    height: 16px;
+    border-radius: 10px;
+}
+
+.acc-porcentaje {
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+.acc-muestra {
+    background-color: var(--blanco);
+    border: 2px solid var(--azul-acero);
+    border-radius: 6px;
+    padding: 8px;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.acc-muestra-normal {
+    font-size: 0.85rem;
+}
+
+.acc-muestra-ampliado {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.acc-muestra-contraste {
+    background-color: #000000;
+    color: #FFFF00;
+    border: 2px solid #FFFF00;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.acc-guias {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.acc-guia {
+    width: 48%;
+    margin: 1%;
+    padding: 10px;
+    background-color: var(--blanco);
+    border: 1px solid var(--gris-borde);
+    border-radius: 6px;
+}
+
+.acc-guia h4 {
+    color: var(--azul-oscuro);
+    margin-bottom: 4px;
+}
+
+.acc-guia ul {
+    padding-left: 18px;
+}
+
+@media screen and (max-width: 800px) {
+    .seccion4 .funcionalidad-wrapper,
+    .seccion4 .info-wrapper {
+        width: 100%;
+    }
+
+    .acc-tarjeta,
+    .acc-guia {
+        width: 98%;
+    }
+}

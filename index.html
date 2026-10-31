@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SismoListo — Asistente de Preparación y Respuesta Sísmica</title>
+    <title>SismoListo — Asistente de preparación y respuesta sísmica</title>
     <!-- Hoja de estilos principal -->
     <link rel="stylesheet" href="css/styles.css">
     <!-- Google Material Symbols para la iconografía -->
@@ -30,7 +30,7 @@
             </div>
             <!-- Botón de acceso rápido al Modo Emergencia exigido por la HU-026 -->
             <a href="#seccion-configuracioninicial-gestionhogar" class="nav-link">Configuración</a>
-            <a href="#seccion-logistica-preparacionpreventiva" class="nav-link">Logística</a>
+            <a href="#seccion-logistica-preparacionpreventiva" class="nav-link">Preparación</a>
             <a href="#seccion-emergencia-respuestainmediata" class="nav-link btn-emergencia-alerta principal">Modo
                 Emergencia</a>
             <a href="#seccion-accesibilidad-inclusion" class="nav-link">Accesibilidad</a>
@@ -42,12 +42,10 @@
 
         <!-- Lado Izquierdo: La Solución -->
         <div class="hero-col solucion-col">
-            <span class="badge badge-solucion">Nuestra Solución</span>
-            <h1>SismoListo: Tu asistente de preparación y respuesta sísmica</h1>
+            <span class="badge badge-solucion">Nuestra solución</span>
+            <h1>SismoListo: tu asistente para prepararte y actuar ante un sismo</h1>
             <p>
-                Convertimos la información dispersa sobre sismos en un plan familiar concreto, verificable y con baja
-                carga
-                cognitiva para actuar con seguridad en calma o durante una emergencia.
+                Reunimos en un solo lugar lo que tu familia necesita saber sobre sismos y lo convertimos en un plan con pasos cortos y fáciles de seguir, tanto para prepararse con calma como para actuar durante una emergencia.
             </p>
             <div class="hero-imagen-wrapper">
                 <img src="assets/images/Imagen_Prototipo.jpg" class="hero-img">
@@ -56,11 +54,10 @@
 
         <!-- Lado Derecho: La Problemática -->
         <div class="hero-col problematica-col">
-            <span class="badge badge-alerta">La Problemática</span>
+            <span class="badge badge-alerta">El problema</span>
             <h2>¿Por qué es difícil prepararnos ante un sismo?</h2>
             <p>
-                Lima enfrenta un alto riesgo sísmico. La desorganización familiar, la falta de rutinas y materiales no
-                adaptados al estrés o sin conexión a internet impiden reaccionar a tiempo.
+                Lima tiene un alto riesgo sísmico. Muchas familias no tienen un plan acordado ni practican qué hacer, y la información disponible suele ser difícil de seguir bajo estrés o cuando no hay internet. Por eso, cuando ocurre un sismo, cuesta reaccionar a tiempo.
             </p>
             <div class="hero-imagen-wrapper">
                 <video class="hero-img" muted playsinline controls>
@@ -97,7 +94,7 @@
 
                         <!-- PASO 1: Registro de cuenta (HU-001, HU-002) -->
                         <div class="step-form active" id="step-1">
-                            <h3>1. Registro de cuenta</h3>
+                            <h3>1. Crea tu cuenta</h3>
                             <form action="/tu-endpoint" method="POST" target="subida_oculta" id="form-registro"
                                 class="form-landing">
                                 <div class="form-group">
@@ -109,58 +106,57 @@
                                     <label for="reg-pass">Contraseña:</label>
                                     <input type="password" id="reg-pass" placeholder="••••••••" required>
                                 </div>
-                                <p class="nota-sesion">ℹ️ La sesión se mantendrá activa de forma persistente para
-                                    emergencias.</p>
-                                <button type="submit" class="btn-enviar">Registrar cuenta</button>
+                                <p class="nota-sesion">ℹ️ Tu sesión quedará abierta para que, en una emergencia, puedas usar la app sin volver a escribir tu contraseña.</p>
+                                <button type="submit" class="btn-enviar">Crear cuenta</button>
                             </form>
                         </div>
 
                         <!-- PASO 2: Características de la Vivienda (HU-003) !!!!!! -->
                         <div class="step-form" id="step-2">
-                            <h3>2. Datos de la Vivienda</h3>
+                            <h3>2. Datos de tu vivienda</h3>
                             <form action="/tu-endpoint" method="POST" target="subida_oculta" id="form-vivienda"
                                 class="form-landing">
                                 <div class="form-group">
-                                    <label for="reg-distrito">Distrito (Lima y Callao):</label>
+                                    <label for="reg-distrito">Distrito donde vives (Lima o Callao):</label>
                                     <select id="reg-distrito" required>
-                                        <option>Seleccione su distrito...</option>
+                                        <option>Elige tu distrito...</option>
                                         <option>San Miguel</option>
                                         <option>Callao</option>
                                         <option>Ventanilla</option>
                                         <option>San Martín de Porres</option>
                                     </select>
-                                    <label>Características del hogar:</label>
+                                    <label>Marca las características de tu vivienda:</label>
                                     <div class="checkbox-group">
                                         <label><input type="checkbox" required> Tiene escaleras</label>
-                                        <label><input type="checkbox" required> Única salida</label>
-                                        <label><input type="checkbox" required> Pasajes estrechos</label>
+                                        <label><input type="checkbox" required> Tiene una sola salida</label>
+                                        <label><input type="checkbox" required> Tiene pasadizos o pasajes estrechos</label>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn-enviar">Registrar hogar</button>
+                                <button type="submit" class="btn-enviar">Guardar y continuar</button>
                             </form>
                         </div>
 
                         <!-- PASO 3: Registro de integrantes (HU-004) -->
                         <div class="step-form" id="step-3">
-                            <h3>3. Registro de integrantes</h3>
+                            <h3>3. Integrantes de tu hogar</h3>
                             <form action="/tu-endpoint" method="POST" target="subida_oculta" id="form-integrantes"
                                 class="form-landing">
                                 <div class="form-group">
-                                    <label>Nombre del familiar:</label>
+                                    <label>Nombre del integrante:</label>
                                     <input type="text" placeholder="Ej. Rosa Huamán">
-                                    <label>Parentesco:</label>
+                                    <label>Parentesco o relación:</label>
                                     <input type="text" placeholder="Ej. Madre">
                                     <label>Edad (años):</label>
                                     <input type="number" placeholder="Ej. 55">
                                 </div>
-                                <button type="submit" class="btn-enviar">Registrar integrante</button>
+                                <button type="submit" class="btn-enviar">Agregar integrante</button>
                             </form>
                         </div>
 
                         <!-- PASO 4: Código de vinculación familiar (HU-006) -->
                         <div class="step-form" id="step-4">
-                            <h3>4. Código de vinculación familiar</h3>
-                            <p>Comparte este código con los celulares de tu familia para sincronizar la aplicación:</p>
+                            <h3>4. Código para unir a tu familia</h3>
+                            <p>Comparte este código con los integrantes de tu hogar. Al ingresarlo en su celular, verán el mismo plan familiar:</p>
                             <div class="codigo-box">
                                 <span class="codigo-badge">SIS-8821</span>
                             </div>
@@ -169,8 +165,8 @@
 
                         <!-- PASO 5: Asignación de Roles con integrantes predefinidos (HU-007) -->
                         <div class="step-form" id="step-5">
-                            <h3>5. Asignación de Roles</h3>
-                            <p>Selecciona un integrante para asignarle una tarea crítica:</p>
+                            <h3>5. Asignación de roles</h3>
+                            <p>Elige a un integrante y escribe el rol que cumplirá durante una emergencia:</p>
 
                             <!-- Lista de 3 integrantes predefinidos -->
                             <div class="integrantes-lista-simulacion">
@@ -202,34 +198,34 @@
                                 <form action="/tu-endpoint" method="POST" target="subida_oculta" id="form-rol"
                                     class="form-landing">
                                     <div class="form-group">
-                                        <label>Rol o tarea de emergencia:</label>
-                                        <input type="text" placeholder="Ej. Encargado de mochila de emergencia"
+                                        <label>Rol durante la emergencia:</label>
+                                        <input type="text" placeholder="Ej. Llevar la mochila de emergencia"
                                             required>
                                     </div>
-                                    <button type="submit" class="btn-enviar">Guardar y Continuar</button>
+                                    <button type="submit" class="btn-enviar">Guardar y continuar</button>
                                 </form>
                             </div>
                         </div>
 
                         <!-- PASO 6: Acciones en caso de sismo dentro/fuera de casa (HU-008) -->
                         <div class="step-form" id="step-6">
-                            <h3>6. Protocolo de acciones rápidas</h3>
-                            <p>Guía visual de actuación rápida según tu ubicación:</p>
+                            <h3>6. Qué hacer según dónde estés</h3>
+                            <p>Revisa qué hacer en cada situación:</p>
                             <div class="tarjetas-acciones-grid">
                                 <div class="accion-card">
                                     <span class="material-symbols-outlined">home</span>
                                     <h4>Dentro de casa</h4>
-                                    <p>Ubicarse en zona segura interna, alejarse de ventanas y muebles altos.</p>
+                                    <p>Ve a la zona segura de tu casa y aléjate de ventanas y muebles altos.</p>
                                 </div>
                                 <div class="accion-card">
                                     <span class="material-symbols-outlined">directions_walk</span>
                                     <h4>Durante la evacuación</h4>
-                                    <p>Mantener la calma, usar escaleras y no utilizar ascensores.</p>
+                                    <p>Sal con calma, usa las escaleras y nunca el ascensor.</p>
                                 </div>
                                 <div class="accion-card">
                                     <span class="material-symbols-outlined">location_city</span>
                                     <h4>Fuera de casa</h4>
-                                    <p>Dirigirse al punto de encuentro externo acordado con el hogar.</p>
+                                    <p>Ve al punto de encuentro que acordó tu familia.</p>
                                 </div>
                             </div>
                             <button type="button" class="btn-enviar">Continuar</button>
@@ -237,80 +233,78 @@
 
                         <!-- PASO 7: Registro del Punto de Encuentro Externo (HU-009) -->
                         <div class="step-form" id="step-7">
-                            <h3>7. Punto de encuentro externo</h3>
+                            <h3>7. Punto de encuentro fuera de casa</h3>
                             <form action="/tu-endpoint" method="POST" target="subida_oculta" id="form-encuentro"
                                 class="form-landing">
                                 <div class="form-group">
-                                    <label for="encuentro-nombre">Lugar de encuentro acordado:</label>
+                                    <label for="encuentro-nombre">Lugar donde se reunirán:</label>
                                     <input type="text" id="encuentro-nombre"
                                         placeholder="Ej. Parque Principal de San Miguel" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="encuentro-ref">Referencia o descripción:</label>
+                                    <label for="encuentro-ref">Referencia para encontrarlo:</label>
                                     <input type="text" id="encuentro-ref"
                                         placeholder="Ej. Frente a la puerta principal del mercado" required>
                                 </div>
                                 <div class="mapa-simulado">
-                                    <img src="../assets/images/mapa-referencia.png" alt="Mapa de ubicación"
+                                    <img src="../assets/images/mapa-referencia.png" alt="Mapa con la ubicación del punto de encuentro"
                                         class="mapa-img">
                                     <span class="material-symbols-outlined pin-ubicacion">location_on</span>
                                 </div>
-                                <button type="submit" class="btn-enviar">Guardar Punto de Encuentro</button>
+                                <button type="submit" class="btn-enviar">Guardar y continuar</button>
                             </form>
                         </div>
 
                         <!-- PASO 8: Registro de Zonas Seguras dentro del Hogar (HU-010) -->
                         <div class="step-form" id="step-8">
-                            <h3>8. Zonas seguras del hogar</h3>
+                            <h3>8. Zonas seguras dentro de casa</h3>
                             <form action="/tu-endpoint" method="POST" target="subida_oculta" id="form-zonas"
                                 class="form-landing">
                                 <div class="form-group">
-                                    <label for="zona-desc">Ubicación de la zona segura interna:</label>
+                                    <label for="zona-desc">¿Dónde está la zona segura dentro de tu casa?</label>
                                     <input type="text" id="zona-desc"
                                         placeholder="Ej. Al costado de la columna del tragaluz en la sala" required>
                                 </div>
                                 <div class="form-group">
-                                    <label>Referencia visual o croquis de un espacio seguro:</label>
+                                    <label>Foto o croquis de la zona segura:</label>
                                     <div class="upload-simulado">
                                         <img src="../assets/images/upload-placeholder.png"
-                                            alt="Imagen cartoon de un espacio seguro en una vivienda"
+                                            alt="Ilustración de una zona segura dentro de una vivienda"
                                             class="upload-icon">
-                                        <p>Imagen o croquis de un espacio seguro de vivienda</p>
+                                        <p>Aquí se mostrará la foto o el croquis de tu zona segura</p>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn-enviar">Guardar Zona Segura</button>
+                                <button type="submit" class="btn-enviar">Guardar y continuar</button>
                             </form>
                         </div>
 
                         <!-- PASO 9: Dashboard / Ficha Resumen del Plan Familiar -->
                         <div class="step-form" id="step-9">
-                            <h3>9. Resumen del Plan Familiar</h3>
+                            <h3>9. Resumen de tu plan familiar</h3>
                             <div class="resumen-dashboard">
                                 <div class="resumen-card">
-                                    <h4>👥 Integrantes y Roles</h4>
+                                    <h4>👥 Integrantes y roles</h4>
                                     <ul style="list-style-type: none;">
                                         <li><strong>Rosa Huamán:</strong> Cortar luz y gas</li>
                                         <li><strong>Julio Cárdenas:</strong> Mochila de emergencia</li>
                                     </ul>
                                 </div>
                                 <div class="resumen-card">
-                                    <h4>📍 Puntos Clave</h4>
+                                    <h4>📍 Lugares clave</h4>
                                     <p><strong>Punto de encuentro:</strong> Parque Principal</p>
-                                    <p><strong>Zona segura interna:</strong> Columna principal del tragaluz</p>
+                                    <p><strong>Zona segura en casa:</strong> Columna principal del tragaluz</p>
                                 </div>
                             </div>
-                            <button type="button" class="btn-enviar">Finalizar Configuración</button>
+                            <button type="button" class="btn-enviar">Terminar configuración</button>
                         </div>
 
                     </div>
                 </div>
             </div>
             <aside class="seccion1 info-wrapper">
-                <h1>Configuración Inicial y Gestión del Hogar</h1>
+                <h1>Configuración inicial y gestión del hogar</h1>
                 <p>
-                    Esta sección permite a los usuarios configurar su hogar y gestionar la información crítica para la
-                    preparación ante sismos. Incluye funcionalidades como registro de miembros del hogar, ubicación de
-                    recursos de emergencia, y personalización de alertas.
+                    Arma el plan de tu familia paso a paso: registra a los integrantes del hogar, asigna un rol a cada uno y define tus zonas seguras y el punto de encuentro. Al final verás un resumen con todo el plan. Cada paso pide solo lo necesario para que no te abrumes.
                 </p>
             </aside>
         </section>
@@ -322,20 +316,16 @@
             </div>
             <div class="columna-centro">
                 <div class="title-section2">
-                    <h1>Logística y Preparación Preventiva</h1>
+                    <h1>Logística y preparación preventiva</h1>
                 </div>
                 <div class="info-hu15">
                     <strong>Lista sugerida para la mochila:</strong> <br>
-                    Generamos automaticamente una recomendación de los elementos esenciales para la mochila de
-                    emergencia, adaptada a las necesidades del hogar y siguiendo las directrices del INDECI. <br>
-                    Ademas, permite al usuario personalizar la lista según sus preferencias y necesidades específicas,
-                    señalando a su vez la cantidad de agua requerida en funcion de los integrantes del hogar.
+                    SismoListo te sugiere qué llevar en la mochila de emergencia según las necesidades de tu hogar y las recomendaciones del INDECI. <br>
+                    Puedes agregar o quitar elementos de la lista, y la app te indica cuánta agua necesitan según el número de integrantes.
                 </div>
                 <div class="info-hu20"><strong>Simulacro exprés cronometrado:</strong> <br>
-                    Funcionalidad que permite a los usuarios realizar un simulacro exprés de evacuación en caso de
-                    sismo, mostrando los pasos a seguir junto a un cronometro que señale el tiempo que transcrurre. <br>
-                    Ademas, permite al usuario finalizarlo en cuanto señale que se completo el simulacro, o cancelarlo
-                    sin registrar el tiempo transcurrido. <br>
+                    Practica la evacuación de tu hogar con un simulacro corto: la app te muestra los pasos a seguir y un cronómetro con el tiempo que tardan. <br>
+                    Al terminar, marca el simulacro como completado para guardar el tiempo, o cancélalo si no quieres registrarlo. <br>
                 </div>
             </div>
             <div class="columna-hu20">
@@ -347,12 +337,9 @@
                     <span class="material-symbols-outlined">verified_user</span>
                 </div>
                 <div class="banner-contenido">
-                    <h2>Importancia de la Preparación</h2>
+                    <h2>¿Por qué prepararse?</h2>
                     <p>
-                        Las capacidades de plantear una mochila de emergencia y realizar simulacros exprés son
-                        fundamentales para garantizar la seguridad y la eficiencia en la respuesta ante sismos. Estas
-                        funcionalidades permiten a los usuarios estar mejor preparados, reduciendo riesgos y aumentando
-                        la resiliencia de sus hogares.
+                        Tener la mochila lista y practicar simulacros cortos ayuda a que tu familia sepa qué hacer y reaccione más rápido durante un sismo. Prepararse con anticipación reduce riesgos y da más tranquilidad a todo el hogar.
                     </p>
                 </div>
             </div>
@@ -362,13 +349,9 @@
         <section id="seccion-emergencia-respuestainmediata" class="landing-section grid-1-3">
             <aside class="info-wrapper">
                 <!-- Apartado informativo lateral (1/3) -->
-                <h1>Respuesta Inmediata y Modo Emergencia</h1>
+                <h1>Respuesta inmediata y Modo Emergencia</h1>
                 <p>
-                    Esta sección está diseñada para proporcionar a los usuarios herramientas y recursos esenciales
-                    durante una emergencia sísmica. Incluye funcionalidades críticas como el Modo Emergencia, que
-                    permite activar alertas y protocolos de seguridad de manera rápida y eficiente. Ademas reportes a
-                    los integrantes del hogar sobre la situación actual, acciones recomendadas y la posibilidad
-                    contactar con otros integrantes del hogar.
+                    Durante un sismo, el Modo Emergencia te guía con pasos cortos y fáciles de leer para protegerte y evacuar. Después, te permite avisar a tu familia cómo estás, ver cómo están los demás integrantes y enviar un mensaje rápido a quien aún no ha respondido.
                 </p>
             </aside>
 
@@ -384,8 +367,7 @@
                             <div class="pantalla-activacion">
                                 <span class="material-symbols-outlined icono-alerta-grande">warning</span>
                                 <h2>Modo Emergencia</h2>
-                                <p>Activa este modo únicamente durante un evento sísmico o en situaciones de riesgo
-                                    inminente para guiar tu evacuación y emitir reportes de estado.</p>
+                                <p>Actívalo solo durante un sismo o ante un peligro inmediato. Te guiará para evacuar y avisar a tu familia cómo estás.</p>
                                 <button type="button" class="btn-emergencia-activar">
                                     <span class="material-symbols-outlined">sos</span>
                                     Activar Modo Emergencia
@@ -400,17 +382,16 @@
                             <div class="step-emergencia active" id="emergencia-substep-1">
                                 <div class="protocolo-evacuacion">
                                     <span class="badge badge-alerta">Paso 1 de 3: Durante el sismo</span>
-                                    <h3>1. Mantén la calma y ubícate en Zona Segura</h3>
-                                    <p>Cúbrete la cabeza, aléjate de ventanas, espejos y muebles altos o estantes que
-                                        puedan colapsar.</p>
+                                    <h3>1. Mantén la calma y ve a la zona segura</h3>
+                                    <p>Cúbrete la cabeza y aléjate de ventanas, espejos y muebles o estantes que puedan caerse.</p>
                                     <div class="hero-imagen-wrapper">
                                         <div class="upload-simulado">
                                             <img src="../assets/images/ilustracion-zona-segura.png"
-                                                alt="Ilustración: Zona segura interna" class="upload-icon">
+                                                alt="Ilustración: zona segura dentro de casa" class="upload-icon">
                                         </div>
                                     </div>
                                     <button type="button" class="btn-enviar completo-ancho"
-                                        data-next="emergencia-substep-2">Siguiente paso (Evacuación)</button>
+                                        data-next="emergencia-substep-2">Siguiente: evacuar</button>
                                 </div>
                             </div>
 
@@ -418,27 +399,25 @@
                             <div class="step-emergencia" id="emergencia-substep-2">
                                 <div class="protocolo-evacuacion">
                                     <span class="badge badge-alerta">Paso 2 de 3: Evacuación</span>
-                                    <h3>2. Evacúa ordenadamente sin correr</h3>
-                                    <p>Usa las rutas señalizadas, desciende por las escaleras de emergencia y no
-                                        utilices los ascensores bajo ninguna circunstancia.</p>
+                                    <h3>2. Sal con calma, sin correr</h3>
+                                    <p>Cuando pare el movimiento, sigue las rutas señalizadas, baja por las escaleras y nunca uses el ascensor.</p>
                                     <div class="hero-imagen-wrapper">
                                         <div class="upload-simulado">
                                             <img src="../assets/images/ilustracion-evacuacion.png"
-                                                alt="Ilustración: Uso de escaleras" class="upload-icon">
+                                                alt="Ilustración: uso de las escaleras para evacuar" class="upload-icon">
                                         </div>
                                     </div>
                                     <button type="button" class="btn-enviar completo-ancho"
-                                        data-next="emergencia-substep-3">Siguiente paso (Punto externo)</button>
+                                        data-next="emergencia-substep-3">Siguiente: punto de encuentro</button>
                                 </div>
                             </div>
 
                             <!-- Sub-paso 2.3 (Paso 3 de la guía - Con cambio de texto en el botón) -->
                             <div class="step-emergencia" id="emergencia-substep-3">
                                 <div class="protocolo-evacuacion">
-                                    <span class="badge badge-alerta">Paso 3 de 3: Exterior</span>
-                                    <h3>3. Dirígete al punto de encuentro externo</h3>
-                                    <p>Al llegar a la zona segura exterior, mantente alejado de postes de luz, cables
-                                        caídos y fachadas con riesgo de desprendimiento.</p>
+                                    <span class="badge badge-alerta">Paso 3 de 3: Afuera</span>
+                                    <h3>3. Ve al punto de encuentro</h3>
+                                    <p>Al llegar, mantente lejos de postes de luz, cables caídos y fachadas que puedan desprenderse.</p>
                                     <div class="hero-imagen-wrapper">
                                         <div class="upload-simulado">
                                             <img src="../assets/images/ilustracion-punto-encuentro.png"
@@ -446,7 +425,7 @@
                                         </div>
                                     </div>
                                     <button type="button" class="btn-emergencia-activar completo-ancho"
-                                        data-next="emergencia-step-3">Reporte de estado</button>
+                                        data-next="emergencia-step-3">Avisar cómo estoy</button>
                                 </div>
                             </div>
 
@@ -456,7 +435,7 @@
                         <div class="step-emergencia" id="emergencia-step-3">
                             <div class="reporte-estado-inicial">
                                 <h2>¿Cómo estás?</h2>
-                                <p>Selecciona tu estado actual para informarlo de inmediato a tu hogar:</p>
+                                <p>Elige una opción para avisar a tu familia:</p>
 
                                 <div class="botones-estado-grupo">
                                     <button type="button" class="btn-estado btn-estoy-bien">
@@ -476,29 +455,27 @@
                         <!-- PASO 4: Formulario de Requerimiento de Ayuda y Mensaje Offline -->
                         <div class="step-emergencia" id="emergencia-step-4">
                             <div class="form-ayuda-container">
-                                <h3>Solicitar Ayuda Urgente</h3>
+                                <h3>Pide ayuda</h3>
                                 <form action="/tu-endpoint" method="POST" target="subida_oculta"
                                     id="form-solicitud-ayuda">
                                     <div class="form-group">
-                                        <label for="tipo-ayuda">Tipo de asistencia requerida:</label>
+                                        <label for="tipo-ayuda">¿Qué tipo de ayuda necesitas?</label>
                                         <select id="tipo-ayuda" class="tipo-ayuda" required>
-                                            <option value="">Selecciona el tipo de ayuda...</option>
-                                            <option value="medica">Primeros Auxilios / Atención Médica</option>
-                                            <option value="atrapado">Atrapamiento / Estructura bloqueada</option>
-                                            <option value="evacuacion">Dificultad de movilidad para evacuar</option>
-                                            <option value="otra">Otra urgencia grave</option>
+                                            <option value="">Elige una opción...</option>
+                                            <option value="medica">Necesito primeros auxilios o atención médica</option>
+                                            <option value="atrapado">No puedo salir: la salida está bloqueada</option>
+                                            <option value="evacuacion">Necesito apoyo para moverme y evacuar</option>
+                                            <option value="otra">Otra urgencia</option>
                                         </select>
                                     </div>
 
                                     <div class="alerta-offline-box">
                                         <span class="material-symbols-outlined">wifi_off</span>
-                                        <p><strong>Cola de envío offline activa:</strong> Sin conexión a internet
-                                            detectada. Tu reporte se guardará localmente y se enviará automáticamente al
-                                            restablecerse la señal movil/WiFi.</p>
+                                        <p><strong>Sin conexión a internet:</strong> tu pedido de ayuda queda pendiente de envío en tu celular y se enviará automáticamente cuando vuelva la señal (datos móviles o wifi).</p>
                                     </div>
 
                                     <button type="submit" onclick="setTimeout(()=>{this.form.reset();}, 100);"
-                                        class="btn-emergencia-alerta completo-ancho">Enviar Reporte de Ayuda</button>
+                                        class="btn-emergencia-alerta completo-ancho">Enviar pedido de ayuda</button>
                                 </form>
                             </div>
                         </div>
@@ -506,8 +483,8 @@
                         <!-- PASO 5: Lista y Estado del Hogar -->
                         <div class="step-emergencia" id="emergencia-step-5">
                             <div class="estado-hogar-container">
-                                <h3>Estado del Hogar</h3>
-                                <p>Monitoreo en tiempo real del reporte de los integrantes:</p>
+                                <h3>Estado del hogar</h3>
+                                <p>Así están los integrantes según su último reporte:</p>
 
                                 <div class="integrantes-estado-lista">
                                     <!-- Integrante 1: Estoy bien -->
@@ -517,8 +494,7 @@
                                             <span>Madre (44 años)</span>
                                         </div>
                                         <span class="badge-estado badge-bien">
-                                            <span class="material-symbols-outlined">check</span>
-                                            Estoy bien
+                                            <span class="material-symbols-outlined">check</span> Estoy bien
                                         </span>
                                     </div>
 
@@ -529,8 +505,7 @@
                                             <span>Hijo (20 años)</span>
                                         </div>
                                         <span class="badge-estado badge-bien">
-                                            <span class="material-symbols-outlined">check</span>
-                                            Estoy bien
+                                            <span class="material-symbols-outlined">check</span> Estoy bien
                                         </span>
                                     </div>
 
@@ -541,8 +516,7 @@
                                             <span>Abuelo (68 años)</span>
                                         </div>
                                         <span class="badge-estado badge-ayuda">
-                                            <span class="material-symbols-outlined">warning</span>
-                                            Necesito ayuda
+                                            <span class="material-symbols-outlined">warning</span> Necesito ayuda
                                         </span>
                                     </div>
 
@@ -553,16 +527,14 @@
                                             <span>Hija (14 años)</span>
                                         </div>
                                         <span class="badge-estado badge-esperando">
-                                            <span class="material-symbols-outlined">hourglass_empty</span>
-                                            Esperando
+                                            <span class="material-symbols-outlined">hourglass_empty</span> Sin reporte
                                         </span>
                                     </div>
                                 </div>
 
                                 <button type="button" class="btn-enviar btn-contactar-pendiente">
                                     <span class="material-symbols-outlined">sms</span>
-                                    <label style="margin-left: 5px;">Contactar a integrante sin reporte (Ana
-                                        Lazaro)</label>
+                                    <label style="margin-left: 5px;">Enviar mensaje a Ana Lazaro (sin reporte)</label>
                                 </button>
                             </div>
                         </div>
@@ -570,36 +542,35 @@
                         <!-- PASO 6: Mensaje Rápido Predefinido y Notificación PUSH Push-Notification -->
                         <div class="step-emergencia" id="emergencia-step-6">
                             <div class="mensaje-rapido-container">
-                                <h3>Contactar a Ana Lazaro</h3>
-                                <p>Selecciona un mensaje predefinido para envío rápido SMS/Mesh:</p>
+                                <h3>Enviar mensaje a Ana Lazaro</h3>
+                                <p>Elige un mensaje para enviarlo rápido por SMS:</p>
                                 <!-- Investigar si es posible utilizar javascript para eliminar las multiples veces que se escribio en el html la siguiente linea en los form: action="/tu-endpoint" method="POST" target="subida_oculta"-->
                                 <form action="/tu-endpoint" method="POST" target="subida_oculta"
                                     id="form-mensaje-rapido">
                                     <div class="radio-mensajes-grupo">
                                         <label class="radio-opcion">
                                             <input type="radio" name="msg-predefinido" value="1" checked>
-                                            <span><strong>"¿Te encuentras bien? Por favor confirma tu estado."</strong></span>
+                                            <span><strong>"¿Estás bien? Por favor, avísame cómo estás."</strong></span>
                                         </label>
                                         <label class="radio-opcion">
                                             <input type="radio" name="msg-predefinido" value="2">
-                                            <span><strong>"Dirígete al punto de encuentro en el Parque Principal."</strong></span>
+                                            <span><strong>"Ve al punto de encuentro en el Parque Principal."</strong></span>
                                         </label>
                                         <label class="radio-opcion">
                                             <input type="radio" name="msg-predefinido" value="3">
-                                            <span><strong>"Voy en camino a buscarte a la zona segura."</strong></span>
+                                            <span><strong>"Voy a buscarte. Espérame en la zona segura."</strong></span>
                                         </label>
                                     </div>
 
-                                    <button type="submit" class="btn-enviar">Enviar Mensaje Rápido</button>
+                                    <button type="submit" class="btn-enviar">Enviar mensaje</button>
                                 </form>
 
                                 <!-- Notificación PUSH simulada al enviar -->
                                 <div class="notificacion-push-card">
                                     <span class="material-symbols-outlined">notifications_active</span>
                                     <div>
-                                        <strong>Notificación del Sistema</strong>
-                                        <p>✅ Tu reporte de estado fue transmitido exitosamente por red SMS de respaldo.
-                                            Mensaje enviado a Ana Lazaro.</p>
+                                        <strong>SismoListo</strong>
+                                        <p>✅ Mensaje enviado a Ana Lazaro por SMS.</p>
                                     </div>
                                 </div>
                             </div>
@@ -610,21 +581,18 @@
                             <div class="post-sismo-container">
                                 <div class="header-salida-emergencia">
                                     <span class="material-symbols-outlined icono-ok">task_alt</span>
-                                    <h2>Retorno a Estado de Calma</h2>
-                                    <p>Has finalizado el reporte activo de emergencia.</p>
+                                    <h2>Después del sismo</h2>
+                                    <p>Ya enviaste tu reporte. Antes de cerrar el Modo Emergencia, revisa estos pasos.</p>
                                 </div>
 
-                                <h4>Protocolo de 4 pasos Post-Sismo:</h4>
+                                <h4>4 pasos para después del sismo:</h4>
                                 <ol class="lista-post-sismo">
-                                    <li class="card">Verifica si hay lesionados o daños estructurales antes de ingresar
-                                        al inmueble.
+                                    <li class="card">Revisa si hay personas heridas o daños en la vivienda antes de volver a entrar.
                                     </li>
-                                    <li class="card">Cierra llaves de paso de gas y agua si percibes fugas u olor a gas.
+                                    <li class="card">Si hay fugas u olor a gas, cierra las llaves de gas y agua.
                                     </li>
-                                    <li class="card">Infórmate únicamente por canales oficiales (INDECI / COEN). Evita
-                                        difundir
-                                        rumores.</li>
-                                    <li class="card">Mantén la mochila de emergencia a la mano ante posibles réplicas.
+                                    <li class="card">Infórmate solo por canales oficiales (INDECI, COEN) y no compartas rumores.</li>
+                                    <li class="card">Ten la mochila de emergencia a la mano: puede haber réplicas.
                                     </li>
                                 </ol>
 
@@ -646,7 +614,7 @@
                         </button>
                         <button type="button" class="nav-item nav-emergencia-highlight active">
                             <span class="material-symbols-outlined">e911_emergency</span>
-                            <span>EMERGENCIA</span>
+                            <span>Emergencia</span>
                         </button>
                         <button type="button" class="nav-item">
                             <span class="material-symbols-outlined">inventory_2</span>
@@ -664,8 +632,8 @@
 <!-- SECCIÓN 4: Accesibilidad e Inclusión -->
         <section id="seccion-accesibilidad-inclusion" class="landing-section split-tabs">
             <div class="tabs-navigation">
-                <h2>Accesibilidad e Inclusión</h2>
-                <p>Selecciona una opción para probar la funcionalidad:</p>
+                <h2>Accesibilidad e inclusión</h2>
+                <p>Elige una opción para probarla:</p>
                 <ul class="viñetas-lista" role="tablist" aria-label="Funcionalidades de accesibilidad">
                     <!-- Botones/Viñetas para las 8 HUs de accesibilidad (HU-005, 011, 012, 013, 032, 042, 043, 045) -->
                     <li role="tab" tabindex="0" class="tab-btn active" data-target="hu-005">Integrantes que requieren asistencia</li>
@@ -673,7 +641,7 @@
                     <li role="tab" tabindex="0" class="tab-btn" data-target="hu-012">Resumen del plan familiar</li>
                     <li role="tab" tabindex="0" class="tab-btn" data-target="hu-013">Progreso del plan familiar</li>
                     <li role="tab" tabindex="0" class="tab-btn" data-target="hu-032">Modo de ahorro de batería en emergencia</li>
-                    <li role="tab" tabindex="0" class="tab-btn" data-target="hu-042-043">Texto Ampliado y Alto Contraste</li>
+                    <li role="tab" tabindex="0" class="tab-btn" data-target="hu-042-043">Texto ampliado y alto contraste</li>
                     <li role="tab" tabindex="0" class="tab-btn" data-target="hu-045">Guías breves</li>
                     <!-- ... demás viñetas ... -->
                 </ul>
@@ -683,10 +651,10 @@
                 <!-- HU-005: Integrantes que requieren asistencia -->
                 <article class="tab-panel active" id="hu-005" role="tabpanel">
                     <h3>Integrantes que requieren asistencia</h3>
-                    <p>Marca a quienes necesitarán ayuda para evacuar. Así el hogar sabe a quién acompañar primero.</p>
+                    <p>Marca a quienes requieren asistencia para evacuar. Así tu familia sabrá a quién acompañar primero.</p>
                     <div class="tabla-scroll">
                         <table class="tabla-hogar">
-                            <thead><tr><th>Integrante</th><th>¿Requiere ayuda?</th><th>Tipo de asistencia</th></tr></thead>
+                            <thead><tr><th>Integrante</th><th>¿Requiere asistencia?</th><th>Tipo de asistencia</th></tr></thead>
                             <tbody id="tbody-integrantes"></tbody>
                         </table>
                     </div>
@@ -696,10 +664,10 @@
                 <!-- HU-011: Contactos de emergencia externos -->
                 <article class="tab-panel" id="hu-011" role="tabpanel">
                     <h3>Contactos de emergencia externos</h3>
-                    <p>Personas fuera del hogar a quienes llamar si la familia queda separada.</p>
+                    <p>Personas que no viven contigo y a quienes pueden llamar si la familia se separa.</p>
                     <form id="form-contacto-externo" class="form-landing">
                         <div class="form-group">
-                            <label for="cx-nombre">Nombre y parentesco:</label>
+                            <label for="cx-nombre">Nombre y relación:</label>
                             <input type="text" id="cx-nombre" placeholder="Ej. Tía Carmen" required>
                             <label for="cx-cel">Celular (9 dígitos):</label>
                             <input type="tel" id="cx-cel" placeholder="Ej. 912345678" pattern="[0-9]{9}" required>
@@ -732,7 +700,7 @@
                 <!-- HU-032: Modo de ahorro de batería en emergencia -->
                 <article class="tab-panel" id="hu-032" role="tabpanel">
                     <h3>Modo de ahorro de batería en emergencia</h3>
-                    <p>Si se corta la luz, SismoListo reduce su consumo para que el celular dure más.</p>
+                    <p>Si se corta la luz, activa este modo para que tu celular dure más.</p>
                     <label class="interruptor"><input type="checkbox" id="ahorro-bateria"> Activar ahorro de batería</label>
                     <div class="ahorro-caja" id="ahorro-caja">
                         <div class="bateria" aria-hidden="true"><div class="bateria-nivel"></div></div>
@@ -757,7 +725,7 @@
                     </div>
                     <div class="vista-previa" id="vista-previa">
                         <h4>Vista previa</h4>
-                        <p>Mantén la calma, ubícate en la zona segura y cúbrete la cabeza.</p>
+                        <p>Mantén la calma, ve a la zona segura y cúbrete la cabeza.</p>
                         <button type="button" class="btn-accion">Estoy bien</button>
                     </div>
                 </article>
@@ -765,7 +733,7 @@
                 <!-- HU-045: Guías breves -->
                 <article class="tab-panel" id="hu-045" role="tabpanel">
                     <h3>Guías breves</h3>
-                    <p>Instrucciones cortas para leer en segundos, incluso con estrés.</p>
+                    <p>Instrucciones cortas que puedes leer en segundos, incluso bajo estrés.</p>
                     <div class="guias-fila">
                         <section class="guia-card">
                             <h4>Durante el sismo</h4>
@@ -773,7 +741,7 @@
                         </section>
                         <section class="guia-card">
                             <h4>Después del sismo</h4>
-                            <ol><li>Revisa si hay heridos.</li><li>Cierra gas y agua.</li><li>Usa canales oficiales.</li></ol>
+                            <ol><li>Revisa si hay personas heridas.</li><li>Si huele a gas, cierra gas y agua.</li><li>Infórmate por canales oficiales.</li></ol>
                         </section>
                         <section class="guia-card">
                             <h4>Más información</h4>
@@ -792,21 +760,17 @@
         <div class="container-split">
             <!-- Lado Izquierdo: Testimonios con blockquote -->
             <div class="testimonios-col">
-                <h2>Lo que dicen nuestras familias</h2>
-                <p>Experiencias de usuarios que organizaron su hogar con SismoListo:</p>
+                <h2>Experiencias de las familias</h2>
+                <p>Testimonios ilustrativos, basados en las personas usuarias de nuestra investigación:</p>
 
                 <div class="testimonios-lista">
                     <blockquote class="testimonio-card">
-                        <p>“Organizar los roles con mis hijos fue sencillísimo. Ahora sé exactamente qué debe hacer cada
-                            uno
-                            sin ponernos a gritar durante un temblor.”</p>
+                        <p>“Repartir los roles con mis hijos fue muy sencillo. Ahora cada uno sabe qué hacer durante un temblor, sin gritos ni confusión.”</p>
                         <cite>— Rosa Huamán, Jefa de hogar (44 años)</cite>
                     </blockquote>
 
                     <blockquote class="testimonio-card">
-                        <p>“Como adulto mayor, me daba miedo no saber usar la app. El botón 'Estoy bien' en alto
-                            contraste
-                            es tan claro que puedo avisar a mis hijas en un toque.”</p>
+                        <p>“Temía no entender la app. El botón ‘Estoy bien’ en alto contraste es tan claro que aviso a mis hijas con un solo toque.”</p>
                         <cite>— Julio Cárdenas, Adulto mayor (68 años)</cite>
                     </blockquote>
                 </div>
@@ -814,8 +778,8 @@
 
             <!-- Lado Derecho: Formulario para contactar con la Startup -->
             <div class="contacto-col">
-                <h2>Contacta con la Startup</h2>
-                <h4><strong>¿Tienes dudas o deseas coordinar una alianza con SismoListo? Contactanos</strong></h4>
+                <h2>Contáctanos</h2>
+                <h4><strong>¿Tienes dudas o quieres coordinar una alianza con SismoListo? Escríbenos.</strong></h4>
                 <form action="/tu-endpoint" method="POST" target="subida_oculta" id="form-contacto"
                     class="form-landing">
                     <div class="form-group">
@@ -850,14 +814,14 @@
             </div>
             <div class="info-item">
                 <span class="material-symbols-outlined">school</span>
-                <span>Proyecto Académico UPC — HCI for UX Design</span>
+                <span>Proyecto académico UPC — HCI for UX Design</span>
             </div>
         </div>
     </section>
 
     <!-- PIE DE PÁGINA -->
     <footer class="footer-principal">
-        <p>&copy; 2026 SismoListo - Proyecto Académico UPC. Todos los derechos reservados.</p>
+        <p>&copy; 2026 SismoListo - Proyecto académico UPC. Todos los derechos reservados.</p>
     </footer>
 
     <!-- Script principal de JavaScript -->

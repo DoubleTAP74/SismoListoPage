@@ -36,7 +36,7 @@ body {
    2. CABECERA Y NAVEGACIÓN
    ========================================= */
 .header-principal {
-    background-color: var(--naranja-acento);
+    background-color: var(--blanco);
     border-bottom: 1px solid var(--gris-borde);
     position: sticky;
     top: 0px;
@@ -183,6 +183,11 @@ body {
     width: 100%;
     border-radius: 4px;
     border: 1px solid var(--azul-acero);
+}
+
+/* Margen superior para despegar la imagen y el video del texto */
+.hero-imagen-wrapper {
+    margin-top: 1.5rem;
 }
 
 /* =========================================

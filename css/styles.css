@@ -124,10 +124,12 @@ body {
    3. ESTILO GENERAL DE LAS SECCIONES
    ========================================= */
 .landing-section {
+    width: 100%;
+    min-height: 100vh;
     padding: 5px;
     background-color: var(--fondo);
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.02);
-    scroll-margin-top: 60px;
+    scroll-margin-top: 75px;
 }
 
 /* =========================================
@@ -211,10 +213,13 @@ body {
 .columna-centro {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
 }
 
 .info-hu15 {
     background-color: var(--fondo-claro);
+    height: 100%;
     padding: 20px;
     border: 1px solid var(--azul-acero);
     border-left: 5px solid var(--azul-petroleo);
@@ -228,6 +233,7 @@ body {
 
 .info-hu20 {
     background-color: var(--fondo-claro);
+    height: 100%;
     padding: 20px;
     border: 1px solid var(--azul-acero);
     border-right: 5px solid var(--azul-petroleo);
@@ -279,6 +285,7 @@ body {
     grid-template-columns: 2fr 1fr;
     /* Una columna grande y otra lateral */
     gap: 5px;
+    align-items: stretch;
 }
 
 .grid-3-cols {
@@ -444,7 +451,7 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 20px;
+    padding: 5px;
     border-top: 1px solid var(--gris-borde);
     align-items: center;
 }
@@ -479,6 +486,16 @@ body {
     border-radius: 12px;
     border-color: black;
     box-shadow: 0 10px 25px rgba(110, 110, 110, 0.08);
+    height: 100%;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.seccion1 .funcionalidad-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
 }
 
 /* Barra superior de pasos */
@@ -509,8 +526,8 @@ body {
 
 /* Manejo de visibilidad de los formularios internos del simulador */
 .step-form {
-    display: none;
     /* Oculta los pasos por defecto */
+    display: none;
     flex-direction: column;
     gap: 12px;
 }

@@ -8,6 +8,7 @@
     --azul-neutro: #3d5e98;
     --azul-acero: #4a5568;
     --naranja-hover: #CD5B16;
+    --naranja-acento: #F57A2D;
     --naranja-claro: #ff5c10;
     --naranja-suave: #FFE5D1;
     --naranja-neutro: #F57A2D;
@@ -36,7 +37,7 @@ body {
    2. CABECERA Y NAVEGACIÓN
    ========================================= */
 .header-principal {
-    background-color: var(--blanco);
+    background-color: var(--naranja-acento);
     border-bottom: 1px solid var(--gris-borde);
     position: sticky;
     top: 0px;
@@ -183,11 +184,6 @@ body {
     width: 100%;
     border-radius: 4px;
     border: 1px solid var(--azul-acero);
-}
-
-/* Margen superior para despegar la imagen y el video del texto */
-.hero-imagen-wrapper {
-    margin-top: 1.5rem;
 }
 
 /* =========================================

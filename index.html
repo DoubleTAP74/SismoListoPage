@@ -43,8 +43,8 @@
         <!-- Lado Izquierdo: La Solución -->
         <div class="hero-col solucion-col">
             <span class="badge badge-solucion">Nuestra solución</span>
-            <h1>SismoListo: tu asistente para prepararte y actuar ante un sismo</h1>
-            <p>
+            <h1><span id="word-sismolisto">SismoListo</span> Tu asistente para prepararte y actuar ante un sismo</h1>
+            <p class="parraf-one">
                 Reunimos en un solo lugar lo que tu familia necesita saber sobre sismos y lo convertimos en un plan con
                 pasos cortos y fáciles de seguir, tanto para prepararse con calma como para actuar durante una
                 emergencia.
@@ -58,13 +58,14 @@
         <div class="hero-col problematica-col">
             <span class="badge badge-alerta">El problema</span>
             <h2>¿Por qué es difícil prepararnos ante un sismo?</h2>
-            <p>
+            <p class="parraf-two">
                 Lima tiene un alto riesgo sísmico. Muchas familias no tienen un plan acordado ni practican qué hacer, y
                 la información disponible suele ser difícil de seguir bajo estrés o cuando no hay internet. Por eso,
                 cuando ocurre un sismo, cuesta reaccionar a tiempo.
             </p>
+            <h2>Noticias frecuentes:</h2>
             <div class="hero-imagen-wrapper">
-                <video class="hero-img" muted playsinline controls>
+                <video class="hero-vid" muted playsinline height="400" controls>
                     <source src="assets/videos/video_problematica.mp4" type="video/mp4">
                 </video>
                 <!-- Cambiar la imagen de problematica por un video -->
@@ -98,7 +99,7 @@
 
                         <!-- PASO 1: Registro de cuenta (HU-001, HU-002) -->
                         <div class="step-form active" id="step-1">
-                            <h3>1. Crea tu cuenta</h3>
+                            <h3 class="steps-words">1. Crea tu cuenta</h3>
                             <form action="/tu-endpoint" method="POST" target="subida_oculta" id="form-registro"
                                 class="form-landing">
                                 <div class="form-group">
@@ -118,7 +119,7 @@
 
                         <!-- PASO 2: Características de la Vivienda (HU-003) !!!!!! -->
                         <div class="step-form" id="step-2">
-                            <h3>2. Datos de tu vivienda</h3>
+                            <h3 class="steps-words">2. Datos de tu vivienda</h3>
                             <form action="/tu-endpoint" method="POST" target="subida_oculta" id="form-vivienda"
                                 class="form-landing">
                                 <div class="form-group">
@@ -144,7 +145,7 @@
 
                         <!-- PASO 3: Registro de integrantes (HU-004) -->
                         <div class="step-form" id="step-3">
-                            <h3>3. Integrantes de tu hogar</h3>
+                            <h3 class="steps-words">3. Integrantes de tu hogar</h3>
                             <form action="/tu-endpoint" method="POST" target="subida_oculta" id="form-integrantes"
                                 class="form-landing">
                                 <div class="form-group">
@@ -161,7 +162,7 @@
 
                         <!-- PASO 4: Código de vinculación familiar (HU-006) -->
                         <div class="step-form" id="step-4">
-                            <h3>4. Código para unir a tu familia</h3>
+                            <h3 class="steps-words">4. Código para unir a tu familia</h3>
                             <p>Comparte este código con los integrantes de tu hogar. Al ingresarlo en su celular, verán
                                 el mismo plan familiar:</p>
                             <div class="codigo-box">
@@ -172,7 +173,7 @@
 
                         <!-- PASO 5: Asignación de Roles con integrantes predefinidos (HU-007) -->
                         <div class="step-form" id="step-5">
-                            <h3>5. Asignación de roles</h3>
+                            <h3 class="steps-words">5. Asignación de roles</h3>
                             <p>Elige a un integrante y escribe el rol que cumplirá durante una emergencia:</p>
 
                             <!-- Lista de 3 integrantes predefinidos -->
@@ -215,7 +216,7 @@
 
                         <!-- PASO 6: Acciones en caso de sismo dentro/fuera de casa (HU-008) -->
                         <div class="step-form" id="step-6">
-                            <h3>6. Qué hacer según dónde estés</h3>
+                            <h3 class="steps-words">6. Qué hacer según dónde estés</h3>
                             <p>Revisa qué hacer en cada situación:</p>
                             <div class="tarjetas-acciones-grid">
                                 <div class="accion-card">
@@ -239,7 +240,7 @@
 
                         <!-- PASO 7: Registro del Punto de Encuentro Externo (HU-009) -->
                         <div class="step-form" id="step-7">
-                            <h3>7. Punto de encuentro fuera de casa</h3>
+                            <h3 class="steps-words">7. Punto de encuentro fuera de casa</h3>
                             <form action="/tu-endpoint" method="POST" target="subida_oculta" id="form-encuentro"
                                 class="form-landing">
                                 <div class="form-group">
@@ -263,7 +264,7 @@
 
                         <!-- PASO 8: Registro de Zonas Seguras dentro del Hogar (HU-010) -->
                         <div class="step-form" id="step-8">
-                            <h3>8. Zonas seguras dentro de casa</h3>
+                            <h3 class="steps-words">8. Zonas seguras dentro de casa</h3>
                             <form action="/tu-endpoint" method="POST" target="subida_oculta" id="form-zonas"
                                 class="form-landing">
                                 <div class="form-group">
@@ -286,7 +287,7 @@
 
                         <!-- PASO 9: Dashboard / Ficha Resumen del Plan Familiar -->
                         <div class="step-form" id="step-9">
-                            <h3>9. Resumen de tu plan familiar</h3>
+                            <h3 class="steps-words">9. Resumen de tu plan familiar</h3>
                             <div class="resumen-dashboard">
                                 <div class="resumen-card">
                                     <h4>👥 Integrantes y roles</h4>
@@ -309,7 +310,7 @@
             </div>
             <aside class="seccion1 info-wrapper">
                 <h1>Configuración inicial y gestión del hogar</h1>
-                <p>
+                <p class="parraf-one">
                     Arma el plan de tu familia paso a paso: registra a los integrantes del hogar, asigna un rol a cada
                     uno y define tus zonas seguras y el punto de encuentro. Al final verás un resumen con todo el plan.
                     Cada paso pide solo lo necesario para que no te abrumes.
@@ -364,7 +365,7 @@
             <aside class="info-wrapper">
                 <!-- Apartado informativo lateral (1/3) -->
                 <h1>Respuesta inmediata y Modo Emergencia</h1>
-                <p>
+                <p class="parraf-one">
                     Durante un sismo, el Modo Emergencia te guía con pasos cortos y fáciles de leer para protegerte y
                     evacuar. Después, te permite avisar a tu familia cómo estás, ver cómo están los demás integrantes y
                     enviar un mensaje rápido a quien aún no ha respondido.
@@ -792,11 +793,11 @@
             <!-- LADO DERECHO: Apartado informativo lateral (1/3) -->
             <aside class="info-wrapper">
                 <h1>Accesibilidad e inclusión</h1>
-                <p>
+                <p class="parraf-one">
                     SismoListo está pensado para toda la familia: niñas y niños, personas adultas mayores, personas con
                     movilidad o visión reducida y quienes no están acostumbrados a usar aplicaciones.
                 </p>
-                <p>
+                <p class="parraf-one">
                     Puedes indicar quién necesita apoyo, guardar contactos de emergencia, ver tu plan en una sola
                     pantalla y avanzar por partes. En una emergencia, el texto ampliado, el alto contraste, el ahorro de
                     batería y las guías breves te ayudan a actuar con calma, incluso sin internet.

@@ -324,6 +324,66 @@
         <section id="seccion-logistica-preparacionpreventiva" class="landing-section grid-3-cols">
             <div class="columna-hu15">
                 <!-- Funcionalidad HU-015: Mochila de emergencia -->
+                <div class="hu-panel" id="hu15-panel">
+                    <div class="hu-panel-encabezado">
+                        <span class="material-symbols-outlined" aria-hidden="true">backpack</span>
+                        <h2 class="hu-panel-titulo">Mochila de emergencia</h2>
+                    </div>
+
+                    <!-- HU-015 CA02 y CA03: la lista base se adapta al hogar registrado -->
+                    <fieldset class="hu15-hogar">
+                        <legend>Composición de tu hogar</legend>
+                        <div class="hu15-campo">
+                            <label for="hu15-integrantes">Integrantes del hogar</label>
+                            <input type="number" id="hu15-integrantes" name="hu15-integrantes" min="1" max="15"
+                                value="4" inputmode="numeric">
+                        </div>
+                        <div class="hu15-checks">
+                            <label class="hu15-check" for="hu15-adultos">
+                                <input type="checkbox" id="hu15-adultos" name="hu15-adultos" checked>
+                                <span>Hay adultos mayores</span>
+                            </label>
+                            <label class="hu15-check" for="hu15-ninos">
+                                <input type="checkbox" id="hu15-ninos" name="hu15-ninos">
+                                <span>Hay niños pequeños</span>
+                            </label>
+                        </div>
+                        <p class="hu15-nota-agua" id="hu15-nota-agua"></p>
+                    </fieldset>
+
+                    <!-- HU-015 CA04: agregar artículos personalizados -->
+                    <form class="hu15-form" id="hu15-form" novalidate>
+                        <h3 class="hu15-subtitulo">Agregar un artículo</h3>
+                        <div class="hu15-campo">
+                            <label for="hu15-nombre">Nombre del artículo</label>
+                            <input type="text" id="hu15-nombre" name="hu15-nombre" placeholder="Ej. Linterna a pilas"
+                                maxlength="60" autocomplete="off" required>
+                            <span class="hu15-error" id="hu15-error-nombre" role="alert" hidden></span>
+                        </div>
+                        <div class="hu15-campo-doble">
+                            <div class="hu15-campo">
+                                <label for="hu15-cantidad">Cantidad</label>
+                                <input type="number" id="hu15-cantidad" name="hu15-cantidad" min="1" max="99" value="1"
+                                    inputmode="numeric" required>
+                                <span class="hu15-error" id="hu15-error-cantidad" role="alert" hidden></span>
+                            </div>
+                            <div class="hu15-campo">
+                                <label for="hu15-vencimiento">Fecha de vencimiento</label>
+                                <input type="date" id="hu15-vencimiento" name="hu15-vencimiento">
+                                <span class="hu15-error" id="hu15-error-vencimiento" role="alert" hidden></span>
+                            </div>
+                        </div>
+                        <button type="submit" class="hu15-btn-agregar">
+                            <span class="material-symbols-outlined" aria-hidden="true">add_circle</span>
+                            Agregar artículo
+                        </button>
+                    </form>
+
+                    <h3 class="hu15-subtitulo">Lista sugerida para tu mochila</h3>
+                    <p class="hu15-fuente">Basada en el plan familiar de emergencia de INDECI y UNICEF.</p>
+                    <ul class="hu15-lista" id="hu15-lista"></ul>
+                    <p class="hu15-resumen" id="hu15-resumen" role="status" aria-live="polite"></p>
+                </div>
             </div>
             <div class="columna-centro">
                 <div class="title-section2">
@@ -345,6 +405,34 @@
             </div>
             <div class="columna-hu20">
                 <!-- Funcionalidad HU-020: Simulacro exprés -->
+                <div class="hu-panel" id="hu20-panel">
+                    <div class="hu-panel-encabezado">
+                        <span class="material-symbols-outlined" aria-hidden="true">directions_run</span>
+                        <h2 class="hu-panel-titulo">Simulacro exprés cronometrado</h2>
+                    </div>
+
+                    <!-- HU-020 CA01: el cronómetro está visible desde el inicio -->
+                    <div class="hu20-cronometro">
+                        <span class="material-symbols-outlined hu20-cron-icono" aria-hidden="true">timer</span>
+                        <span class="hu20-cron-tiempo" id="hu20-tiempo" role="timer">00:00</span>
+                        <span class="hu20-cron-unidad">minutos : segundos</span>
+                    </div>
+
+                    <div class="hu20-controles">
+                        <button type="button" class="hu20-btn-principal" id="hu20-btn">
+                            <span class="material-symbols-outlined" id="hu20-btn-icono"
+                                aria-hidden="true">play_arrow</span>
+                            <span id="hu20-btn-texto">Iniciar simulacro</span>
+                        </button>
+                        <!-- HU-020 CA04: cancelar sin registrar -->
+                        <button type="button" class="hu20-btn-cancelar" id="hu20-cancelar" hidden>
+                            Cancelar sin registrar
+                        </button>
+                    </div>
+
+                    <!-- HU-020 CA02: los pasos se muestran de uno en uno -->
+                    <div class="hu20-tarjeta" id="hu20-tarjeta" aria-live="polite" hidden></div>
+                </div>
             </div>
             <!-- BANNER DE IMPORTANCIA -->
             <div class="banner-importancia">

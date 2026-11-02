@@ -1212,15 +1212,25 @@ body {
     overflow-wrap: break-word;
 }
 
-/* Si la fuente de iconos no carga (sin conexion, bloqueo de CDN), el
-   nombre de la ligadura no debe romper la maqueta: se recorta. */
-.hu-panel .material-symbols-outlined {
+/* Iconos SVG incrustados: no dependen de ninguna fuente ni archivo
+   externo, de modo que se ven igual sin conexion. */
+.hu-icono-caja {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     flex: none;
-    width: 1em;
-    max-width: 2.2rem;
-    overflow: hidden;
-    white-space: nowrap;
-    line-height: 1;
+    line-height: 0;
+}
+
+.hu-icono {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .hu-panel {
@@ -1243,9 +1253,13 @@ body {
     border-bottom: 2px solid var(--naranja-acento);
 }
 
-.hu-panel-encabezado .material-symbols-outlined {
+.hu-panel-encabezado .hu-icono-caja {
     color: var(--naranja-acento);
-    font-size: 1.9rem;
+}
+
+.hu-panel-encabezado .hu-icono {
+    width: 1.8rem;
+    height: 1.8rem;
 }
 
 .hu-panel-titulo {
@@ -1379,6 +1393,12 @@ body {
     font-weight: 600;
 }
 
+.hu15-btn-agregar .hu-icono,
+.hu20-btn-principal .hu-icono {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
 .hu15-btn-agregar,
 .hu20-btn-principal {
     display: inline-flex;
@@ -1432,7 +1452,11 @@ body {
 
 .hu15-item-icono {
     color: var(--azul-petroleo);
-    font-size: 1.6rem;
+}
+
+.hu15-item-icono .hu-icono {
+    width: 1.65rem;
+    height: 1.65rem;
 }
 
 .hu15-item-cuerpo {
@@ -1471,8 +1495,10 @@ body {
     white-space: nowrap;
 }
 
-.hu15-badge .material-symbols-outlined {
-    font-size: 1rem;
+.hu15-badge .hu-icono {
+    width: .95rem;
+    height: .95rem;
+    stroke-width: 2.3;
 }
 
 .hu15-badge--vigente {
@@ -1493,6 +1519,11 @@ body {
 .hu15-badge--sin-fecha {
     color: var(--azul-acero);
     background: var(--gris-borde);
+}
+
+.hu15-quitar-icono .hu-icono {
+    width: 1.1rem;
+    height: 1.1rem;
 }
 
 .hu15-item-quitar {
@@ -1551,7 +1582,11 @@ body {
 
 .hu20-cron-icono {
     color: var(--naranja-acento);
-    font-size: 2rem;
+}
+
+.hu20-cron-icono .hu-icono {
+    width: 1.9rem;
+    height: 1.9rem;
 }
 
 .hu20-cron-tiempo {

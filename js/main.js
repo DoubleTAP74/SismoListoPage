@@ -23,6 +23,45 @@
 
   var MS_DIA = 24 * 60 * 60 * 1000;
 
+  /* Iconos SVG incrustados. No dependen de ninguna fuente ni archivo
+     externo, asi que se ven igual sin conexion, que es la condicion real
+     en la que se usa SismoListo despues de un sismo. */
+  var ICONOS = {
+    mochila:    '<path d="M7 9a5 5 0 0 1 10 0v10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z"/><path d="M9.5 9V6.5a2.5 2.5 0 0 1 5 0V9"/><path d="M9.5 14h5v4h-5z"/>',
+    mas:        '<circle cx="12" cy="12" r="9"/><path d="M12 8.5v7M8.5 12h7"/>',
+    meta:       '<path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/>',
+    cronometro: '<circle cx="12" cy="13.5" r="7.5"/><path d="M12 13.5V9.5"/><path d="M9.5 2.5h5"/><path d="M12 2.5v3"/>',
+    play:       '<path d="M8 5.5v13l11-6.5z" fill="currentColor" stroke="none"/>',
+    siguiente:  '<path d="M4 12h15"/><path d="M13 6l6 6-6 6"/>',
+    bandera:    '<path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/>',
+    repetir:    '<path d="M4 12a8 8 0 1 0 2.5-5.8"/><path d="M4 4.5v4h4"/>',
+    agua:       '<path d="M12 3s6 6.5 6 10.5a6 6 0 0 1-12 0C6 9.5 12 3 12 3z"/>',
+    medicina:   '<rect x="3.2" y="8.8" width="17.6" height="6.4" rx="3.2" transform="rotate(-45 12 12)"/><path d="M9.2 9.2l5.6 5.6"/>',
+    galleta:    '<circle cx="12" cy="12" r="8.5"/><circle cx="10" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="14.5" cy="11" r="1" fill="currentColor" stroke="none"/><circle cx="11.5" cy="15" r="1" fill="currentColor" stroke="none"/>',
+    mayor:      '<circle cx="10" cy="4.5" r="2.2"/><path d="M10 7.5v7l-2 6"/><path d="M10 14.5l2.5 6"/><path d="M7 10.5h6"/><path d="M16.5 10v11"/>',
+    nino:       '<circle cx="12" cy="9" r="5"/><path d="M10 11.5a3 3 0 0 0 4 0"/><path d="M7 15.8c1.5 2 3.2 2.9 5 2.9s3.5-.9 5-2.9"/>',
+    caja:       '<path d="M3.5 7.5h17v12h-17z"/><path d="M3.5 7.5l2-4h13l2 4"/><path d="M12 3.5v4"/>',
+    verificado: '<circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.8 2.8L16 9.8"/>',
+    reloj:      '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/>',
+    alerta:     '<path d="M12 4L2.8 20h18.4z"/><path d="M12 10v4"/><path d="M12 17h.01"/>',
+    guion:      '<path d="M6 12h12"/>',
+    cerrar:     '<path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/>'
+  };
+
+  function marcaSvg(nombre) {
+    return '<svg class="hu-icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
+           (ICONOS[nombre] || '') + '</svg>';
+  }
+
+  function svg(nombre, clase) {
+    var s = document.createElement('span');
+    s.className = 'hu-icono-caja' + (clase ? ' ' + clase : '');
+    s.setAttribute('aria-hidden', 'true');
+    s.innerHTML = marcaSvg(nombre);
+    return s;
+  }
+
+
   function hoySinHora() {
     var d = new Date();
     d.setHours(0, 0, 0, 0);
@@ -55,7 +94,7 @@
      --------------------------------------------------------------------- */
   function estadoVencimiento(iso) {
     if (!iso) {
-      return { clave: 'sin-fecha', texto: 'Sin vencimiento', icono: 'remove' };
+      return { clave: 'sin-fecha', texto: 'Sin vencimiento', icono: 'guion' };
     }
     var partes = iso.split('-');
     var fecha = new Date(Number(partes[0]), Number(partes[1]) - 1, Number(partes[2]));
@@ -63,12 +102,12 @@
     var dias = Math.round((fecha - hoySinHora()) / MS_DIA);
 
     if (dias < 0) {
-      return { clave: 'vencido', texto: 'Vencido', icono: 'error', dias: dias };
+      return { clave: 'vencido', texto: 'Vencido', icono: 'alerta', dias: dias };
     }
     if (dias <= DIAS_AVISO_VENCIMIENTO) {
-      return { clave: 'por-vencer', texto: 'Por vencer', icono: 'schedule', dias: dias };
+      return { clave: 'por-vencer', texto: 'Por vencer', icono: 'reloj', dias: dias };
     }
-    return { clave: 'vigente', texto: 'Vigente', icono: 'check_circle', dias: dias };
+    return { clave: 'vigente', texto: 'Vigente', icono: 'verificado', dias: dias };
   }
 
   /* =====================================================================
@@ -100,21 +139,21 @@
         {
           nombre: 'Agua embotellada',
           cantidad: litrosDeAgua(integrantes) + ' litros',
-          icono: 'water_drop',
+          icono: 'agua',
           vence: aISO(sumarDias(180)),
           origen: 'Calculada para ' + integrantes + (integrantes === 1 ? ' integrante' : ' integrantes')
         },
         {
           nombre: 'Medicamentos de uso diario',
           cantidad: '1 bolsa',
-          icono: 'medication',
+          icono: 'medicina',
           vence: aISO(sumarDias(10)),
           origen: 'Lista base INDECI / UNICEF'
         },
         {
           nombre: 'Galletas y conservas',
           cantidad: integrantes * 3 + ' raciones',
-          icono: 'cookie',
+          icono: 'galleta',
           vence: aISO(sumarDias(-6)),
           origen: 'Lista base INDECI / UNICEF'
         }
@@ -124,7 +163,7 @@
         base.push({
           nombre: 'Medicamentos para adultos mayores',
           cantidad: '1 kit',
-          icono: 'elderly',
+          icono: 'mayor',
           vence: aISO(sumarDias(45)),
           origen: 'Agregado porque el hogar tiene adultos mayores'
         });
@@ -133,7 +172,7 @@
         base.push({
           nombre: 'Pañales y fórmula infantil',
           cantidad: '1 paquete',
-          icono: 'child_care',
+          icono: 'nino',
           vence: aISO(sumarDias(90)),
           origen: 'Agregado porque el hogar tiene niños pequeños'
         });
@@ -147,10 +186,7 @@
       var li = document.createElement('li');
       li.className = 'hu15-item';
 
-      var icono = document.createElement('span');
-      icono.className = 'material-symbols-outlined hu15-item-icono';
-      icono.setAttribute('aria-hidden', 'true');
-      icono.textContent = articulo.icono;
+      var icono = svg(articulo.icono, 'hu15-item-icono');
 
       var cuerpo = document.createElement('div');
       cuerpo.className = 'hu15-item-cuerpo';
@@ -173,11 +209,7 @@
 
       var badge = document.createElement('span');
       badge.className = 'hu15-badge hu15-badge--' + estado.clave;
-      var badgeIcono = document.createElement('span');
-      badgeIcono.className = 'material-symbols-outlined';
-      badgeIcono.setAttribute('aria-hidden', 'true');
-      badgeIcono.textContent = estado.icono;
-      badge.appendChild(badgeIcono);
+      badge.appendChild(svg(estado.icono, 'hu15-badge-icono'));
       badge.appendChild(document.createTextNode(estado.texto));
 
       li.appendChild(icono);
@@ -191,7 +223,7 @@
         quitar.type = 'button';
         quitar.className = 'hu15-item-quitar';
         quitar.setAttribute('aria-label', 'Quitar ' + articulo.nombre + ' de la lista');
-        quitar.innerHTML = '<span class="material-symbols-outlined" aria-hidden="true">close</span>';
+        quitar.appendChild(svg('cerrar', 'hu15-quitar-icono'));
         quitar.addEventListener('click', function () {
           personalizados.splice(indicePersonalizado, 1);
           pintarLista();
@@ -285,7 +317,7 @@
       personalizados.push({
         nombre: nombre,
         cantidad: cantidad + (cantidad === 1 ? ' unidad' : ' unidades'),
-        icono: 'inventory_2',
+        icono: 'caja',
         vence: vence,
         origen: 'Agregado por ti'
       });
@@ -394,10 +426,10 @@
          y es la acción que cierra el simulacro. */
       if (pasoActual === PASOS.length - 1) {
         textoBoton.textContent = 'Llegué al punto de encuentro';
-        iconoBoton.textContent = 'flag';
+        iconoBoton.innerHTML = marcaSvg('bandera');
       } else {
         textoBoton.textContent = 'Siguiente paso';
-        iconoBoton.textContent = 'arrow_forward';
+        iconoBoton.innerHTML = marcaSvg('siguiente');
       }
     }
 
@@ -430,7 +462,7 @@
       botonCancelar.hidden = true;
       botonPrincipal.classList.remove('hu20-btn-principal--activo');
       textoBoton.textContent = 'Repetir simulacro';
-      iconoBoton.textContent = 'replay';
+      iconoBoton.innerHTML = marcaSvg('repetir');
 
       tarjeta.className = 'hu20-tarjeta hu20-tarjeta--final';
       tarjeta.innerHTML = '';
@@ -464,7 +496,7 @@
       botonCancelar.hidden = true;
       botonPrincipal.classList.remove('hu20-btn-principal--activo');
       textoBoton.textContent = 'Iniciar simulacro';
-      iconoBoton.textContent = 'play_arrow';
+      iconoBoton.innerHTML = marcaSvg('play');
 
       tarjeta.className = 'hu20-tarjeta hu20-tarjeta--cancelado';
       tarjeta.hidden = false;

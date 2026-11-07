@@ -13,11 +13,6 @@
 </head>
 
 <body>
-    <!--
-    Textos descriptivos más conectados con el problema real (Needfinding):
-    Tus descripciones actuales son buenas y técnicas, pero puedes enriquecerlas conectándolas con los dolores de los usuarios que investigaron (por ejemplo, mencionar la baja carga cognitiva, el funcionamiento sin conexión o los adultos mayores). Esto le da un plus académico y de diseño UX muy fuerte a tu entrega.
-    -->
-
     <!-- Iframe de subida oculta (prevencion de desviacion de la posicion del usuario) -->
     <iframe name="subida_oculta" style="display:none;"></iframe>
 
@@ -66,11 +61,10 @@
                 cuando ocurre un sismo, cuesta reaccionar a tiempo.
             </p>
             <h2>Noticias frecuentes:</h2>
-            <div class="hero-imagen-wrapper">
-                <video class="hero-vid" muted playsinline height="400" controls>
+            <div>
+                <video class="hero-vid" playsinline controls>
                     <source src="assets/videos/video_problematica.mp4" type="video/mp4">
                 </video>
-                <!-- Cambiar la imagen de problematica por un video -->
             </div>
         </div>
     </section>
@@ -321,12 +315,27 @@
         </section>
 
         <!-- SECCIÓN 2: Logística y Preparación Preventiva -->
-        <section id="seccion-logistica-preparacionpreventiva" class="landing-section grid-3-cols">
+        <section id="seccion-logistica-preparacionpreventiva" class="landing-section">
+            <div class="title-section2">
+                <h1>Logística y preparación preventiva</h1>
+            </div>
+            <div class="info-hu15">
+                <strong>Lista sugerida para la mochila:</strong> <br>
+                SismoListo te sugiere qué llevar en la mochila de emergencia según las necesidades de tu hogar y las
+                recomendaciones del INDECI. <br>
+                Puedes agregar o quitar elementos de la lista, y la app te indica cuánta agua necesitan según el
+                número de integrantes.
+            </div>
             <div class="columna-hu15">
                 <!-- Funcionalidad HU-015: Mochila de emergencia -->
                 <div class="hu-panel" id="hu15-panel">
                     <div class="hu-panel-encabezado">
-                        <span class="hu-icono-caja" aria-hidden="true"><svg class="hu-icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 9a5 5 0 0 1 10 0v10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z"/><path d="M9.5 9V6.5a2.5 2.5 0 0 1 5 0V9"/><path d="M9.5 14h5v4h-5z"/></svg></span>
+                        <span class="hu-icono-caja" aria-hidden="true"><svg class="hu-icono" viewBox="0 0 24 24"
+                                aria-hidden="true" focusable="false">
+                                <path d="M7 9a5 5 0 0 1 10 0v10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z" />
+                                <path d="M9.5 9V6.5a2.5 2.5 0 0 1 5 0V9" />
+                                <path d="M9.5 14h5v4h-5z" />
+                            </svg></span>
                         <h2 class="hu-panel-titulo">Mochila de emergencia</h2>
                     </div>
 
@@ -374,7 +383,11 @@
                             </div>
                         </div>
                         <button type="submit" class="hu15-btn-agregar">
-                            <span class="hu-icono-caja" aria-hidden="true"><svg class="hu-icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 8.5v7M8.5 12h7"/></svg></span>
+                            <span class="hu-icono-caja" aria-hidden="true"><svg class="hu-icono" viewBox="0 0 24 24"
+                                    aria-hidden="true" focusable="false">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="M12 8.5v7M8.5 12h7" />
+                                </svg></span>
                             Agregar artículo
                         </button>
                     </form>
@@ -385,42 +398,43 @@
                     <p class="hu15-resumen" id="hu15-resumen" role="status" aria-live="polite"></p>
                 </div>
             </div>
-            <div class="columna-centro">
-                <div class="title-section2">
-                    <h1>Logística y preparación preventiva</h1>
-                </div>
-                <div class="info-hu15">
-                    <strong>Lista sugerida para la mochila:</strong> <br>
-                    SismoListo te sugiere qué llevar en la mochila de emergencia según las necesidades de tu hogar y las
-                    recomendaciones del INDECI. <br>
-                    Puedes agregar o quitar elementos de la lista, y la app te indica cuánta agua necesitan según el
-                    número de integrantes.
-                </div>
-                <div class="info-hu20"><strong>Simulacro exprés cronometrado:</strong> <br>
-                    Practica la evacuación de tu hogar con un simulacro corto: la app te muestra los pasos a seguir y un
-                    cronómetro con el tiempo que tardan. <br>
-                    Al terminar, marca el simulacro como completado para guardar el tiempo, o cancélalo si no quieres
-                    registrarlo. <br>
-                </div>
+            <div class="info-hu20"><strong>Simulacro exprés cronometrado:</strong> <br>
+                Practica la evacuación de tu hogar con un simulacro corto: la app te muestra los pasos a seguir y un
+                cronómetro con el tiempo que tardan. <br>
+                Al terminar, marca el simulacro como completado para guardar el tiempo, o cancélalo si no quieres
+                registrarlo. <br>
             </div>
             <div class="columna-hu20">
                 <!-- Funcionalidad HU-020: Simulacro exprés -->
                 <div class="hu-panel" id="hu20-panel">
                     <div class="hu-panel-encabezado">
-                        <span class="hu-icono-caja" aria-hidden="true"><svg class="hu-icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/></svg></span>
+                        <span class="hu-icono-caja" aria-hidden="true"><svg class="hu-icono" viewBox="0 0 24 24"
+                                aria-hidden="true" focusable="false">
+                                <path d="M5 21V4" />
+                                <path d="M5 4h12l-2.5 4L17 12H5" />
+                            </svg></span>
                         <h2 class="hu-panel-titulo">Simulacro exprés cronometrado</h2>
                     </div>
 
                     <!-- HU-020 CA01: el cronómetro está visible desde el inicio -->
                     <div class="hu20-cronometro">
-                        <span class="hu-icono-caja hu20-cron-icono" aria-hidden="true"><svg class="hu-icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 13.5V9.5"/><path d="M9.5 2.5h5"/><path d="M12 2.5v3"/></svg></span>
+                        <span class="hu-icono-caja hu20-cron-icono" aria-hidden="true"><svg class="hu-icono"
+                                viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <circle cx="12" cy="13.5" r="7.5" />
+                                <path d="M12 13.5V9.5" />
+                                <path d="M9.5 2.5h5" />
+                                <path d="M12 2.5v3" />
+                            </svg></span>
                         <span class="hu20-cron-tiempo" id="hu20-tiempo" role="timer">00:00</span>
                         <span class="hu20-cron-unidad">minutos : segundos</span>
                     </div>
 
                     <div class="hu20-controles">
                         <button type="button" class="hu20-btn-principal" id="hu20-btn">
-                            <span class="hu-icono-caja" id="hu20-btn-icono" aria-hidden="true"><svg class="hu-icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.5v13l11-6.5z" fill="currentColor" stroke="none"/></svg></span>
+                            <span class="hu-icono-caja" id="hu20-btn-icono" aria-hidden="true"><svg class="hu-icono"
+                                    viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path d="M8 5.5v13l11-6.5z" fill="currentColor" stroke="none" />
+                                </svg></span>
                             <span id="hu20-btn-texto">Iniciar simulacro</span>
                         </button>
                         <!-- HU-020 CA04: cancelar sin registrar -->
@@ -746,16 +760,15 @@
                 </div>
         </section>
 
-       <!-- SECCIÓN 4: Accesibilidad e Inclusión -->
+        <!-- SECCIÓN 4: Accesibilidad e Inclusión -->
         <section id="seccion-accesibilidad-inclusion" class="landing-section">
             <aside class="seccion1 info-wrapper">
                 <h1>Accesibilidad e inclusión</h1>
-                <p>
+                <p class="parraf-one">
                     SismoListo está pensado para toda la familia: niñas y niños, personas adultas mayores, personas con
                     movilidad o visión reducida y quienes no están acostumbrados a usar aplicaciones. Nadie debería
                     depender de otra persona para ponerse a salvo.
-                </p>
-                <p>
+                    <br><br>
                     Elige una función con los botones de abajo: indica quién requiere asistencia, guarda contactos
                     externos, mira tu plan en una sola pantalla o activa las ayudas para actuar con calma, incluso sin
                     internet.
@@ -857,7 +870,8 @@
                                 Emergencia. Lo activas o desactivas cuando quieras.</p>
                             <div class="acc-item">
                                 <p><strong>Modo de ahorro de batería:</strong>
-                                    <span class="acc-etiqueta acc-etiqueta-ok">Activado</span></p>
+                                    <span class="acc-etiqueta acc-etiqueta-ok">Activado</span>
+                                </p>
                                 <p><strong>Batería estimada restante:</strong> 18 %</p>
                                 <p>Brillo reducido y solo las funciones esenciales del Modo Emergencia.</p>
                             </div>
@@ -902,13 +916,8 @@
             </div>
 
             <!-- LADO DERECHO: Apartado informativo lateral (1/3) -->
-            <aside class="info-wrapper">
-                <h1>Accesibilidad e inclusión</h1>
-                <p class="parraf-one">
-                    SismoListo está pensado para toda la familia: niñas y niños, personas adultas mayores, personas con
-                    movilidad o visión reducida y quienes no están acostumbrados a usar aplicaciones.
-                </p>
-                <p class="parraf-one">
+            <aside class="banner-importancia">
+                <p class="banner-contenido">
                     Puedes indicar quién necesita apoyo, guardar contactos de emergencia, ver tu plan en una sola
                     pantalla y avanzar por partes. En una emergencia, el texto ampliado, el alto contraste, el ahorro de
                     batería y las guías breves te ayudan a actuar con calma, incluso sin internet.
@@ -919,7 +928,7 @@
     </main>
 
     <!-- SECCIÓN PRE-FOOTER: Testimonios y Formulario de Contacto -->
-    <section id="seccion-contacto-testimonios" class="landing-section pre-footer-grid">
+    <section id="seccion-contacto-testimonios" class="landing-section pre-footer-grid" style="min-height: auto;">
         <div class="container-split">
             <!-- Lado Izquierdo: Testimonios con blockquote -->
             <div class="testimonios-col">

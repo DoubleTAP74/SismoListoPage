@@ -1,25 +1,40 @@
+/* =========================================================================
+   SismoListo — Landing Page
+   Hoja de estilos principal estructurada por secciones y componentes
+   ========================================================================= */
+
 /* =========================================
    1. VARIABLES GLOBALES Y RESETEO BÁSICO
    ========================================= */
 :root {
+    /* Paleta Principal */
     --azul-oscuro: #142A3D;
     --azul-petroleo: #215175;
     --azul-cielo: #4A90E2;
     --azul-neutro: #3d5e98;
     --azul-acero: #4a5568;
-    --naranja-hover: #CD5B16;
+    
     --naranja-acento: #F57A2D;
+    --naranja-hover: #CD5B16;
     --naranja-claro: #ff5c10;
     --naranja-suave: #FFE5D1;
     --naranja-neutro: #F57A2D;
+    
     --fondo-claro: #eff5fc;
     --fondo: #ffffff;
     --fondo-blanco: #F7FAFC;
     --blanco: #FFFFFF;
     --gris-borde: #E2E8F0;
+
+    /* Estados de Vencimiento (Sección 2 - HU-018) */
+    --estado-vigente: #1B7A4B;
+    --estado-vigente-fondo: #E6F4EC;
+    --estado-porvencer: #8A5A00;
+    --estado-porvencer-fondo: #FFF4D6;
+    --estado-vencido: #A32020;
+    --estado-vencido-fondo: #FDE8E8;
 }
 
-/* El selector universal (*) limpia los márgenes por defecto de los navegadores */
 * {
     margin: 0;
     padding: 0;
@@ -43,7 +58,6 @@ body {
     top: 0px;
     z-index: 1000;
 }
-
 
 .nav-container {
     max-width: 1200px;
@@ -88,40 +102,27 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.principal {
-    transition: background-color 0.3s ease;
-}
-
 .btn-emergencia-alerta:hover {
     background-color: rgb(141, 27, 27);
 }
 
-.principal:hover{
+.principal {
+    transition: background-color 0.3s ease;
+}
+
+.principal:hover {
     background-color: #C53030;
     animation: pulsar 1s infinite ease-in-out;
 }
 
-/* Definición del efecto de pulso */
 @keyframes pulsar {
-    0% {
-        transform: scale(1);
-        /* Tamaño original */
-    }
-
-    50% {
-        transform: scale(1.08);
-        /* Se agranda un 8% */
-    }
-
-    100% {
-        transform: scale(1);
-        /* Vuelve al tamaño original */
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
 }
 
-
 /* =========================================
-   3. ESTILO GENERAL DE LAS SECCIONES
+   3. ESTILOS GENERALES DE SECCIONES Y LAYOUTS
    ========================================= */
 .landing-section {
     width: 100%;
@@ -132,159 +133,10 @@ body {
     scroll-margin-top: 75px;
 }
 
-/* =========================================
-   4. SECCIÓN HERO (Problemática vs Solución)
-   ========================================= */
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* Divide en dos columnas iguales */
-    align-items: center;
-}
-
-.hero-col {
-    display: flex;
-    flex-direction: column;
-}
-
-.solucion-col {
-    background-color: var(--fondo-blanco);
-    padding: 20px;
-    border: 1px solid var(--azul-petroleo);
-}
-
-.problematica-col {
-    background-color: var(--naranja-suave);
-    padding: 20px;
-    border: 1px solid var(--naranja-neutro);
-    height: 100%;
-    /*usar en el javascript: const altura = window.getComputedStyle(elementoOrigen).height; y luego eliminar esta linea*/
-}
-
-
-.badge {
-    background-color: var(--fondo-claro);
-    color: var(--azul-petroleo);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: bold;
-    width: fit-content;
-}
-
-.badge-solucion {
-    background-color: #D1E8FF;
-    color: #215175;
-}
-
-.badge-alerta {
-    background-color: #fedcdc;
-    color: #911919;
-}
-
-.hero-img {
-    width: 100%;
-    border-radius: 4px;
-    border: 5px solid var(--azul-acero);
-}
-
-/* =========================================
-   4.1. SECCION 1: CONFIGURACION Y GESTION
-   ========================================= */
-
-.seccion1 {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.info-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: var(--fondo-claro);
-    padding: 20px;
-}
-
-/* =========================================
-   4.2. SECCION 2: LOGISTICA Y PREPARACION
-   ========================================= */
-
-.columna-centro {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: space-between;
-}
-
-.info-hu15 {
-    background-color: var(--fondo-claro);
-    height: 100%;
-    padding: 20px;
-    border: 1px solid var(--azul-acero);
-    border-left: 5px solid var(--azul-petroleo);
-    transition: all 0.3s ease;
-    
-}
-
-.info-hu15:hover {
-    background-color: var(--azul-oscuro);
-    color: var(--fondo-claro);
-}
-
-.info-hu20 {
-    background-color: var(--fondo-claro);
-    height: 100%;
-    padding: 20px;
-    border: 1px solid var(--azul-acero);
-    border-right: 5px solid var(--azul-petroleo);
-    transition: all 0.3s ease;
-}
-
-.info-hu20:hover {
-    background-color: var(--azul-oscuro);
-    color: var(--fondo-claro);
-}
-
-.columna-hu15 {
-    background-color: var(--fondo-claro);
-    padding: 20px;
-    border: 1px solid var(--azul-acero);
-    border-left: 5px solid var(--azul-petroleo);
-}
-
-.grid-3-cols:has(.columna-hu15:hover) .info-hu15 {
-    background-color: var(--azul-oscuro);
-    color: var(--fondo-claro);
-}
-
-.columna-hu20 {
-    background-color: var(--fondo-claro);
-    padding: 20px;
-    border: 1px solid var(--azul-acero);
-    border-right: 5px solid var(--azul-petroleo);
-}
-
-.grid-3-cols:has(.columna-hu20:hover) .info-hu20 {
-    background-color: var(--azul-oscuro);
-    color: var(--fondo-claro);
-}
-
-.title-section2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
-    background-color: var(--azul-oscuro);
-    color: var(--fondo-claro);
-}
-
-/* =========================================
-   5. SECCIONES DE CONTENIDO (Grids 2/3, 3 y 1/3)
-   ========================================= */
+/* Grids Generales */
 .grid-2-3 {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    /* Una columna grande y otra lateral */
     gap: 5px;
     align-items: stretch;
 }
@@ -292,119 +144,15 @@ body {
 .grid-3-cols {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    /* Tres columnas */
 }
 
 .grid-1-3 {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    /* Lateral pequeña y principal grande */
     gap: 5px;
 }
 
-/* Banner de importancia (Sección 2) */
-.banner-importancia {
-    grid-column: 1 / -1;
-    /* Ocupa todo el ancho del grid superior */
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background-color: #FFF7ED;
-    border-left: 5px solid var(--naranja-acento);
-    padding: 20px;
-    margin-top: 5px;
-}
-
-/* =========================================
-   6. SECCIÓN 4: ACCESIBILIDAD E INCLUSIÓN (Pestañas)
-   ========================================= */
-.split-tabs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
-
-.viñetas-lista {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 5px;
-}
-
-.tab-btn {
-    padding: 12px 16px;
-    background-color: var(--fondo-claro);
-    border: 1px solid var(--gris-borde);
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.2s ease;
-}
-
-.tab-btn:hover {
-    background-color: var(--gris-borde);
-}
-
-.tab-btn.active {
-    background-color: var(--azul-petroleo);
-    color: var(--blanco);
-    border-color: var(--azul-petroleo);
-}
-
-.tabs-content-display {
-    background-color: var(--fondo-claro);
-    border: 1px solid var(--gris-borde);
-    padding: 20px;
-    min-height: 250px;
-}
-
-/* =========================================
-   7. SECCIÓN PRE-FOOTER (Testimonios y Contacto)
-   ========================================= */
-.pre-footer-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.container-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
-.testimonios-col {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.testimonios-lista {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 20px;
-    height: 100%;
-}
-
-.testimonio-card {
-    height: 100%;
-    background-color: var(--fondo-claro);
-    padding: 20px;
-    border-left: 4px solid var(--azul-petroleo);
-}
-
-.testimonio-card cite {
-    height: 100%;
-    display: block;
-    margin-top: 10px;
-    font-size: 0.9rem;
-    color: var(--azul-acero);
-    font-style: normal;
-    font-weight: bold;
-}
-
-/* Formulario de contacto */
+/* Formularios Generales */
 .form-landing {
     display: flex;
     flex-direction: column;
@@ -416,7 +164,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding: 10px ;
+    padding: 10px;
 }
 
 .form-group label {
@@ -425,7 +173,8 @@ body {
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
     padding: 10px;
     border: 1px solid var(--gris-borde);
     font-family: inherit;
@@ -446,57 +195,134 @@ body {
     background-color: var(--naranja-hover);
 }
 
-/* Información directa inferior */
-.contacto-info-directa {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 5px;
-    border-top: 1px solid var(--gris-borde);
-    align-items: center;
-}
-
-.info-item {
+.completo-ancho {
     display: flex;
     align-items: center;
-    gap: 8px;
-    color: var(--azul-acero);
+    justify-content: center;
+    margin-top: 10px;
+    padding: 12px;
+    width: 100%;
 }
 
 /* =========================================
-   8. PIE DE PÁGINA (Footer)
+   4. SECCIÓN HERO (Problemática vs Solución)
    ========================================= */
-.footer-principal {
-    text-align: center;
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.hero-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.solucion-col {
+    background-color: var(--fondo-blanco);
     padding: 20px;
-    background-color: var(--azul-oscuro);
-    color: var(--blanco);
-    font-size: 0.9rem;
+    border: 1px solid var(--azul-petroleo);
+    min-height: 100%;
 }
 
+.problematica-col {
+    background-color: var(--naranja-suave);
+    padding: 20px;
+    border: 1px solid var(--naranja-neutro);
+    height: 100%;
+}
+
+#word-sismolisto {
+    background-color: #F57A2D;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.parraf-one {
+    background-color: #d9e9fb;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.parraf-two {
+    background-color: #ffd8b8;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.badge {
+    background-color: var(--fondo-claro);
+    color: var(--azul-petroleo);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    width: fit-content;
+}
+
+.badge-solucion {
+    background-color: #D1E8FF;
+    color: #215175;
+    margin-bottom: 10px;
+}
+
+.badge-alerta {
+    background-color: #fedcdc;
+    color: #911919;
+}
+
+.hero-img {
+    width: 100%;
+    border-radius: 4px;
+    border: 5px solid var(--azul-acero);
+}
+
+.hero-vid {
+    display:block;
+    height:auto;
+    aspect-ratio:16/9;
+    width: 100%;
+    object-fit:contain;
+    border-radius: 4px;
+    border: 5px solid var(--naranja-claro);
+}
 
 /* =========================================
-   ESTILOS ESPECÍFICOS PARA LA SECCIÓN 1
+   5. SECCIÓN 1: CONFIGURACIÓN Y GESTIÓN
    ========================================= */
-
-/* Contenedor tipo marco de dispositivo (PC/Celular) */
-.dispositivo-marco {
-    background-color: var(--blanco);
-    border: 4px solid var(--azul-oscuro);
-    border-radius: 12px;
-    border-color: black;
-    box-shadow: 0 10px 25px rgba(110, 110, 110, 0.08);
-    height: 100%;
-    justify-content: space-between;
-    padding: 15px;
+.seccion1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .seccion1 .funcionalidad-wrapper {
     height: 100%;
     display: flex;
     flex-direction: column;
+}
 
+.info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--fondo-claro);
+    padding: 20px;
+}
+
+/* Contenedor tipo marco de dispositivo (PC/Celular) */
+.dispositivo-marco {
+    background-color: var(--blanco);
+    border: 4px solid #000000;
+    box-shadow: 0 10px 25px rgba(110, 110, 110, 0.08);
+    height: 100%;
+    justify-content: space-between;
+    padding: 15px;
 }
 
 /* Barra superior de pasos */
@@ -525,9 +351,11 @@ body {
     color: var(--blanco);
 }
 
-/* Manejo de visibilidad de los formularios internos del simulador */
+.steps-words {
+    margin-left: 10px;
+}
+
 .step-form {
-    /* Oculta los pasos por defecto */
     display: none;
     flex-direction: column;
     gap: 12px;
@@ -535,7 +363,6 @@ body {
 
 .step-form.active {
     display: flex;
-    /* Muestra el paso activo actual */
 }
 
 .step-form h3 {
@@ -544,7 +371,6 @@ body {
     margin-bottom: 5px;
 }
 
-/* Estilos visuales para los elementos internos de simulación */
 .checkbox-group {
     display: flex;
     flex-direction: column;
@@ -585,7 +411,6 @@ body {
 
 .mapa-simulado {
     position: relative;
-    /* Clave para que el icono absoluto se posicione dentro de este cuadro */
     overflow: hidden;
     border-radius: 6px;
 }
@@ -602,15 +427,11 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* Centra el icono exactamente en medio */
     color: #E53E3E;
-    /* Rojo de alerta para destacar */
     font-size: 2.5rem;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    /* Sombra para darle profundidad */
 }
 
-/* Tarjetas de acciones del Paso 6 */
 .tarjetas-acciones-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -633,7 +454,6 @@ body {
     margin-bottom: 5px;
 }
 
-/* Área de carga simulada del Paso 8 */
 .upload-simulado {
     background-color: var(--fondo-claro);
     border: 2px dashed var(--azul-acero);
@@ -644,7 +464,6 @@ body {
     font-size: 0.85rem;
 }
 
-/* Resumen Dashboard del Paso 9 */
 .resumen-dashboard {
     display: flex;
     flex-direction: column;
@@ -665,10 +484,356 @@ body {
 }
 
 /* =========================================
-   ESTILOS ESPECÍFICOS PARA LA SECCIÓN 3 (MODO EMERGENCIA)
+   6. SECCIÓN 2: LOGÍSTICA Y PREPARACIÓN (HU-015 / HU-020)
    ========================================= */
+.title-section2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--azul-oscuro);
+    color: var(--fondo-claro);
+}
 
-/* Marco del dispositivo adaptado al Modo Emergencia (Fondo rojo suave y bordes) */
+.info-hu15, .info-hu20 {
+    background-color: var(--fondo-claro);
+    height: 100%;
+    padding: 20px;
+    border: 1px solid var(--azul-acero);
+    border-left: 5px solid var(--azul-petroleo);
+    transition: all 0.3s ease;
+}
+
+.info-hu15:hover, .info-hu20:hover {
+    background-color: var(--azul-oscuro);
+    color: var(--fondo-claro);
+}
+
+.columna-hu15, .columna-hu20 {
+    background-color: var(--fondo-claro);
+    padding: 20px;
+    border: 1px solid var(--azul-acero);
+    border-left: 5px solid var(--azul-petroleo);
+    min-width: 0;
+}
+
+.landing-section:has(.columna-hu15:hover) .info-hu15,
+.landing-section:has(.columna-hu20:hover) .info-hu20 {
+    background-color: var(--azul-oscuro);
+    color: var(--fondo-claro);
+}
+
+.banner-importancia {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #FFF7ED;
+    border-left: 5px solid var(--naranja-acento);
+    padding: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Paneles HU */
+.hu-panel {
+    background: var(--fondo);
+    border: 1px solid var(--gris-borde);
+    border-radius: 14px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.hu-panel p,
+.hu-panel h2,
+.hu-panel h3,
+.hu-panel label,
+.hu-panel legend {
+    overflow-wrap: break-word;
+}
+
+.hu-panel-encabezado {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    padding-bottom: .8rem;
+    border-bottom: 2px solid var(--naranja-acento);
+}
+
+.hu-panel-encabezado .hu-icono-caja { color: var(--naranja-acento); }
+.hu-panel-encabezado .hu-icono { width: 1.8rem; height: 1.8rem; }
+.hu-panel-titulo { font-size: 1.15rem; color: var(--azul-oscuro); margin: 0; line-height: 1.3; }
+
+.hu-icono-caja {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    line-height: 0;
+}
+
+.hu-icono {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.hu-panel a:focus-visible,
+.hu-panel button:focus-visible,
+.hu-panel input:focus-visible,
+.hu-panel select:focus-visible {
+    outline: 3px solid var(--azul-cielo);
+    outline-offset: 2px;
+    border-radius: 6px;
+}
+
+/* HU-015: Mochila de Emergencia */
+.hu15-hogar {
+    border: 1px solid var(--gris-borde);
+    border-radius: 10px;
+    padding: .9rem 1rem 1rem;
+    margin: 0;
+    background: var(--fondo-blanco);
+}
+
+.hu15-hogar legend {
+    font-weight: 700;
+    font-size: .88rem;
+    color: var(--azul-petroleo);
+    padding: 0 .35rem;
+}
+
+.hu15-checks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem 1.2rem;
+    margin-top: .6rem;
+}
+
+.hu15-check {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    font-size: .88rem;
+    color: var(--azul-acero);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.hu15-check input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--naranja-acento);
+    cursor: pointer;
+}
+
+.hu15-nota-agua {
+    margin: .7rem 0 0;
+    font-size: .82rem;
+    color: var(--azul-petroleo);
+    background: var(--fondo-claro);
+    border-left: 3px solid var(--azul-cielo);
+    padding: .5rem .7rem;
+    border-radius: 0 6px 6px 0;
+}
+
+.hu15-subtitulo { font-size: .95rem; color: var(--azul-oscuro); margin: .2rem 0 0; }
+.hu15-fuente { margin: 0; font-size: .78rem; color: var(--azul-acero); font-style: italic; }
+.hu15-form { display: flex; flex-direction: column; gap: .75rem; }
+.hu15-campo { display: flex; flex-direction: column; gap: .25rem; }
+.hu15-campo label { font-size: .82rem; font-weight: 600; color: var(--azul-acero); }
+.hu15-campo input {
+    border: 1px solid var(--gris-borde);
+    border-radius: 8px;
+    padding: .55rem .7rem;
+    font-size: .9rem;
+    font-family: inherit;
+    color: var(--azul-oscuro);
+    background: var(--blanco);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.hu15-campo input[aria-invalid="true"] {
+    border-color: var(--estado-vencido);
+    background: var(--estado-vencido-fondo);
+}
+
+.hu15-campo-doble { display: grid; grid-template-columns: 1fr 1.2fr; gap: .75rem; }
+.hu15-error { font-size: .78rem; color: var(--estado-vencido); font-weight: 600; }
+
+.hu15-btn-agregar, .hu20-btn-principal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .45rem;
+    background: var(--naranja-acento);
+    color: var(--blanco);
+    border: none;
+    border-radius: 8px;
+    padding: .7rem 1.1rem;
+    font-size: .92rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    min-height: 44px;
+    transition: background .18s ease;
+}
+
+.hu15-btn-agregar:hover, .hu20-btn-principal:hover { background: var(--naranja-hover); }
+.hu15-btn-agregar .hu-icono, .hu20-btn-principal .hu-icono { width: 1.25rem; height: 1.25rem; }
+
+.hu15-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: .55rem;
+}
+
+.hu15-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "icono cuerpo quitar" "icono badge badge";
+    align-items: center;
+    gap: .35rem .7rem;
+    background: var(--fondo-blanco);
+    border: 1px solid var(--gris-borde);
+    border-radius: 10px;
+    padding: .65rem .8rem;
+}
+
+.hu15-item-icono { grid-area: icono; color: var(--azul-petroleo); }
+.hu15-item-icono .hu-icono { width: 1.65rem; height: 1.65rem; }
+.hu15-item-cuerpo { grid-area: cuerpo; min-width: 0; }
+.hu15-item-nombre { margin: 0; font-weight: 700; font-size: .9rem; color: var(--azul-oscuro); }
+.hu15-item-detalle { margin: .1rem 0 0; font-size: .8rem; color: var(--azul-acero); }
+.hu15-item-origen { margin: .1rem 0 0; font-size: .74rem; color: var(--azul-neutro); font-style: italic; }
+
+.hu15-badge {
+    grid-area: badge;
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    font-size: .74rem;
+    font-weight: 700;
+    padding: .25rem .55rem;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.hu15-badge .hu-icono { width: .95rem; height: .95rem; stroke-width: 2.3; }
+.hu15-badge--vigente { color: var(--estado-vigente); background: var(--estado-vigente-fondo); }
+.hu15-badge--por-vencer { color: var(--estado-porvencer); background: var(--estado-porvencer-fondo); }
+.hu15-badge--vencido { color: var(--estado-vencido); background: var(--estado-vencido-fondo); }
+.hu15-badge--sin-fecha { color: var(--azul-acero); background: var(--gris-borde); }
+
+.hu15-item-quitar {
+    grid-area: quitar;
+    background: transparent;
+    border: none;
+    color: var(--azul-acero);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    min-height: 32px;
+    border-radius: 50%;
+}
+
+.hu15-item-quitar:hover { background: var(--estado-vencido-fondo); color: var(--estado-vencido); }
+.hu15-quitar-icono .hu-icono { width: 1.1rem; height: 1.1rem; }
+.hu15-resumen { margin: 0; font-size: .82rem; font-weight: 600; color: var(--azul-petroleo); }
+
+/* HU-020: Simulacro Exprés */
+.hu20-cronometro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .15rem;
+    background: var(--azul-oscuro);
+    border-radius: 12px;
+    padding: 1.1rem 1rem;
+}
+
+.hu20-cron-icono { color: var(--naranja-acento); }
+.hu20-cron-icono .hu-icono { width: 1.9rem; height: 1.9rem; }
+.hu20-cron-tiempo {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--blanco);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: .04em;
+    line-height: 1.1;
+}
+
+.hu20-cron-unidad {
+    font-size: .74rem;
+    color: var(--gris-borde);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+
+.hu20-controles { display: flex; flex-direction: column; gap: .5rem; }
+.hu20-btn-principal--activo { background: var(--azul-petroleo); }
+.hu20-btn-principal--activo:hover { background: var(--azul-oscuro); }
+
+.hu20-btn-cancelar {
+    background: transparent;
+    border: 1px solid var(--gris-borde);
+    color: var(--azul-acero);
+    border-radius: 8px;
+    padding: .55rem 1rem;
+    font-size: .85rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    min-height: 40px;
+}
+
+.hu20-btn-cancelar:hover { border-color: var(--estado-vencido); color: var(--estado-vencido); }
+
+.hu20-tarjeta {
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+    border-left: 5px solid var(--naranja-acento);
+    background: var(--naranja-suave);
+}
+
+.hu20-tarjeta--final { border-left-color: var(--estado-vigente); background: var(--estado-vigente-fondo); }
+.hu20-tarjeta--cancelado { border-left-color: var(--azul-acero); background: var(--fondo-claro); }
+
+.hu20-paso-etiqueta {
+    margin: 0 0 .3rem;
+    font-size: .74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: var(--naranja-hover);
+}
+
+.hu20-paso-titulo { margin: 0; font-size: 1.05rem; color: var(--azul-oscuro); line-height: 1.3; }
+.hu20-paso-detalle { margin: .4rem 0 0; font-size: .88rem; color: var(--azul-acero); line-height: 1.5; }
+.hu20-paso-nota { margin: .5rem 0 0; font-size: .78rem; font-style: italic; color: var(--azul-petroleo); }
+
+.hu20-progreso { display: flex; gap: .35rem; margin-top: .9rem; }
+.hu20-progreso-punto { flex: 1; height: 6px; border-radius: 999px; background: rgba(20, 42, 61, .15); }
+.hu20-progreso-punto--hecho { background: var(--naranja-acento); }
+
+/* =========================================
+   7. SECCIÓN 3: RESPUESTA INMEDIATA Y MODO EMERGENCIA
+   ========================================= */
 .marco-emergencia {
     background-color: #1e2452;
     border: 4px solid #000000;
@@ -685,7 +850,6 @@ body {
     color: white;
 }
 
-/* Control de visibilidad de pasos de emergencia */
 .step-emergencia {
     display: none;
     flex-direction: column;
@@ -696,7 +860,7 @@ body {
     display: flex;
 }
 
-/* Paso 1: Pantalla de Activación */
+/* Paso 1 */
 .pantalla-activacion {
     text-align: center;
     display: flex;
@@ -732,16 +896,7 @@ body {
     transform: scale(1.02);
 }
 
-.completo-ancho {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    padding: 12px;
-    width: 100%;
-}
-
-/* Paso 3: Botones del reporte "¿Cómo estás?" */
+/* Paso 3 */
 .reporte-estado-inicial {
     text-align: center;
     display: flex;
@@ -770,19 +925,11 @@ body {
     transition: opacity 0.2s;
 }
 
-.btn-estado:hover {
-    opacity: 0.9;
-}
+.btn-estado:hover { opacity: 0.9; }
+.btn-estoy-bien { background-color: #38A169; }
+.btn-necesito-ayuda { background-color: #E53E3E; }
 
-.btn-estoy-bien {
-    background-color: #38A169; /* Verde éxito */
-}
-
-.btn-necesito-ayuda {
-    background-color: #E53E3E; /* Rojo alerta */
-}
-
-/* Paso 4: Alerta Offline */
+/* Paso 4 */
 .alerta-offline-box {
     display: flex;
     align-items: flex-start;
@@ -801,7 +948,7 @@ body {
     border-radius: 6px;
 }
 
-/* Paso 5: Lista y badges de estado del hogar */
+/* Paso 5 */
 .integrantes-estado-lista {
     display: flex;
     flex-direction: column;
@@ -823,7 +970,7 @@ body {
     display: flex;
     flex-direction: column;
     font-size: 0.9rem;
-    color: var(--azul-petroleo)
+    color: var(--azul-petroleo);
 }
 
 .badge-estado {
@@ -846,7 +993,7 @@ body {
     align-items: center;
 }
 
-/* Paso 6: Mensajes predefinidos y Notificación PUSH */
+/* Paso 6 */
 .radio-mensajes-grupo {
     display: flex;
     flex-direction: column;
@@ -864,7 +1011,7 @@ body {
     border: 1px solid var(--gris-borde);
     font-size: 0.85rem;
     cursor: pointer;
-    color: var(--azul-petroleo)
+    color: var(--azul-petroleo);
 }
 
 .notificacion-push-card {
@@ -883,7 +1030,7 @@ body {
     color: var(--naranja-acento);
 }
 
-/* Paso 7: Protocolo Post-Sismo */
+/* Paso 7 */
 .header-salida-emergencia {
     text-align: center;
     color: #0fa158;
@@ -902,8 +1049,7 @@ body {
     list-style-type: none;
     margin: 10px;
     color: var(--azul-petroleo);
-    font-weight
-    : bold;
+    font-weight: bold;
 }
 
 .card {
@@ -913,7 +1059,7 @@ body {
     border-left: 4px solid var(--azul-petroleo);
 }
 
-/* BARRA DE NAVEGACIÓN INFERIOR (Bottom Navigation Bar) */
+/* Bottom Nav */
 .bottom-nav-emergencia {
     display: flex;
     justify-content: space-around;
@@ -951,7 +1097,9 @@ body {
     border: 1px solid #FEB2B2;
 }
 
-/*SECCIÓN 4: ACCESIBILIDAD E INCLUSIÓN*/
+/* =========================================
+   8. SECCIÓN 4: ACCESIBILIDAD E INCLUSIÓN
+   ========================================= */
 .seccion4 {
     display: flex;
     flex-wrap: wrap;
@@ -1041,13 +1189,8 @@ body {
     font-weight: bold;
 }
 
-.acc-etiqueta-alerta {
-    background-color: #911919;
-}
-
-.acc-etiqueta-ok {
-    background-color: #276749;
-}
+.acc-etiqueta-alerta { background-color: #911919; }
+.acc-etiqueta-ok { background-color: #276749; }
 
 .acc-etiqueta .material-symbols-outlined {
     color: var(--blanco);
@@ -1083,14 +1226,8 @@ body {
     text-align: center;
 }
 
-.acc-muestra-normal {
-    font-size: 0.85rem;
-}
-
-.acc-muestra-ampliado {
-    font-size: 1.3rem;
-    font-weight: bold;
-}
+.acc-muestra-normal { font-size: 0.85rem; }
+.acc-muestra-ampliado { font-size: 1.3rem; font-weight: bold; }
 
 .acc-muestra-contraste {
     background-color: #000000;
@@ -1123,590 +1260,120 @@ body {
     padding-left: 18px;
 }
 
-@media screen and (max-width: 800px) {
-    .seccion4 .funcionalidad-wrapper,
-    .seccion4 .info-wrapper {
-        width: 100%;
-    }
-
-    .acc-tarjeta,
-    .acc-guia {
-        width: 98%;
-    }
+/* Pestañas alternativas */
+.split-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
 
-#word-sismolisto{
-    background-color:#F57A2D;
-    border-radius: 10px;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-.parraf-one{
-    background-color: #d9e9fb;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    padding: 5px;
-}
-
-.parraf-two{
-    background-color: #ffd8b8;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 5px;
-}
-
-.badge-solucion{
-    margin-bottom: 10px;
-}
-
-.hero-vid{
-    width: 100%;
-    border-radius: 4px;
-    border: 5px solid var(--naranja-claro);
-    height: 400px;
-}
-
-.steps-words{
-    margin-left: 10px;
-}
-
-
-
-
-
-/* =========================================================================
-   SECCIÓN 2 · FUNCIONALIDADES HU-015 Y HU-020
-   HU-015 Lista sugerida para la mochila · HU-018 Control de vencimientos
-   HU-020 Simulacro exprés cronometrado
-   ========================================================================= */
-
-:root {
-    --estado-vigente: #1B7A4B;
-    --estado-vigente-fondo: #E6F4EC;
-    --estado-porvencer: #8A5A00;
-    --estado-porvencer-fondo: #FFF4D6;
-    --estado-vencido: #A32020;
-    --estado-vencido-fondo: #FDE8E8;
-}
-
-/* Permite que las columnas del grid de la seccion 2 bajen de su ancho
-   minimo de contenido. Sin esto, el cronometro y los botones de estos
-   paneles ensanchan la rejilla y aparece scroll horizontal en tablet. */
-.columna-hu15,
-.columna-hu20 {
-    min-width: 0;
-}
-
-/* Los textos largos se parten por palabra, no por caracter. */
-.hu-panel p,
-.hu-panel h2,
-.hu-panel h3,
-.hu-panel label,
-.hu-panel legend {
-    overflow-wrap: break-word;
-}
-
-/* Iconos SVG incrustados: no dependen de ninguna fuente ni archivo
-   externo, de modo que se ven igual sin conexion. */
-.hu-icono-caja {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex: none;
-    line-height: 0;
-}
-
-.hu-icono {
-    width: 1.5rem;
-    height: 1.5rem;
-    display: block;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.9;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.hu-panel {
-    background: var(--fondo);
-    border: 1px solid var(--gris-borde);
-    border-radius: 14px;
-    padding: 1.5rem;
+.viñetas-lista {
+    list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    height: 100%;
-    box-sizing: border-box;
+    gap: 10px;
+    margin: 5px;
 }
 
-.hu-panel-encabezado {
-    display: flex;
-    align-items: center;
-    gap: .6rem;
-    padding-bottom: .8rem;
-    border-bottom: 2px solid var(--naranja-acento);
-}
-
-.hu-panel-encabezado .hu-icono-caja {
-    color: var(--naranja-acento);
-}
-
-.hu-panel-encabezado .hu-icono {
-    width: 1.8rem;
-    height: 1.8rem;
-}
-
-.hu-panel-titulo {
-    font-size: 1.15rem;
-    color: var(--azul-oscuro);
-    margin: 0;
-    line-height: 1.3;
-}
-
-/* Foco visible en todos los controles de estos dos paneles.
-   Criterio de accesibilidad del capítulo 4: navegación por teclado. */
-.hu-panel a:focus-visible,
-.hu-panel button:focus-visible,
-.hu-panel input:focus-visible,
-.hu-panel select:focus-visible {
-    outline: 3px solid var(--azul-cielo);
-    outline-offset: 2px;
-    border-radius: 6px;
-}
-
-/* ---------- HU-015 · composición del hogar ---------- */
-
-.hu15-hogar {
+.tab-btn {
+    padding: 12px 16px;
+    background-color: var(--fondo-claro);
     border: 1px solid var(--gris-borde);
-    border-radius: 10px;
-    padding: .9rem 1rem 1rem;
-    margin: 0;
-    background: var(--fondo-blanco);
-}
-
-.hu15-hogar legend {
-    font-weight: 700;
-    font-size: .88rem;
-    color: var(--azul-petroleo);
-    padding: 0 .35rem;
-}
-
-.hu15-checks {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .4rem 1.2rem;
-    margin-top: .6rem;
-}
-
-.hu15-check {
-    display: flex;
-    align-items: center;
-    gap: .4rem;
-    font-size: .88rem;
-    color: var(--azul-acero);
     cursor: pointer;
     font-weight: 500;
+    transition: all 0.2s ease;
 }
 
-.hu15-check input {
-    width: 18px;
-    height: 18px;
-    accent-color: var(--naranja-acento);
-    cursor: pointer;
-}
+.tab-btn:hover { background-color: var(--gris-borde); }
 
-.hu15-nota-agua {
-    margin: .7rem 0 0;
-    font-size: .82rem;
-    color: var(--azul-petroleo);
-    background: var(--fondo-claro);
-    border-left: 3px solid var(--azul-cielo);
-    padding: .5rem .7rem;
-    border-radius: 0 6px 6px 0;
-}
-
-/* ---------- HU-015 · formulario ---------- */
-
-.hu15-subtitulo {
-    font-size: .95rem;
-    color: var(--azul-oscuro);
-    margin: .2rem 0 0;
-}
-
-.hu15-fuente {
-    margin: 0;
-    font-size: .78rem;
-    color: var(--azul-acero);
-    font-style: italic;
-}
-
-.hu15-form {
-    display: flex;
-    flex-direction: column;
-    gap: .75rem;
-}
-
-.hu15-campo {
-    display: flex;
-    flex-direction: column;
-    gap: .25rem;
-}
-
-.hu15-campo label {
-    font-size: .82rem;
-    font-weight: 600;
-    color: var(--azul-acero);
-}
-
-.hu15-campo input {
-    border: 1px solid var(--gris-borde);
-    border-radius: 8px;
-    padding: .55rem .7rem;
-    font-size: .9rem;
-    font-family: inherit;
-    color: var(--azul-oscuro);
-    background: var(--blanco);
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.hu15-campo input[aria-invalid="true"] {
-    border-color: var(--estado-vencido);
-    background: var(--estado-vencido-fondo);
-}
-
-.hu15-campo-doble {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: .75rem;
-}
-
-.hu15-error {
-    font-size: .78rem;
-    color: var(--estado-vencido);
-    font-weight: 600;
-}
-
-.hu15-btn-agregar .hu-icono,
-.hu20-btn-principal .hu-icono {
-    width: 1.25rem;
-    height: 1.25rem;
-}
-
-.hu15-btn-agregar,
-.hu20-btn-principal {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: .45rem;
-    background: var(--naranja-acento);
+.tab-btn.active {
+    background-color: var(--azul-petroleo);
     color: var(--blanco);
-    border: none;
-    border-radius: 8px;
-    padding: .7rem 1.1rem;
-    font-size: .92rem;
-    font-weight: 700;
-    font-family: inherit;
-    cursor: pointer;
-    min-height: 44px;
-    transition: background .18s ease;
+    border-color: var(--azul-petroleo);
 }
 
-.hu15-btn-agregar:hover,
-.hu20-btn-principal:hover {
-    background: var(--naranja-hover);
+.tabs-content-display {
+    background-color: var(--fondo-claro);
+    border: 1px solid var(--gris-borde);
+    padding: 20px;
+    min-height: 250px;
 }
 
-/* ---------- HU-015 · lista y HU-018 · badges ---------- */
-
-.hu15-lista {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+/* =========================================
+   9. SECCIÓN PRE-FOOTER, CONTACTO Y FOOTER
+   ========================================= */
+.pre-footer-grid {
     display: flex;
     flex-direction: column;
-    gap: .55rem;
+    gap: 40px;
 }
 
-/* El badge va en su propia fila para que el nombre del articulo
-   disponga de todo el ancho de la columna, que es estrecha. */
-.hu15-item {
+.container-split {
     display: grid;
-    grid-template-columns: auto 1fr auto;
-    grid-template-areas:
-        "icono cuerpo quitar"
-        "icono badge  badge";
-    align-items: center;
-    gap: .35rem .7rem;
-    background: var(--fondo-blanco);
-    border: 1px solid var(--gris-borde);
-    border-radius: 10px;
-    padding: .65rem .8rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
 }
 
-.hu15-item-icono {
-    color: var(--azul-petroleo);
-}
-
-.hu15-item-icono .hu-icono {
-    width: 1.65rem;
-    height: 1.65rem;
-}
-
-.hu15-item-cuerpo {
-    min-width: 0;
-}
-
-.hu15-item-nombre {
-    margin: 0;
-    font-weight: 700;
-    font-size: .9rem;
-    color: var(--azul-oscuro);
-}
-
-.hu15-item-detalle {
-    margin: .1rem 0 0;
-    font-size: .8rem;
-    color: var(--azul-acero);
-}
-
-.hu15-item-origen {
-    margin: .1rem 0 0;
-    font-size: .74rem;
-    color: var(--azul-neutro);
-    font-style: italic;
-}
-
-/* El estado nunca se comunica solo con color: lleva icono y etiqueta. */
-.hu15-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: .25rem;
-    font-size: .74rem;
-    font-weight: 700;
-    padding: .25rem .55rem;
-    border-radius: 999px;
-    white-space: nowrap;
-}
-
-.hu15-badge .hu-icono {
-    width: .95rem;
-    height: .95rem;
-    stroke-width: 2.3;
-}
-
-.hu15-badge--vigente {
-    color: var(--estado-vigente);
-    background: var(--estado-vigente-fondo);
-}
-
-.hu15-badge--por-vencer {
-    color: var(--estado-porvencer);
-    background: var(--estado-porvencer-fondo);
-}
-
-.hu15-badge--vencido {
-    color: var(--estado-vencido);
-    background: var(--estado-vencido-fondo);
-}
-
-.hu15-badge--sin-fecha {
-    color: var(--azul-acero);
-    background: var(--gris-borde);
-}
-
-.hu15-quitar-icono .hu-icono {
-    width: 1.1rem;
-    height: 1.1rem;
-}
-
-.hu15-item-quitar {
-    background: transparent;
-    border: none;
-    color: var(--azul-acero);
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 32px;
-    min-height: 32px;
-    border-radius: 50%;
-}
-
-.hu15-item-quitar:hover {
-    background: var(--estado-vencido-fondo);
-    color: var(--estado-vencido);
-}
-
-.hu15-item-icono {
-    grid-area: icono;
-}
-
-.hu15-item-cuerpo {
-    grid-area: cuerpo;
-}
-
-.hu15-badge {
-    grid-area: badge;
-    justify-self: start;
-}
-
-.hu15-item-quitar {
-    grid-area: quitar;
-}
-
-.hu15-resumen {
-    margin: 0;
-    font-size: .82rem;
-    font-weight: 600;
-    color: var(--azul-petroleo);
-}
-
-/* ---------- HU-020 · cronómetro ---------- */
-
-.hu20-cronometro {
+.testimonios-col {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+}
+
+.testimonios-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    height: 100%;
+}
+
+.testimonio-card {
+    height: 100%;
+    background-color: var(--fondo-claro);
+    padding: 20px;
+    border-left: 4px solid var(--azul-petroleo);
+}
+
+.testimonio-card cite {
+    height: 100%;
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--azul-acero);
+    font-style: normal;
+    font-weight: bold;
+}
+
+.contacto-info-directa {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 5px;
+    border-top: 1px solid var(--gris-borde);
     align-items: center;
-    gap: .15rem;
-    background: var(--azul-oscuro);
-    border-radius: 12px;
-    padding: 1.1rem 1rem;
 }
 
-.hu20-cron-icono {
-    color: var(--naranja-acento);
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--azul-acero);
 }
 
-.hu20-cron-icono .hu-icono {
-    width: 1.9rem;
-    height: 1.9rem;
-}
-
-.hu20-cron-tiempo {
-    font-size: 2.6rem;
-    font-weight: 700;
+.footer-principal {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--azul-oscuro);
     color: var(--blanco);
-    font-variant-numeric: tabular-nums;
-    letter-spacing: .04em;
-    line-height: 1.1;
+    font-size: 0.9rem;
 }
 
-.hu20-cron-unidad {
-    font-size: .74rem;
-    color: var(--gris-borde);
-    text-transform: uppercase;
-    letter-spacing: .08em;
-}
-
-.hu20-controles {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-}
-
-.hu20-btn-principal--activo {
-    background: var(--azul-petroleo);
-}
-
-.hu20-btn-principal--activo:hover {
-    background: var(--azul-oscuro);
-}
-
-.hu20-btn-cancelar {
-    background: transparent;
-    border: 1px solid var(--gris-borde);
-    color: var(--azul-acero);
-    border-radius: 8px;
-    padding: .55rem 1rem;
-    font-size: .85rem;
-    font-weight: 600;
-    font-family: inherit;
-    cursor: pointer;
-    min-height: 40px;
-}
-
-.hu20-btn-cancelar:hover {
-    border-color: var(--estado-vencido);
-    color: var(--estado-vencido);
-}
-
-/* ---------- HU-020 · tarjeta de pasos ---------- */
-
-.hu20-tarjeta {
-    border-radius: 12px;
-    padding: 1rem 1.1rem;
-    border-left: 5px solid var(--naranja-acento);
-    background: var(--naranja-suave);
-}
-
-.hu20-tarjeta--final {
-    border-left-color: var(--estado-vigente);
-    background: var(--estado-vigente-fondo);
-}
-
-.hu20-tarjeta--cancelado {
-    border-left-color: var(--azul-acero);
-    background: var(--fondo-claro);
-}
-
-.hu20-paso-etiqueta {
-    margin: 0 0 .3rem;
-    font-size: .74rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .07em;
-    color: var(--naranja-hover);
-}
-
-.hu20-paso-titulo {
-    margin: 0;
-    font-size: 1.05rem;
-    color: var(--azul-oscuro);
-    line-height: 1.3;
-}
-
-.hu20-paso-detalle {
-    margin: .4rem 0 0;
-    font-size: .88rem;
-    color: var(--azul-acero);
-    line-height: 1.5;
-}
-
-.hu20-paso-nota {
-    margin: .5rem 0 0;
-    font-size: .78rem;
-    font-style: italic;
-    color: var(--azul-petroleo);
-}
-
-.hu20-progreso {
-    display: flex;
-    gap: .35rem;
-    margin-top: .9rem;
-}
-
-.hu20-progreso-punto {
-    flex: 1;
-    height: 6px;
-    border-radius: 999px;
-    background: rgba(20, 42, 61, .15);
-}
-
-.hu20-progreso-punto--hecho {
-    background: var(--naranja-acento);
-}
-
-/* ---------- Responsive de los dos paneles ---------- */
-
+/* =========================================
+   10. MEDIA QUERIES (RESPONSIVE)
+   ========================================= */
 @media screen and (max-width: 1024px) {
-
     .hu-panel {
         padding: 1.2rem;
     }
@@ -1717,16 +1384,22 @@ body {
 }
 
 @media screen and (max-width: 800px) {
+    .seccion4 .funcionalidad-wrapper,
+    .seccion4 .info-wrapper {
+        width: 100%;
+    }
+
+    .acc-tarjeta,
+    .acc-guia {
+        width: 98%;
+    }
 
     .hu15-campo-doble {
         grid-template-columns: 1fr;
     }
-
-
 }
 
 @media screen and (max-width: 480px) {
-
     .hu-panel {
         padding: 1rem;
         border-radius: 10px;
@@ -1739,6 +1412,4 @@ body {
     .hu20-cron-tiempo {
         font-size: 2rem;
     }
-
-
 }

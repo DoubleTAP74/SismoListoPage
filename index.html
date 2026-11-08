@@ -18,20 +18,27 @@
 
     <!-- CABECERA Y NAVEGACIÓN -->
     <header class="header-principal">
-        <nav class="nav-container">
+        <button id="boton-menu" class="hamburguesa" type="button" aria-controls="navegacion" aria-expanded="false"
+            aria-label="Abrir menú">
+            <span class="lineas" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span id="texto-menu">Menú</span>
+        </button>
+        <div class="nav-container">
             <div class="logo">
                 <span class="material-symbols-outlined">shield</span>
                 <span>SismoListo</span>
             </div>
-            <!-- Botón de acceso rápido al Modo Emergencia exigido por la HU-026 -->
-            <a href="#seccion-configuracioninicial-gestionhogar" class="nav-link">Configuración</a>
-            <a href="#seccion-logistica-preparacionpreventiva" class="nav-link">Preparación</a>
-            <a href="#seccion-emergencia-respuestainmediata" class="nav-link btn-emergencia-alerta principal">Modo
-                Emergencia</a>
-            <a href="#seccion-accesibilidad-inclusion" class="nav-link">Accesibilidad</a>
-            <a href="#seccion-contacto-testimonios" class="nav-link">Testimonios</a>
-            <a href="#seccion-contacto-testimonios" class="nav-link">Contactenos</a>
-        </nav>
+            <nav id="navegacion" class="navegacion-principal" aria-label="Navegación principal">
+                <a href="#seccion-hero" class="nav-link">Inicio</a>
+                <a href="#seccion-configuracioninicial-gestionhogar" class="nav-link">Configuración</a>
+                <a href="#seccion-logistica-preparacionpreventiva" class="nav-link">Preparación</a>
+                <a href="#seccion-emergencia-respuestainmediata" class="nav-link btn-emergencia-alerta principal">Modo
+                    Emergencia</a>
+                <a href="#seccion-accesibilidad-inclusion" class="nav-link">Accesibilidad</a>
+                <a href="#seccion-contacto-testimonios" class="nav-link">Testimonios</a>
+                <a href="#seccion-contacto-testimonios" class="nav-link">Contactenos</a>
+            </nav>
+        </div>
     </header>
 
     <!-- SECCIÓN HERO: Problemática y Solución -->
@@ -78,18 +85,17 @@
                 <div class="dispositivo-marco">
 
                     <!-- Barra de progreso superior con los pasos de las 10 HUs -->
-                    <div class="pasos-barra">
-                        <span class="paso-item active">1. Cuenta</span>
-                        <span class="paso-item">2. Vivienda</span>
-                        <span class="paso-item">3. Integrantes</span>
-                        <span class="paso-item">4. Código</span>
-                        <span class="paso-item">5. Roles</span>
-                        <span class="paso-item">6. Acciones</span>
-                        <span class="paso-item">7. Encuentro</span>
-                        <span class="paso-item">8. Zonas</span>
-                        <span class="paso-item">9. Resumen</span>
+                    <div class="pasos-barra" id="Items">
+                        <button type="button" class="paso-item active">1. Cuenta</button>
+                        <button type="button" class="paso-item">2. Vivienda</button>
+                        <button type="button" class="paso-item">3. Integrantes</button>
+                        <button type="button" class="paso-item">4. Código</button>
+                        <button type="button" class="paso-item">5. Roles</button>
+                        <button type="button" class="paso-item">6. Acciones</button>
+                        <button type="button" class="paso-item">7. Encuentro</button>
+                        <button type="button" class="paso-item">8. Zonas</button>
+                        <button type="button" class="paso-item">9. Resumen</button>
                     </div>
-
                     <!-- Contenedor de los formularios de los pasos (Simulación visual) -->
                     <div class="pasos-contenido">
 
@@ -121,7 +127,7 @@
                                 <div class="form-group">
                                     <label for="reg-distrito">Distrito donde vives (Lima o Callao):</label>
                                     <select id="reg-distrito" required>
-                                        <option>Elige tu distrito...</option>
+                                        <option value="" disabled selected>Elige tu distrito...</option>
                                         <option>San Miguel</option>
                                         <option>Callao</option>
                                         <option>Ventanilla</option>
@@ -129,9 +135,9 @@
                                     </select>
                                     <label>Marca las características de tu vivienda:</label>
                                     <div class="checkbox-group">
-                                        <label><input type="checkbox" required> Tiene escaleras</label>
-                                        <label><input type="checkbox" required> Tiene una sola salida</label>
-                                        <label><input type="checkbox" required> Tiene pasadizos o pasajes
+                                        <label><input type="checkbox"> Tiene escaleras</label>
+                                        <label><input type="checkbox"> Tiene una sola salida</label>
+                                        <label><input type="checkbox"> Tiene pasadizos o pasajes
                                             estrechos</label>
                                     </div>
                                 </div>
@@ -146,11 +152,11 @@
                                 class="form-landing">
                                 <div class="form-group">
                                     <label>Nombre del integrante:</label>
-                                    <input type="text" placeholder="Ej. Rosa Huamán">
+                                    <input type="text" id="int-nombre" placeholder="Ej. Rosa Huamán" required>
                                     <label>Parentesco o relación:</label>
-                                    <input type="text" placeholder="Ej. Madre">
+                                    <input type="text" id="parentesco" placeholder="Ej. Madre" required>
                                     <label>Edad (años):</label>
-                                    <input type="number" placeholder="Ej. 55">
+                                    <input type="number" id="edad" placeholder="Ej. 55" required>
                                 </div>
                                 <button type="submit" class="btn-enviar">Agregar integrante</button>
                             </form>
@@ -174,27 +180,27 @@
 
                             <!-- Lista de 3 integrantes predefinidos -->
                             <div class="integrantes-lista-simulacion">
-                                <div class="integrante-item" data-integrante="Rosa">
-                                    <span class="material-symbols-outlined">person</span>
+                                <button type="button" class="integrante-item" data-integrante="Rosa">
+                                    <span class="material-symbols-outlined" style="margin-right: 5px;">person</span>
                                     <div>
                                         <strong>Rosa Huamán</strong>
                                         <p>Madre (30 años)</p>
                                     </div>
-                                </div>
-                                <div class="integrante-item" data-integrante="Julio">
-                                    <span class="material-symbols-outlined">person</span>
+                                </button>
+                                <button class="integrante-item" data-integrante="Julio">
+                                    <span class="material-symbols-outlined" style="margin-right: 5px;">person</span>
                                     <div>
                                         <strong>Julio Cárdenas</strong>
                                         <p>Abuelo (65 años)</p>
                                     </div>
-                                </div>
-                                <div class="integrante-item" data-integrante="Ana">
-                                    <span class="material-symbols-outlined">person</span>
+                                </button>
+                                <button class="integrante-item" data-integrante="Ana">
+                                    <span class="material-symbols-outlined" style="margin-right: 5px;">person</span>
                                     <div>
                                         <strong>Ana Lazaro</strong>
                                         <p>Hija (7 años)</p>
                                     </div>
-                                </div>
+                                </button>
                             </div>
 
                             <!-- Formulario inferior para asignar el rol al integrante seleccionado -->
@@ -761,25 +767,25 @@
         </section>
 
         <!-- SECCIÓN 4: Accesibilidad e Inclusión -->
-        <section id="seccion-accesibilidad-inclusion" class="landing-section">
-            <aside class="seccion1 info-wrapper">
+        <section id="seccion-accesibilidad-inclusion" class="landing-section seccion4">
+            <aside class="info-wrapper info-accesibilidad">
                 <h1>Accesibilidad e inclusión</h1>
                 <p class="parraf-one">
                     SismoListo está pensado para toda la familia: niñas y niños, personas adultas mayores, personas con
                     movilidad o visión reducida y quienes no están acostumbrados a usar aplicaciones. Nadie debería
                     depender de otra persona para ponerse a salvo.
-                    <br><br>
+                    <br>
                     Elige una función con los botones de abajo: indica quién requiere asistencia, guarda contactos
                     externos, mira tu plan en una sola pantalla o activa las ayudas para actuar con calma, incluso sin
                     internet.
                 </p>
             </aside>
 
-            <div class="seccion1 funcionalidad-wrapper">
+            <div class="funcionalidad-wrapper">
                 <div class="dispositivo-marco">
 
                     <!-- Barra superior con los 7 botones (uno por función) -->
-                    <div class="pasos-barra">
+                    <div class="pasos-barra" id="Acces">
                         <button type="button" class="paso-item active">1. Apoyo</button>
                         <button type="button" class="paso-item">2. Contactos</button>
                         <button type="button" class="paso-item">3. Resumen</button>
@@ -788,7 +794,6 @@
                         <button type="button" class="paso-item">6. Contraste</button>
                         <button type="button" class="paso-item">7. Guías</button>
                     </div>
-
                     <!-- Contenedor de las funciones: solo se muestra la que tiene la clase active -->
                     <div class="pasos-contenido">
 
@@ -846,6 +851,10 @@
                                 <p><strong>Contactos externos:</strong> 3 guardados</p>
                             </div>
                             <button type="button" class="btn-enviar">Compartir como imagen</button>
+                            <div class="aviso-imagen-compartida">
+                                <span class="material-symbols-outlined">image</span>
+                                <p><strong>Imagen compartida con exito</strong></p>
+                            </div>
                         </div>
 
                         <!-- FUNCIÓN 4: Progreso del plan familiar (HU-013) -->
@@ -928,7 +937,7 @@
     </main>
 
     <!-- SECCIÓN PRE-FOOTER: Testimonios y Formulario de Contacto -->
-    <section id="seccion-contacto-testimonios" class="landing-section pre-footer-grid" style="min-height: auto;">
+    <section id="seccion-contacto-testimonios" class="landing-section pre-footer-grid">
         <div class="container-split">
             <!-- Lado Izquierdo: Testimonios con blockquote -->
             <div class="testimonios-col">

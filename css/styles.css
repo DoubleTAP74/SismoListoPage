@@ -539,6 +539,14 @@ body {
     border-radius: 6px;
     color: var(--azul-acero);
     font-size: 0.85rem;
+    overflow: hidden;
+}
+
+.map-img {
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .resumen-dashboard {

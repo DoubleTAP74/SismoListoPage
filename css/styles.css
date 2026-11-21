@@ -1899,3 +1899,156 @@ body {
         word-wrap: break-word;
     }
 }
+
+/* =========================================================
+   MEJORAS DE ACCESIBILIDAD (WCAG)
+   ========================================================= */
+
+/* Enlace rápido para navegación con teclado */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    z-index: 9999;
+    text-decoration: none;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 16px;
+}
+
+/* Indicador visual claro al navegar con la tecla Tab */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #f97316;
+    outline-offset: 3px;
+}
+
+/* Respetar preferencia de movimiento reducido del usuario */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important;
+    }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* MODO ALTO CONTRASTE ACTIVADO DESDE LA SECCIÓN 4 */
+body.modo-alto-contraste,
+body.modo-alto-contraste * {
+    background-color: #000000 !important;
+    color: #ffff00 !important;
+    border-color: #ffff00 !important;
+    box-shadow: none !important;
+}
+
+body.modo-alto-contraste a,
+body.modo-alto-contraste button {
+    background-color: #111111 !important;
+    color: #00ffff !important;
+    border: 2px solid #00ffff !important;
+}
+
+body.modo-alto-contraste img,
+body.modo-alto-contraste video {
+    filter: contrast(1.25);
+}
+/* =========================================================
+   MENÚ DESPLEGABLE DE ACCESIBILIDAD EN BARRA SUPERIOR (1 LÍNEA)
+   ========================================================= */
+.navegacion-principal {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+.navegacion-principal .nav-link {
+    white-space: nowrap;
+    padding: 6px 8px;
+    font-size: 0.9rem;
+}
+
+.acc-nav-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.btn-nav-acc {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background-color: #0f172a;
+    color: #ffffff !important;
+    border: 1px solid #334155;
+    padding: 5px 10px !important;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.88rem !important;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.btn-nav-acc .material-symbols-outlined {
+    font-size: 18px;
+}
+
+.btn-nav-acc:hover {
+    background-color: #1e293b;
+}
+
+.menu-nav-acc {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background-color: #ffffff;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 8px;
+    min-width: 215px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    z-index: 3000;
+}
+
+.menu-nav-acc[hidden] {
+    display: none;
+}
+
+.menu-nav-acc button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 10px;
+    background-color: #f8fafc;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+}
+
+.menu-nav-acc button:hover,
+.menu-nav-acc button[aria-pressed="true"] {
+    background-color: #0f172a;
+    color: #ffffff;
+}

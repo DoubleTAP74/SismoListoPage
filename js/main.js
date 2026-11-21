@@ -846,3 +846,61 @@
     }
   }
 })();
+
+// =========================================================
+// MENÚ DESPLEGABLE SUPERIOR Y CONTROLES DE ACCESIBILIDAD
+// =========================================================
+document.addEventListener("DOMContentLoaded", () => {
+    const btnNavToggle = document.getElementById("btn-nav-acc-toggle");
+    const menuNavAcc = document.getElementById("menu-nav-acc");
+
+    // 1. Abrir y cerrar la barra desplegable de arriba
+    if (btnNavToggle && menuNavAcc) {
+        btnNavToggle.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const abierto = btnNavToggle.getAttribute("aria-expanded") === "true";
+            btnNavToggle.setAttribute("aria-expanded", String(!abierto));
+            menuNavAcc.hidden = abierto;
+        });
+
+        // Cerrar si se hace clic fuera del menú
+        document.addEventListener("click", (e) => {
+            if (!menuNavAcc.hidden && !menuNavAcc.contains(e.target) && !btnNavToggle.contains(e.target)) {
+                btnNavToggle.setAttribute("aria-expanded", "false");
+                menuNavAcc.hidden = true;
+            }
+        });
+    }
+
+    // 2. Hacer que funcionen tanto los botones de arriba como los de la Sección 4
+    const botonesAmpliado = document.querySelectorAll(".js-acc-ampliado, #btn-acc-ampliado");
+    const botonesContraste = document.querySelectorAll(".js-acc-contraste, #btn-acc-contraste");
+    const botonesNormal = document.querySelectorAll(".js-acc-normal, #btn-acc-normal");
+
+    let textoGrandeActivo = false;
+
+    botonesAmpliado.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            textoGrandeActivo = !textoGrandeActivo;
+            document.documentElement.style.fontSize = textoGrandeActivo ? "120%" : "100%";
+            botonesAmpliado.forEach((b) => b.setAttribute("aria-pressed", String(textoGrandeActivo)));
+        });
+    });
+
+    botonesContraste.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const contrasteActivo = document.body.classList.toggle("modo-alto-contraste");
+            botonesContraste.forEach((b) => b.setAttribute("aria-pressed", String(contrasteActivo)));
+        });
+    });
+
+    botonesNormal.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            textoGrandeActivo = false;
+            document.documentElement.style.fontSize = "100%";
+            document.body.classList.remove("modo-alto-contraste");
+            botonesAmpliado.forEach((b) => b.setAttribute("aria-pressed", "false"));
+            botonesContraste.forEach((b) => b.setAttribute("aria-pressed", "false"));
+        });
+    });
+});

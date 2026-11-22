@@ -116,7 +116,6 @@ body {
     color: var(--azul-acero);
     font-weight: bold;
     transition: color 0.3s ease;
-    margin-left: 25px;
 }
 
 .nav-link:hover {
@@ -1847,6 +1846,150 @@ body {
     }
 }
 
+/* Ajusted de pantalla para el intervalo entre 870 y 1220px */
+@media screen and (min-width: 871px) and (max-width: 1220px) {
+    .header-principal {
+        min-height: 64px;
+    }
+
+    .nav-container {
+        padding: 10px 20px;
+        min-height: 64px;
+    }
+
+    .hamburguesa {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        z-index: 1002;
+        display: inline-flex;
+    }
+
+    .navegacion-principal {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-height: calc(100vh - 64px);
+        overflow-y: auto;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 20px 16px;
+        background-color: var(--naranja-acento);
+        border-bottom: 1px solid var(--gris-borde);
+        box-shadow: 0 8px 20px rgba(30, 58, 95, 0.18);
+    }
+
+    .navegacion-principal .nav-link {
+        padding: 12px 8px;
+        border-radius: 4px;
+        color: black;
+    }
+
+    .navegacion-principal .btn-emergencia-alerta {
+        margin: 4px 0;
+        text-align: center;
+    }
+
+    .landing-section {
+        scroll-margin-top: 64px;
+    }
+
+    /* Sección 1: la información pasa antes del simulador cuando la pantalla se estrecha. */
+    #seccion-configuracioninicial-gestionhogar {
+        grid-template-columns: 1fr;
+        width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+        padding-inline: 5px;
+    }
+
+    #seccion-configuracioninicial-gestionhogar>.info-wrapper {
+        order: 1;
+        width: 100%;
+        min-width: 0;
+    }
+
+    #seccion-configuracioninicial-gestionhogar>.funcionalidad-wrapper {
+        order: 2;
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Grids generales que pasan de varias columnas a una sola columna. */
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .grid-1-3 {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+
+    .container-split {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* Contenedores internos de la sección 1: evitan desbordamientos horizontales. */
+    .dispositivo-marco {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    /* Los pasos se ajustan en varias filas para no exigir desplazamiento lateral. */
+    .pasos-barra {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: scroll;
+        max-width: 100%;
+        min-width: 0;
+        position: relative;
+    }
+
+    .pasos-barra .paso-item {
+        flex: 0 1 auto;
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    /* Los formularios internos nunca deben exceder el ancho disponible. */
+    .step-form {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .form-landing,
+    .form-group {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 5px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    #seccion-configuracioninicial-gestionhogar .info-wrapper h1,
+    #seccion-configuracioninicial-gestionhogar .info-wrapper p,
+    #seccion-configuracioninicial-gestionhogar .step-form {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+}
+
+
 /* Ajustes para tablets y pantallas medianas. */
 @media screen and (width <= 768px) {
 
@@ -1972,6 +2115,11 @@ body.modo-alto-contraste video {
     align-items: center;
     flex-wrap: nowrap;
     gap: 10px;
+}
+
+/* Ocultar el menu principal cuando este oculto */
+.navegacion-principal[hidden] {
+    display: none;
 }
 
 .navegacion-principal .nav-link {

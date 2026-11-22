@@ -545,7 +545,7 @@
 
   if (!botonMenu || !navegacion || !textoMenu) return;
 
-  var pantallaMovil = window.matchMedia('(max-width: 870px)');
+  var pantallaMovil = window.matchMedia('(max-width: 1220px)');
 
   function cambiarMenu(abrir) {
     navegacion.hidden = pantallaMovil.matches && !abrir;

@@ -1694,7 +1694,7 @@ body {
    ========================================================================== */
 
 /* Ajustes intermedios para paneles grandes y componentes de HU. */
-@media screen and (max-width: 1024px) {
+@media screen and (width <= 1024px) {
     .hu-panel {
         padding: 1.2rem;
     }
@@ -1705,7 +1705,7 @@ body {
 }
 
 /* Navegación móvil: el menú hamburguesa aparece desde 870 px hacia abajo. */
-@media screen and (max-width: 870px) {
+@media screen and (width <= 870px) {
     .header-principal {
         min-height: 64px;
     }
@@ -1848,7 +1848,7 @@ body {
 }
 
 /* Ajustes para tablets y pantallas medianas. */
-@media screen and (max-width: 800px) {
+@media screen and (width <= 768px) {
 
     .seccion4 .funcionalidad-wrapper,
     .seccion4 .info-wrapper {

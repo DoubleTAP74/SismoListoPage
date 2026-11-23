@@ -2,32 +2,44 @@
    1. VARIABLES GLOBALES Y RESETEO BÁSICO
    ========================================= */
 :root {
-    /* Paleta Principal */
+    /* Paleta de la guía de estilos (informe, sección 4.1.1, Figura 25) */
     --azul-oscuro: #142a3d;
     --azul-petroleo: #215175;
-    --azul-cielo: #4a90e2;
-    --azul-neutro: #3d5e98;
-    --azul-acero: #4a5568;
-
+    --azul-acero: #4480a4;
+    --azul-claro: #5598c0;
     --naranja-acento: #f57a2d;
     --naranja-hover: #cd5b16;
-    --naranja-claro: #ff5c10;
-    --naranja-suave: #ffe5d1;
-    --naranja-neutro: #f57a2d;
-
-    --fondo-claro: #eff5fc;
-    --fondo: #ffffff;
-    --fondo-blanco: #f7fafc;
+    --salmon: #f0a473;
+    --beige: #dfd6cf;
+    --rojo: #ff3131;
+    --verde: #7ed957;
+    --amarillo: #ffde59;
+    --negro: #000000;
     --blanco: #ffffff;
-    --gris-borde: #e2e8f0;
 
-    /* Estados de Vencimiento (Sección 2 - HU-018) */
-    --estado-vigente: #1b7a4b;
-    --estado-vigente-fondo: #e6f4ec;
-    --estado-porvencer: #8a5a00;
-    --estado-porvencer-fondo: #fff4d6;
-    --estado-vencido: #a32020;
-    --estado-vencido-fondo: #fde8e8;
+    /* Nombres usados por el código, ahora apuntan a la paleta */
+    --azul-cielo: var(--azul-claro);
+    --azul-neutro: var(--azul-petroleo);
+    --naranja-claro: var(--naranja-acento);
+    --naranja-neutro: var(--naranja-acento);
+    --naranja-suave: var(--salmon);
+    --fondo-claro: var(--beige);
+    --fondo: var(--blanco);
+    --fondo-blanco: var(--blanco);
+    --gris-borde: var(--beige);
+
+    /* Estados (Tabla 18): color de fondo con texto negro, siempre con ícono y texto */
+    --estado-vigente: var(--negro);
+    --estado-vigente-fondo: var(--verde);
+    --estado-porvencer: var(--negro);
+    --estado-porvencer-fondo: var(--amarillo);
+    --estado-vencido: var(--negro);
+    --estado-vencido-fondo: var(--rojo);
+
+    /* Componentes (sección 4.1.4) */
+    --radio: 12px;
+    --alto-minimo: 48px;
+    --fuente: "Inter", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
 }
 
 * {
@@ -37,7 +49,7 @@
 }
 
 body {
-    font-family: "Times New Roman", Times, serif;
+    font-family: var(--fuente);
     background-color: var(--fondo-claro);
     color: var(--azul-oscuro);
     line-height: 1.6;
@@ -78,9 +90,9 @@ body {
     gap: 0.65rem;
     min-height: 44px;
     padding: 0.55rem 0.8rem;
-    border: 1px solid #94432f;
+    border: 1px solid var(--azul-oscuro);
     border-radius: 0.45rem;
-    background: #94432f;
+    background: var(--azul-oscuro);
     color: white;
     font: inherit;
     cursor: pointer;
@@ -113,7 +125,7 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: var(--azul-acero);
+    color: var(--azul-petroleo);
     font-weight: bold;
     transition: color 0.3s ease;
 }
@@ -124,7 +136,7 @@ body {
 
 /* Botón de Emergencia global en el Header */
 .btn-emergencia-alerta {
-    background-color: #e53e3e;
+    background-color: var(--rojo);
     color: var(--blanco);
     border: none;
     padding: 8px 16px;
@@ -135,7 +147,7 @@ body {
 }
 
 .btn-emergencia-alerta:hover {
-    background-color: rgb(141, 27, 27);
+    background-color: var(--rojo);
 }
 
 .principal {
@@ -143,7 +155,7 @@ body {
 }
 
 .principal:hover {
-    background-color: #c53030;
+    background-color: var(--rojo);
     animation: pulsar 1s infinite ease-in-out;
 }
 
@@ -190,7 +202,12 @@ body {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 5px;
-    background-color: #f7fafc;
+    background-color: var(--blanco);
+}
+
+/* Evita que un contenido largo ensanche la columna y se corte en celulares. */
+.grid-1-3 > * {
+    min-width: 0;
 }
 
 /* Formularios Generales */
@@ -280,7 +297,7 @@ body {
 }
 
 .parraf-one {
-    background-color: #d9e9fb;
+    background-color: var(--blanco);
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
@@ -288,7 +305,7 @@ body {
 }
 
 .parraf-two {
-    background-color: #ffd8b8;
+    background-color: var(--blanco);
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -301,20 +318,20 @@ body {
     color: var(--azul-petroleo);
     padding: 4px 12px;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     font-weight: bold;
     width: fit-content;
 }
 
 .badge-solucion {
-    background-color: #d1e8ff;
+    background-color: var(--azul-claro);
     color: #215175;
     margin-bottom: 10px;
 }
 
 .badge-alerta {
-    background-color: #fedcdc;
-    color: #911919;
+    background-color: var(--salmon);
+    color: var(--rojo);
 }
 
 .hero-img {
@@ -373,9 +390,9 @@ body {
     padding: 8px 12px;
     border-radius: 6px;
     margin-bottom: 20px;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     font-weight: bold;
-    color: var(--azul-acero);
+    color: var(--azul-petroleo);
     overflow-x: auto;
     gap: 6px;
 }
@@ -384,7 +401,7 @@ body {
 .barra-progreso-bg {
   width: 100px;         /* Tamaño fijo pequeño, estilo indicador de carrusel */
   height: 4px;
-  background: #e2e8f0;  /* Gris claro de fondo */
+  background: var(--beige);  /* Gris claro de fondo */
   margin: 15px auto 0;  /* Centrada abajo del contenedor */
   border-radius: 2px;
   position: relative;
@@ -395,7 +412,7 @@ body {
   position: absolute;
   left: 0; top: 0; bottom: 0;
   width: 30%;           /* Tamaño inicial del indicador */
-  background: #6366f1;  /* Color llamativo */
+  background: var(--azul-petroleo);  /* Color llamativo */
   border-radius: 2px;
 }
 
@@ -441,7 +458,7 @@ body {
     transition:
         background-color 0.3s,
         border-color 0.3s;
-    font-family: "Times New Roman", Times, serif;
+    font-family: var(--fuente);
     margin-top: 10px;
     margin-bottom: 10px;
     min-width: 100%;
@@ -466,9 +483,54 @@ body {
 }
 
 .codigo-badge {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: var(--naranja-acento);
+    letter-spacing: 0.25em;
+    color: var(--naranja-hover);
+}
+
+/* HU-006 */
+.codigo-vence {
+    margin: 4px 0 0;
+    font-size: 0.875rem;
+    color: var(--azul-oscuro);
+}
+
+.codigo-compartir {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.btn-compartir-invitacion {
+    flex: 1 1 140px;
+    min-height: 40px;
+    padding: 8px 12px;
+    border: 2px solid var(--azul-petroleo);
+    border-radius: 6px;
+    background: var(--blanco);
+    color: var(--azul-petroleo);
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-compartir-invitacion:hover,
+.btn-compartir-invitacion:focus-visible {
+    background: var(--azul-petroleo);
+    color: var(--blanco);
+}
+
+.codigo-estado {
+    font-size: 0.875rem;
+    color: var(--estado-vigente);
+    margin: 6px 0 0;
+}
+
+.codigo-unidos {
+    font-size: 0.875rem;
+    margin: 6px 0 10px;
 }
 
 .badge-chip-container {
@@ -482,7 +544,7 @@ body {
     border: 1px solid var(--azul-petroleo);
     padding: 4px 8px;
     border-radius: 12px;
-    font-size: 0.8rem;
+    font-size: 0.875rem;
 }
 
 .mapa-simulado {
@@ -503,7 +565,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #e53e3e;
+    color: var(--rojo);
     font-size: 2.5rem;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -521,7 +583,7 @@ body {
     padding: 10px;
     border-radius: 6px;
     text-align: center;
-    font-size: 0.85rem;
+    font-size: 0.875rem;
 }
 
 .accion-card .material-symbols-outlined {
@@ -536,8 +598,8 @@ body {
     padding: 15px;
     text-align: center;
     border-radius: 6px;
-    color: var(--azul-acero);
-    font-size: 0.85rem;
+    color: var(--azul-petroleo);
+    font-size: 0.875rem;
     overflow: hidden;
 }
 
@@ -609,12 +671,27 @@ body {
     color: var(--fondo-claro);
 }
 
+/* Escritorio: explicación en 1/3 y funcionalidad en 2/3, igual que la sección 3.
+   Por debajo de 1221px se mantiene la columna única que ya existía. */
+@media screen and (min-width: 1221px) {
+    #seccion-logistica-preparacionpreventiva {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 5px;
+        align-items: stretch;
+    }
+
+    #seccion-logistica-preparacionpreventiva .title-section2 {
+        grid-column: 1 / -1;
+    }
+}
+
 .banner-importancia {
     grid-column: 1 / -1;
     display: flex;
     align-items: center;
     gap: 20px;
-    background-color: #fff7ed;
+    background-color: var(--blanco);
     border-left: 5px solid var(--naranja-acento);
     padding: 20px;
     margin-top: 5px;
@@ -722,7 +799,7 @@ body {
     align-items: center;
     gap: 0.4rem;
     font-size: 0.88rem;
-    color: var(--azul-acero);
+    color: var(--azul-petroleo);
     cursor: pointer;
     font-weight: 500;
 }
@@ -736,7 +813,7 @@ body {
 
 .hu15-nota-agua {
     margin: 0.7rem 0 0;
-    font-size: 0.82rem;
+    font-size: 0.875rem;
     color: var(--azul-petroleo);
     background: var(--fondo-claro);
     border-left: 3px solid var(--azul-cielo);
@@ -752,8 +829,8 @@ body {
 
 .hu15-fuente {
     margin: 0;
-    font-size: 0.78rem;
-    color: var(--azul-acero);
+    font-size: 0.875rem;
+    color: var(--azul-petroleo);
     font-style: italic;
 }
 
@@ -770,9 +847,9 @@ body {
 }
 
 .hu15-campo label {
-    font-size: 0.82rem;
+    font-size: 0.875rem;
     font-weight: 600;
-    color: var(--azul-acero);
+    color: var(--azul-petroleo);
 }
 
 .hu15-campo input {
@@ -799,7 +876,7 @@ body {
 }
 
 .hu15-error {
-    font-size: 0.78rem;
+    font-size: 0.875rem;
     color: var(--estado-vencido);
     font-weight: 600;
 }
@@ -879,24 +956,121 @@ body {
 
 .hu15-item-detalle {
     margin: 0.1rem 0 0;
-    font-size: 0.8rem;
-    color: var(--azul-acero);
+    font-size: 0.875rem;
+    color: var(--azul-petroleo);
 }
 
 .hu15-item-origen {
     margin: 0.1rem 0 0;
-    font-size: 0.74rem;
+    font-size: 0.875rem;
     color: var(--azul-neutro);
     font-style: italic;
 }
 
-.hu15-badge {
+/* HU-016: artículos reunidos */
+.hu16-barra {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: var(--fondo-blanco);
+    border: 1px solid var(--gris-borde);
+    border-radius: 10px;
+    padding: 0.7rem 0.9rem;
+}
+
+.hu16-contador-fila {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem 1rem;
+}
+
+.hu16-contador {
+    margin: 0;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--azul-oscuro);
+}
+
+.hu16-progreso {
+    height: 10px;
+    background: var(--gris-borde);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.hu16-progreso-avance {
+    height: 100%;
+    width: 0;
+    background: var(--estado-vigente);
+    border-radius: 999px;
+    transition: width 0.3s ease;
+}
+
+.hu16-nota {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--azul-petroleo);
+}
+
+.hu15-item-pie {
     grid-area: badge;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem 0.8rem;
+}
+
+.hu16-tengo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--azul-petroleo);
+    cursor: pointer;
+    min-height: 32px;
+}
+
+.hu16-tengo input {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--estado-vigente);
+    cursor: pointer;
+}
+
+.hu16-tengo input:disabled {
+    cursor: not-allowed;
+}
+
+.hu16-tengo input:disabled + span {
+    color: var(--estado-vencido);
+    font-weight: 600;
+}
+
+.hu15-item--reunido {
+    border-color: var(--estado-vigente);
+    background: var(--estado-vigente-fondo);
+}
+
+.hu16-vacio {
+    list-style: none;
+    padding: 0.8rem;
+    border: 1px dashed var(--estado-vigente);
+    border-radius: 10px;
+    color: var(--estado-vigente);
+    font-weight: 600;
+    font-size: 0.88rem;
+}
+
+.hu15-badge {
     justify-self: start;
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
-    font-size: 0.74rem;
+    font-size: 0.875rem;
     font-weight: 700;
     padding: 0.25rem 0.55rem;
     border-radius: 999px;
@@ -925,7 +1099,7 @@ body {
 }
 
 .hu15-badge--sin-fecha {
-    color: var(--azul-acero);
+    color: var(--azul-petroleo);
     background: var(--gris-borde);
 }
 
@@ -933,7 +1107,7 @@ body {
     grid-area: quitar;
     background: transparent;
     border: none;
-    color: var(--azul-acero);
+    color: var(--azul-petroleo);
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -955,7 +1129,7 @@ body {
 
 .hu15-resumen {
     margin: 0;
-    font-size: 0.82rem;
+    font-size: 0.875rem;
     font-weight: 600;
     color: var(--azul-petroleo);
 }
@@ -990,7 +1164,7 @@ body {
 }
 
 .hu20-cron-unidad {
-    font-size: 0.74rem;
+    font-size: 0.875rem;
     color: var(--gris-borde);
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -1013,10 +1187,10 @@ body {
 .hu20-btn-cancelar {
     background: transparent;
     border: 1px solid var(--gris-borde);
-    color: var(--azul-acero);
+    color: var(--azul-petroleo);
     border-radius: 8px;
     padding: 0.55rem 1rem;
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     font-weight: 600;
     font-family: inherit;
     cursor: pointer;
@@ -1026,6 +1200,97 @@ body {
 .hu20-btn-cancelar:hover {
     border-color: var(--estado-vencido);
     color: var(--estado-vencido);
+}
+
+/* HU-023: recordatorio mensual */
+.hu23-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    border-top: 1px solid var(--gris-borde);
+    padding-top: 1rem;
+}
+
+.hu23-form select {
+    width: 100%;
+    padding: 0.55rem 0.7rem;
+    border: 1px solid var(--gris-borde);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background: var(--blanco);
+    color: var(--azul-oscuro);
+    min-height: 40px;
+}
+
+.hu23-destinatarios {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--azul-petroleo);
+}
+
+.hu23-estado {
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--azul-petroleo);
+}
+
+.hu23-estado--activo {
+    color: var(--estado-vigente);
+}
+
+.hu23-acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.hu23-acciones[hidden],
+.hu23-aviso[hidden] {
+    display: none;
+}
+
+.hu23-aviso {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: var(--azul-oscuro);
+    color: var(--blanco);
+    border-radius: 12px;
+    padding: 0.8rem 1rem;
+    box-shadow: 0 6px 16px rgba(20, 42, 61, 0.25);
+}
+
+.hu-panel .hu23-aviso p {
+    margin: 0;
+    color: var(--blanco);
+}
+
+.hu23-aviso-app {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.85;
+}
+
+.hu23-aviso-btn {
+    align-self: flex-start;
+    background: var(--blanco);
+    color: var(--azul-oscuro);
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 0.9rem;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    min-height: 40px;
+}
+
+.hu23-aviso-btn:hover,
+.hu23-aviso-btn:focus-visible {
+    background: var(--naranja-suave);
 }
 
 .hu20-tarjeta {
@@ -1041,13 +1306,13 @@ body {
 }
 
 .hu20-tarjeta--cancelado {
-    border-left-color: var(--azul-acero);
+    border-left-color: var(--azul-petroleo);
     background: var(--fondo-claro);
 }
 
 .hu20-paso-etiqueta {
     margin: 0 0 0.3rem;
-    font-size: 0.74rem;
+    font-size: 0.875rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.07em;
@@ -1064,13 +1329,13 @@ body {
 .hu20-paso-detalle {
     margin: 0.4rem 0 0;
     font-size: 0.88rem;
-    color: var(--azul-acero);
+    color: var(--azul-petroleo);
     line-height: 1.5;
 }
 
 .hu20-paso-nota {
     margin: 0.5rem 0 0;
-    font-size: 0.78rem;
+    font-size: 0.875rem;
     font-style: italic;
     color: var(--azul-petroleo);
 }
@@ -1096,7 +1361,7 @@ body {
    7. SECCIÓN 3: RESPUESTA INMEDIATA Y MODO EMERGENCIA
    ========================================= */
 .marco-emergencia {
-    background-color: #1e2452;
+    background-color: var(--azul-oscuro);
     border: 4px solid #000000;
     position: relative;
     display: flex;
@@ -1133,11 +1398,11 @@ body {
 
 .icono-alerta-grande {
     font-size: 3.5rem;
-    color: #e53e3e;
+    color: var(--rojo);
 }
 
 .btn-emergencia-activar {
-    background-color: #e53e3e;
+    background-color: var(--rojo);
     color: var(--blanco);
     border: none;
     padding: 16px 24px;
@@ -1155,7 +1420,7 @@ body {
 }
 
 .btn-emergencia-activar:hover {
-    background-color: #c53030;
+    background-color: var(--rojo);
     transform: scale(1.02);
 }
 
@@ -1193,11 +1458,11 @@ body {
 }
 
 .btn-estoy-bien {
-    background-color: #38a169;
+    background-color: var(--verde);
 }
 
 .btn-necesito-ayuda {
-    background-color: #e53e3e;
+    background-color: var(--rojo);
 }
 
 /* Paso 4 */
@@ -1205,12 +1470,12 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    background-color: #fefcbf;
-    border-left: 4px solid #d69e2e;
+    background-color: var(--amarillo);
+    border-left: 4px solid var(--amarillo);
     padding: 10px;
     border-radius: 6px;
-    font-size: 0.85rem;
-    color: #744210;
+    font-size: 0.875rem;
+    color: var(--negro);
     margin: 10px;
 }
 
@@ -1250,21 +1515,161 @@ body {
     gap: 4px;
     padding: 4px 10px;
     border-radius: 12px;
-    font-size: 0.8rem;
+    font-size: 0.875rem;
     font-weight: bold;
     color: var(--blanco);
 }
 
+/* Colores oscurecidos para que el texto blanco cumpla 4.5:1 (WCAG AA).
+   Antes: var(--verde) (3,3:1), var(--rojo) (4,1:1) y var(--amarillo) (2,4:1). */
 .badge-bien {
-    background-color: #38a169;
+    background-color: var(--verde);
 }
 
 .badge-ayuda {
-    background-color: #e53e3e;
+    background-color: var(--rojo);
 }
 
 .badge-esperando {
-    background-color: #d69e2e;
+    background-color: var(--amarillo);
+}
+
+/* HU-028 / HU-033 / HU-034 / HU-035: Estado del hogar */
+.estado-resumen {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px 12px;
+    background-color: var(--fondo-claro);
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin: 8px 0;
+    font-size: 0.9rem;
+    color: var(--azul-oscuro);
+}
+
+.estado-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 8px 0;
+}
+
+.filtro-estado {
+    min-height: 36px;
+    padding: 4px 12px;
+    border: 1px solid var(--azul-petroleo);
+    border-radius: 18px;
+    background: var(--blanco);
+    color: var(--azul-petroleo);
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.filtro-estado[aria-pressed="true"] {
+    background: var(--naranja-suave);
+    border: 2px solid var(--naranja-acento);
+    color: var(--azul-oscuro);
+}
+
+.estado-grupo-titulo {
+    margin: 12px 0 0;
+    font-size: 0.95rem;
+    color: var(--blanco);
+}
+
+.estado-grupo-titulo[hidden],
+.integrantes-estado-lista[hidden],
+.integrante-estado-item[hidden],
+.push-integrante[hidden],
+.btn-simular-reporte[hidden] {
+    display: none;
+}
+
+#lista-sin-reporte .integrante-estado-item {
+    border: 2px dashed var(--amarillo);
+    background-color: var(--amarillo);
+}
+
+.integrante-estado-item {
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.integrante-hora {
+    font-size: 0.875rem;
+    color: var(--azul-petroleo);
+}
+
+.marcar-manual {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.875rem;
+    color: var(--azul-petroleo);
+}
+
+.btn-marcar-manual,
+.btn-simular-reporte,
+.push-ver-ficha {
+    min-height: 34px;
+    padding: 4px 10px;
+    border: 1px solid var(--azul-petroleo);
+    border-radius: 6px;
+    background: var(--blanco);
+    color: var(--azul-petroleo);
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-simular-reporte {
+    border-style: dashed;
+    margin-bottom: 8px;
+}
+
+.push-integrante {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    padding: 10px 12px;
+    border: 2px solid var(--naranja-acento);
+    border-radius: 8px;
+    margin: 8px 0;
+    font-size: 0.875rem;
+}
+
+.push-integrante > div {
+    flex: 1;
+}
+
+.push-integrante .material-symbols-outlined {
+    color: var(--naranja-acento);
+}
+
+.integrante-destacado {
+    outline: 3px solid var(--naranja-acento);
+    outline-offset: 2px;
+}
+
+.estado-sin-resultados,
+.estado-offline {
+    font-size: 0.875rem;
+    color: var(--gris-borde);
+    margin: 6px 0;
+}
+
+.estado-offline {
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .btn-contactar-pendiente {
@@ -1288,7 +1693,7 @@ body {
     padding: 10px;
     border-radius: 6px;
     border: 1px solid var(--gris-borde);
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     cursor: pointer;
     color: var(--azul-petroleo);
 }
@@ -1302,7 +1707,7 @@ body {
     padding: 12px;
     border-radius: 8px;
     margin-top: 15px;
-    font-size: 0.85rem;
+    font-size: 0.875rem;
 }
 
 .notificacion-push-card .material-symbols-outlined {
@@ -1312,7 +1717,7 @@ body {
 /* Paso 7 */
 .header-salida-emergencia {
     text-align: center;
-    color: #0fa158;
+    color: var(--verde);
 }
 
 .icono-ok {
@@ -1321,7 +1726,7 @@ body {
 
 .lista-post-sismo {
     padding-left: 20px;
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -1357,23 +1762,23 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 2px;
-    font-size: 0.7rem;
-    color: var(--azul-acero);
+    font-size: 0.875rem;
+    color: var(--azul-petroleo);
     cursor: pointer;
     font-weight: 500;
 }
 
 .bottom-nav-emergencia .nav-emergencia-highlight {
-    color: #e53e3e;
+    color: var(--rojo);
     font-weight: bold;
 }
 
 .bottom-nav-emergencia .nav-emergencia-highlight .material-symbols-outlined {
     font-size: 1.6rem;
-    background-color: #fff5f5;
+    background-color: var(--blanco);
     padding: 4px 10px;
     border-radius: 16px;
-    border: 1px solid #feb2b2;
+    border: 1px solid var(--rojo);
 }
 
 /* =========================================
@@ -1412,7 +1817,7 @@ body {
 
 .acc-subtitulo {
     font-size: 0.9rem;
-    color: var(--azul-acero);
+    color: var(--azul-petroleo);
     margin-bottom: 10px;
 }
 
@@ -1457,8 +1862,8 @@ body {
 }
 
 .acc-nota {
-    font-size: 0.8rem;
-    color: var(--azul-acero);
+    font-size: 0.875rem;
+    color: var(--azul-petroleo);
     margin-top: 8px;
 }
 
@@ -1472,16 +1877,199 @@ body {
     color: var(--blanco);
     padding: 2px 8px;
     border-radius: 10px;
-    font-size: 0.8rem;
+    font-size: 0.875rem;
     font-weight: bold;
 }
 
 .acc-etiqueta-alerta {
-    background-color: #911919;
+    background-color: var(--rojo);
 }
 
 .acc-etiqueta-ok {
-    background-color: #276749;
+    background-color: var(--verde);
+}
+
+/* HU-005, HU-011, HU-013, HU-032: controles interactivos de la sección 4 */
+.acc-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.acc-check input {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--azul-petroleo);
+    flex-shrink: 0;
+}
+
+.acc-campos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin: 6px 0;
+}
+
+.acc-campos[hidden],
+.acc-form-contacto[hidden],
+#acc-ahorro-detalle[hidden],
+#acc-ahorro-apagado[hidden],
+.acc-plan-completo[hidden] {
+    display: none;
+}
+
+.acc-campos label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.acc-campos select,
+.acc-form-contacto input,
+.acc-form-contacto select {
+    min-height: 36px;
+    padding: 4px 8px;
+    border: 1px solid var(--azul-acero);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    background: var(--blanco);
+}
+
+.acc-miembro-estado {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.acc-contactos,
+.acc-pendientes {
+    list-style: none;
+    padding: 0;
+}
+
+.acc-contacto,
+.acc-pendientes .acc-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+.acc-form-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 8px;
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.acc-error {
+    color: var(--rojo);
+    font-size: 0.875rem;
+    min-height: 1em;
+}
+
+.acc-form-contacto [aria-invalid="true"] {
+    border: 2px solid var(--rojo);
+}
+
+.acc-btn-secundario,
+.acc-quitar,
+.acc-ir,
+.acc-interruptor {
+    min-height: 36px;
+    padding: 4px 12px;
+    border: 2px solid var(--azul-petroleo);
+    border-radius: 6px;
+    background: var(--blanco);
+    color: var(--azul-petroleo);
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.acc-btn-secundario:hover,
+.acc-ir:hover,
+.acc-btn-secundario:focus-visible,
+.acc-ir:focus-visible {
+    background: var(--azul-petroleo);
+    color: var(--blanco);
+}
+
+.acc-quitar {
+    border-color: var(--rojo);
+    color: var(--rojo);
+}
+
+.acc-item-hecho {
+    background-color: var(--estado-vigente-fondo);
+    border-color: var(--estado-vigente);
+}
+
+.acc-item-hecho .acc-ir {
+    display: none;
+}
+
+.acc-plan-completo {
+    margin-top: 8px;
+    padding: 8px 10px;
+    border-left: 4px solid var(--estado-vigente);
+    background: var(--estado-vigente-fondo);
+    color: var(--estado-vigente);
+    font-weight: bold;
+}
+
+.acc-barra-avance {
+    transition: width 0.3s ease;
+}
+
+.acc-interruptor {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 6px;
+}
+
+.acc-interruptor-pista {
+    position: relative;
+    width: 40px;
+    height: 22px;
+    border-radius: 11px;
+    background: var(--azul-acero);
+    flex-shrink: 0;
+}
+
+.acc-interruptor-pista::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--blanco);
+    transition: left 0.2s ease;
+}
+
+.acc-interruptor[aria-pressed="true"] .acc-interruptor-pista {
+    background: var(--verde);
+}
+
+.acc-interruptor[aria-pressed="true"] .acc-interruptor-pista::after {
+    left: 21px;
+}
+
+/* Vista previa del brillo reducido */
+.acc-bateria-activa {
+    filter: brightness(0.85);
 }
 
 .acc-etiqueta .material-symbols-outlined {
@@ -1497,7 +2085,7 @@ body {
     border-left: 4px solid var(--estado-vigente);
     padding: 10px;
     border-radius: 6px;
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     color: black;
     margin: 10px;
     justify-content: center;
@@ -1533,7 +2121,7 @@ body {
 }
 
 .acc-muestra-normal {
-    font-size: 0.85rem;
+    font-size: 0.875rem;
 }
 
 .acc-muestra-ampliado {
@@ -1657,7 +2245,7 @@ body {
     display: block;
     margin-top: 10px;
     font-size: 0.9rem;
-    color: var(--azul-acero);
+    color: var(--azul-petroleo);
     font-style: normal;
     font-weight: bold;
 }
@@ -1676,7 +2264,7 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: var(--azul-acero);
+    color: var(--azul-petroleo);
 }
 
 .footer-principal {
@@ -2052,7 +2640,7 @@ body {
     position: absolute;
     top: -100px;
     left: 16px;
-    background-color: #0f172a;
+    background-color: var(--azul-oscuro);
     color: #ffffff;
     padding: 12px 20px;
     border-radius: 6px;
@@ -2072,7 +2660,7 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-    outline: 3px solid #f97316;
+    outline: 3px solid var(--azul-petroleo);
     outline-offset: 3px;
 }
 
@@ -2139,9 +2727,9 @@ body.modo-alto-contraste video {
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    background-color: #0f172a;
+    background-color: var(--azul-oscuro);
     color: #ffffff !important;
-    border: 1px solid #334155;
+    border: 1px solid var(--azul-petroleo);
     padding: 5px 10px !important;
     border-radius: 6px;
     cursor: pointer;
@@ -2156,7 +2744,7 @@ body.modo-alto-contraste video {
 }
 
 .btn-nav-acc:hover {
-    background-color: #1e293b;
+    background-color: var(--azul-petroleo);
 }
 
 .menu-nav-acc {
@@ -2164,7 +2752,7 @@ body.modo-alto-contraste video {
     top: calc(100% + 10px);
     right: 0;
     background-color: #ffffff;
-    border: 2px solid #0f172a;
+    border: 2px solid var(--azul-oscuro);
     border-radius: 10px;
     padding: 8px;
     min-width: 215px;
@@ -2185,9 +2773,9 @@ body.modo-alto-contraste video {
     gap: 8px;
     width: 100%;
     padding: 8px 10px;
-    background-color: #f8fafc;
-    color: #0f172a;
-    border: 1px solid #cbd5e1;
+    background-color: var(--blanco);
+    color: var(--azul-oscuro);
+    border: 1px solid var(--azul-acero);
     border-radius: 6px;
     font-size: 0.9rem;
     font-weight: 600;
@@ -2197,6 +2785,798 @@ body.modo-alto-contraste video {
 
 .menu-nav-acc button:hover,
 .menu-nav-acc button[aria-pressed="true"] {
-    background-color: #0f172a;
+    background-color: var(--azul-oscuro);
     color: #ffffff;
+}
+
+/* ==========================================================================
+   11. AJUSTE A LA GUÍA DE ESTILOS (informe, sección 4.1, y mockups de Figma)
+   --------------------------------------------------------------------------
+   - Tipografía Inter en toda la página; títulos en negrita (4.1.2).
+   - Fondo beige y tarjetas blancas; esquinas de 12 px; alto mínimo de 48 px (4.1.4).
+   - Botón de acción naranja #F57A2D con texto negro, presionado #CD5B16 (4.1.4).
+   - Botones secundarios con contorno azul petróleo (4.1.4).
+   - Modo Emergencia: botones rojos con texto negro y pantallas en azul oscuro
+     con texto blanco (Tabla 18).
+   - Estados verde, amarillo y rojo con texto negro e ícono (Tabla 18).
+   - Íconos en azul oscuro; en fondos oscuros, en blanco (4.1.3).
+   - Foco visible de 2,5 px en azul petróleo (Tabla 18).
+   ========================================================================== */
+
+body {
+    font-family: var(--fuente);
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: var(--beige);
+    color: var(--azul-oscuro);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--fuente);
+    font-weight: 700;
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: var(--fuente);
+}
+
+/* ---------- Foco visible ---------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex="-1"]:focus-visible {
+    outline: 2.5px solid var(--azul-petroleo);
+    outline-offset: 2px;
+}
+
+/* En las pantallas oscuras del Modo Emergencia el azul petróleo no se distingue:
+   el mismo borde de 2,5 px se muestra en blanco. */
+.marco-emergencia :focus-visible,
+.hu20-cronometro :focus-visible,
+.hu23-aviso :focus-visible,
+.footer-principal :focus-visible {
+    outline-color: var(--blanco);
+}
+
+/* ---------- Cabecera (como la barra superior de los mockups web) ---------- */
+.header-principal {
+    background-color: var(--blanco);
+    border-bottom: 1px solid var(--beige);
+}
+
+.logo {
+    color: var(--azul-oscuro);
+}
+
+.navegacion-principal .nav-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--alto-minimo);
+    color: var(--azul-oscuro);
+    font-weight: 600;
+    border-radius: var(--radio);
+}
+
+.nav-link:hover {
+    color: var(--azul-petroleo);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.btn-emergencia-alerta,
+.navegacion-principal .btn-emergencia-alerta {
+    background-color: var(--rojo);
+    color: var(--negro);
+    border-radius: var(--radio);
+    font-weight: 700;
+}
+
+.btn-emergencia-alerta:hover,
+.principal:hover {
+    background-color: var(--rojo);
+    color: var(--negro);
+    text-decoration: none;
+    box-shadow: 0 0 0 3px var(--azul-oscuro);
+}
+
+.btn-nav-acc {
+    background-color: var(--azul-oscuro);
+    border-color: var(--azul-oscuro);
+    border-radius: var(--radio) !important;
+    min-height: var(--alto-minimo);
+}
+
+.btn-nav-acc:hover {
+    background-color: var(--azul-petroleo);
+    text-decoration: none;
+}
+
+.hamburguesa {
+    background: var(--azul-oscuro);
+    border-color: var(--azul-oscuro);
+    border-radius: var(--radio);
+    min-height: var(--alto-minimo);
+}
+
+.menu-nav-acc,
+.menu-nav-acc button {
+    border-radius: var(--radio);
+}
+
+@media screen and (width <= 1220px) {
+    .navegacion-principal {
+        background-color: var(--blanco);
+        border-bottom: 1px solid var(--beige);
+    }
+
+    .navegacion-principal .nav-link {
+        color: var(--azul-oscuro);
+    }
+
+    .navegacion-principal .btn-emergencia-alerta {
+        justify-content: center;
+        color: var(--negro);
+    }
+}
+
+/* ---------- Secciones: fondo beige, contenido en tarjetas blancas ---------- */
+.landing-section,
+.grid-1-3,
+.pre-footer-grid {
+    background-color: var(--beige);
+}
+
+.dispositivo-marco {
+    background-color: var(--blanco);
+    border: none;
+    border-radius: var(--radio);
+    box-shadow: 0 2px 10px rgba(20, 42, 61, 0.08);
+}
+
+.solucion-col,
+.problematica-col,
+.info-hu15,
+.info-hu20,
+.columna-hu15,
+.columna-hu20,
+.banner-importancia,
+.testimonio-card,
+.hu-panel,
+.resumen-card {
+    border-radius: var(--radio);
+}
+
+.testimonio-card {
+    background-color: var(--blanco);
+}
+
+.banner-importancia {
+    background-color: var(--blanco);
+    border-left-color: var(--azul-petroleo);
+}
+
+.badge-solucion,
+.badge-alerta {
+    color: var(--negro);
+}
+
+/* ---------- Botones de acción ---------- */
+.btn-enviar,
+.hu15-btn-agregar,
+.hu20-btn-principal {
+    min-height: var(--alto-minimo);
+    background-color: var(--naranja-acento);
+    color: var(--negro);
+    border: none;
+    border-radius: var(--radio);
+    font-weight: 700;
+}
+
+.btn-enviar:hover,
+.btn-enviar:active,
+.hu15-btn-agregar:hover,
+.hu15-btn-agregar:active,
+.hu20-btn-principal:hover,
+.hu20-btn-principal:active {
+    background-color: var(--naranja-hover);
+    color: var(--negro);
+}
+
+.hu20-btn-principal--activo,
+.hu20-btn-principal--activo:hover {
+    background-color: var(--azul-petroleo);
+    color: var(--blanco);
+}
+
+/* Botones secundarios: contorno azul petróleo, como «Posponer» en la Figura 29 */
+.hu20-btn-cancelar,
+.btn-compartir-invitacion,
+.acc-btn-secundario,
+.acc-ir,
+.acc-quitar,
+.acc-interruptor,
+.btn-marcar-manual,
+.btn-simular-reporte,
+.push-ver-ficha {
+    min-height: var(--alto-minimo);
+    padding: 0.5rem 1rem;
+    background-color: var(--blanco);
+    color: var(--azul-petroleo);
+    border: 2px solid var(--azul-petroleo);
+    border-radius: var(--radio);
+    font-weight: 700;
+}
+
+.hu20-btn-cancelar:hover,
+.btn-compartir-invitacion:hover,
+.acc-btn-secundario:hover,
+.acc-ir:hover,
+.acc-quitar:hover,
+.btn-marcar-manual:hover,
+.btn-simular-reporte:hover,
+.push-ver-ficha:hover {
+    background-color: var(--azul-petroleo);
+    color: var(--blanco);
+    border-color: var(--azul-petroleo);
+}
+
+.btn-simular-reporte {
+    border-style: dashed;
+}
+
+/* Pestañas de pasos: la activa en azul petróleo, como el ícono activo de la guía */
+.pasos-barra {
+    border-radius: var(--radio);
+}
+
+.pasos-barra .paso-item {
+    min-height: 40px;
+    padding: 6px 12px;
+    border: 1px solid var(--azul-acero);
+    border-radius: var(--radio);
+    background-color: var(--blanco);
+    color: var(--azul-oscuro);
+    cursor: pointer;
+}
+
+.pasos-barra .paso-item.active {
+    background-color: var(--azul-petroleo);
+    border-color: var(--azul-petroleo);
+    color: var(--blanco);
+}
+
+/* ---------- Campos de formulario (Figura 29) ---------- */
+.form-group input,
+.form-group textarea,
+.form-group select,
+.hu15-campo input,
+.hu23-form select,
+.acc-campos select,
+.acc-form-contacto input,
+.acc-form-contacto select,
+.tipo-ayuda {
+    min-height: var(--alto-minimo);
+    border: 1px solid var(--azul-acero);
+    border-radius: var(--radio);
+    background-color: var(--blanco);
+    color: var(--azul-oscuro);
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 120px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus,
+.hu15-campo input:focus,
+.hu23-form select:focus,
+.acc-campos select:focus,
+.acc-form-contacto input:focus,
+.acc-form-contacto select:focus {
+    border: 2px solid var(--azul-petroleo);
+}
+
+/* Errores: texto negro con ícono rojo (Tabla 18) */
+.hu15-error,
+.acc-error {
+    color: var(--negro);
+}
+
+.hu15-error:not([hidden])::before,
+.acc-error:not(:empty)::before {
+    content: "error";
+    font-family: "Material Symbols Outlined";
+    font-size: 1.1rem;
+    line-height: 1;
+    vertical-align: -0.2em;
+    margin-right: 4px;
+    color: var(--rojo);
+    font-variation-settings: "FILL" 1;
+}
+
+.hu15-campo input[aria-invalid="true"],
+.acc-form-contacto [aria-invalid="true"] {
+    border: 2px solid var(--rojo);
+}
+
+/* ---------- Íconos (4.1.3) ---------- */
+.hu-icono-caja,
+.hu15-item-icono,
+.hu-panel-encabezado .hu-icono-caja,
+.banner-icono .material-symbols-outlined,
+.info-item .material-symbols-outlined,
+.acc-tarjeta .material-symbols-outlined {
+    color: var(--azul-oscuro);
+}
+
+.hu-panel-encabezado {
+    border-bottom: 1px solid var(--beige);
+}
+
+.hu20-cron-icono,
+.notificacion-push-card .material-symbols-outlined,
+.push-integrante .material-symbols-outlined {
+    color: var(--blanco);
+}
+
+.hu15-btn-agregar .hu-icono-caja,
+.hu20-btn-principal .hu-icono-caja {
+    color: inherit;
+}
+
+/* ---------- Mochila y simulacro ---------- */
+.hu16-progreso-avance {
+    background: var(--azul-petroleo);
+}
+
+.hu16-tengo input,
+.hu15-check input,
+.acc-check input {
+    accent-color: var(--azul-petroleo);
+}
+
+.hu16-tengo {
+    min-height: var(--alto-minimo);
+}
+
+.hu15-item--reunido {
+    background: var(--blanco);
+    border: 2px solid var(--verde);
+}
+
+.hu16-vacio {
+    border-color: var(--verde);
+}
+
+.codigo-badge {
+    color: var(--azul-oscuro);
+}
+
+.codigo-box {
+    border-radius: var(--radio);
+}
+
+.hu23-aviso,
+.hu20-cronometro,
+.hu15-item,
+.hu15-hogar,
+.hu16-barra,
+.hu20-tarjeta {
+    border-radius: var(--radio);
+}
+
+/* ---------- Modo Emergencia (Tabla 18 y Figura 29) ---------- */
+.marco-emergencia {
+    background-color: var(--azul-oscuro);
+    border: none;
+    border-radius: var(--radio);
+}
+
+.btn-emergencia-activar {
+    min-height: 64px;
+    background-color: var(--rojo);
+    color: var(--negro);
+    border-radius: var(--radio);
+    box-shadow: none;
+}
+
+.btn-emergencia-activar:hover {
+    background-color: var(--rojo);
+    box-shadow: 0 0 0 3px var(--blanco);
+}
+
+.btn-estado {
+    min-height: 64px;
+    color: var(--negro);
+    border-radius: var(--radio);
+}
+
+.btn-estado:hover {
+    opacity: 1;
+    box-shadow: 0 0 0 3px var(--blanco);
+}
+
+.badge-estado {
+    color: var(--negro);
+    border-radius: var(--radio);
+}
+
+.badge-estado .material-symbols-outlined {
+    font-size: 1.1rem;
+}
+
+.icono-alerta-grande {
+    color: var(--rojo);
+}
+
+.alerta-offline-box,
+.notificacion-push-card,
+.push-integrante,
+.estado-resumen,
+.integrante-estado-item,
+.radio-opcion,
+.card {
+    border-radius: var(--radio);
+}
+
+.push-integrante {
+    border: 2px solid var(--blanco);
+}
+
+#lista-sin-reporte .integrante-estado-item {
+    background-color: var(--blanco);
+    border: 2px dashed var(--amarillo);
+}
+
+.integrante-destacado {
+    outline: 3px solid var(--amarillo);
+}
+
+.integrante-hora {
+    color: var(--azul-petroleo);
+}
+
+/* Filtros como en WF-10: el activo en blanco y los demás en azul petróleo */
+.filtro-estado {
+    min-height: 44px;
+    padding: 6px 14px;
+    background-color: var(--azul-petroleo);
+    color: var(--blanco);
+    border: 1px solid var(--azul-petroleo);
+    border-radius: var(--radio);
+}
+
+.filtro-estado[aria-pressed="true"] {
+    background-color: var(--blanco);
+    color: var(--azul-oscuro);
+    border: 1px solid var(--blanco);
+}
+
+.estado-offline,
+.estado-sin-resultados {
+    color: var(--blanco);
+}
+
+.bottom-nav-emergencia {
+    border-radius: 0 0 var(--radio) var(--radio);
+}
+
+.bottom-nav-emergencia .nav-item {
+    font-size: 0.75rem;
+    min-height: var(--alto-minimo);
+    color: var(--azul-oscuro);
+}
+
+.bottom-nav-emergencia .nav-emergencia-highlight {
+    color: var(--negro);
+}
+
+.bottom-nav-emergencia .nav-emergencia-highlight .material-symbols-outlined {
+    background-color: var(--rojo);
+    border-color: var(--rojo);
+    color: var(--negro);
+}
+
+/* ---------- Accesibilidad ---------- */
+.acc-etiqueta {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    border-radius: var(--radio);
+}
+
+.acc-etiqueta-alerta,
+.acc-etiqueta-ok {
+    color: var(--negro);
+}
+
+.acc-etiqueta-alerta .material-symbols-outlined,
+.acc-etiqueta-ok .material-symbols-outlined {
+    color: var(--negro);
+}
+
+.acc-item-hecho {
+    background-color: var(--blanco);
+    border: 2px solid var(--verde);
+}
+
+.acc-plan-completo {
+    color: var(--negro);
+    border-left-color: var(--azul-petroleo);
+}
+
+.acc-item,
+.acc-guia,
+.acc-muestra,
+.acc-tarjeta,
+.aviso-imagen-compartida {
+    border-radius: var(--radio);
+}
+
+/* ---------- Pie y contacto ---------- */
+.info-item .material-symbols-outlined {
+    color: var(--azul-oscuro);
+}
+
+.footer-principal {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+}
+
+/* Ajustes de distribución: el contenido no deja bloques vacíos */
+#seccion-configuracioninicial-gestionhogar {
+    align-items: start;
+}
+
+.seccion1 .funcionalidad-wrapper,
+.seccion1 .dispositivo-marco {
+    height: auto;
+}
+
+.hu-zone-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.badge-alerta {
+    background-color: var(--blanco);
+}
+
+.icono-en-linea {
+    font-size: 1.15em;
+    margin-right: 4px;
+    vertical-align: -0.2em;
+    color: var(--azul-oscuro);
+}
+
+.notificacion-push-card .icono-en-linea {
+    color: var(--blanco);
+}
+
+.landing-section {
+    min-height: auto;
+    padding: 24px 5px;
+}
+
+.acc-check {
+    display: block;
+}
+
+.acc-check input {
+    margin-right: 8px;
+    vertical-align: -4px;
+}
+
+/* HU-008: acciones según la ubicación */
+.hu8-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hu8-form textarea,
+.hu8-form select {
+    width: 100%;
+    min-height: var(--alto-minimo);
+    padding: 10px;
+    border: 1px solid var(--azul-acero);
+    border-radius: var(--radio);
+    font-family: var(--fuente);
+    font-size: 1rem;
+    color: var(--azul-oscuro);
+    background-color: var(--blanco);
+}
+
+.hu8-contador,
+.hu8-estado {
+    font-size: 0.875rem;
+    color: var(--azul-petroleo);
+}
+
+.hu8-ficha,
+.hu8-pendientes {
+    padding: 12px 14px;
+    border: 1px solid var(--beige);
+    border-radius: var(--radio);
+    background-color: var(--blanco);
+}
+
+.hu8-ficha-titulo,
+.hu8-pendientes h4,
+.hu8-subtitulo {
+    font-weight: 700;
+    color: var(--azul-oscuro);
+}
+
+.hu8-pendientes ul {
+    padding-left: 20px;
+}
+
+/* Campos inválidos después de que la persona los usa (HU-001 CA02 y demás formularios) */
+.form-group input:user-invalid,
+.form-group textarea:user-invalid {
+    border: 2px solid var(--rojo);
+}
+
+.hu15-campo input[aria-invalid="true"],
+.acc-form-contacto [aria-invalid="true"] {
+    background-color: var(--blanco);
+    color: var(--azul-oscuro);
+}
+
+/* Integrantes (HU-004), roles (HU-007), mapa (HU-009) y confirmaciones del Modo Emergencia */
+.int-lista,
+#roles-lista {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.int-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 12px;
+    background-color: var(--blanco);
+    border: 1px solid var(--beige);
+    border-radius: var(--radio);
+}
+
+.int-item > div:first-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.int-celular {
+    background-color: var(--azul-petroleo);
+}
+
+.int-acciones {
+    display: flex;
+    gap: 6px;
+}
+
+.int-error {
+    font-size: 0.875rem;
+    color: var(--azul-oscuro);
+    min-height: 1em;
+}
+
+#form-integrantes select,
+#form-rol select,
+#form-zonas select {
+    min-height: var(--alto-minimo);
+    padding: 8px 10px;
+    border: 1px solid var(--azul-acero);
+    border-radius: var(--radio);
+    background-color: var(--blanco);
+    font-family: var(--fuente);
+    font-size: 1rem;
+}
+
+.mapa-simulado {
+    position: relative;
+    cursor: crosshair;
+}
+
+.mapa-simulado .pin-ubicacion {
+    position: absolute;
+    transform: translate(-50%, -100%);
+}
+
+.mapa-ayuda {
+    font-size: 0.875rem;
+}
+
+.resumen-ficha {
+    font-size: 1.25rem;
+}
+
+.confirmar-emergencia {
+    width: 100%;
+    max-width: 480px;
+    margin-top: 12px;
+    padding: 14px;
+    background-color: var(--blanco);
+    color: var(--azul-oscuro);
+    border-radius: var(--radio);
+    text-align: left;
+}
+
+.confirmar-acciones {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-confirmar-si {
+    flex: 1;
+    background-color: var(--rojo);
+    color: var(--negro);
+}
+
+.emergencia-activado:empty {
+    display: none;
+}
+
+.emergencia-activado {
+    font-size: 0.875rem;
+    color: var(--blanco);
+    margin-bottom: 8px;
+}
+
+.confirmacion-reporte {
+    margin: 8px 0;
+    padding: 10px 12px;
+    border-radius: var(--radio);
+    color: var(--negro);
+    font-weight: 600;
+}
+
+.confirmacion-reporte[hidden] {
+    display: none;
+}
+
+.confirmacion-reporte--bien {
+    background-color: var(--verde);
+}
+
+.confirmacion-reporte--ayuda {
+    background-color: var(--rojo);
+}
+
+/* Tarjetas del simulacro: texto negro sobre salmón, verde y beige (Tabla 18) */
+.hu20-tarjeta--activa,
+.hu20-tarjeta--final,
+.hu20-tarjeta--cancelado {
+    color: var(--negro);
+}
+
+.hu20-tarjeta--activa {
+    background: var(--blanco);
+    border: 2px solid var(--naranja-acento);
+}
+
+.hu20-tarjeta .hu20-paso-etiqueta,
+.hu20-tarjeta .hu20-paso-titulo,
+.hu20-tarjeta .hu20-paso-detalle,
+.hu20-tarjeta .hu20-paso-nota {
+    color: var(--negro);
+}
+
+.hu20-progreso-punto--hecho {
+    background: var(--azul-petroleo);
 }

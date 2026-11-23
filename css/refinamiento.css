@@ -1,0 +1,207 @@
+/* ==========================================================================
+   Refinamiento visual de la V1: más aire, color más limpio y fotos de apoyo.
+   Se carga después de styles.css. Solo usa la paleta, la tipografía Inter y
+   los componentes de la guía de estilos (informe, sección 4.1): fondo beige,
+   contenido en tarjetas blancas con esquinas de 12 px, botones sin cambios.
+   ========================================================================== */
+:root {
+    --espacio-seccion: clamp(40px, 6vw, 88px);
+    --margen-lateral: max(16px, calc((100% - 1240px) / 2));
+    --separacion: clamp(16px, 2.4vw, 32px);
+    --relleno-tarjeta: clamp(20px, 2.6vw, 36px);
+    --sombra-suave: 0 1px 2px rgba(20, 42, 61, 0.06), 0 8px 24px rgba(20, 42, 61, 0.06);
+}
+
+body {
+    line-height: 1.6;
+}
+
+/* ---------- Ritmo de las secciones: mismo margen y más aire ---------- */
+.landing-section {
+    padding: var(--espacio-seccion) var(--margen-lateral);
+    box-shadow: none;
+}
+
+.hero-grid,
+.grid-2-3,
+.grid-1-3 {
+    gap: var(--separacion);
+    align-items: start;
+}
+
+#seccion-logistica-preparacionpreventiva,
+.seccion4 {
+    gap: var(--separacion);
+}
+
+/* ---------- Tarjetas: blancas, sin marcos de color, una sola sombra ---------- */
+.solucion-col,
+.problematica-col,
+.info-wrapper,
+.info-hu15,
+.info-hu20,
+.dispositivo-marco,
+.testimonio-card {
+    background-color: var(--blanco);
+    border: none;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra-suave);
+}
+
+.solucion-col,
+.problematica-col,
+.info-wrapper,
+.info-hu15,
+.info-hu20 {
+    padding: var(--relleno-tarjeta);
+    gap: 16px;
+}
+
+.problematica-col {
+    border-top: 4px solid var(--naranja-acento);
+}
+
+.info-hu15:hover,
+.info-hu20:hover {
+    background-color: var(--blanco);
+    color: var(--azul-oscuro);
+}
+
+.parraf-one,
+.parraf-two {
+    background-color: transparent;
+    max-width: 68ch;
+}
+
+#word-sismolisto {
+    border-radius: 8px;
+    padding: 0 0.2em;
+}
+
+/* ---------- Encabezados de sección: todos iguales ---------- */
+#seccion-hero h1 {
+    font-size: clamp(1.75rem, 3vw, 2.6rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 12px 0 16px;
+}
+
+.info-wrapper h2,
+.title-section2 h2,
+.problematica-col h2,
+#titulo-testimonios {
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+.title-section2 {
+    grid-column: 1 / -1;
+    background-color: transparent;
+    color: var(--azul-oscuro);
+    text-align: left;
+    padding: 0;
+}
+
+.hero-imagen-wrapper {
+    margin-top: 8px;
+}
+
+/* ---------- Fotos de apoyo ---------- */
+.foto-apoyo {
+    margin: 8px 0 0;
+    border-radius: var(--radio);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background-color: var(--beige);
+}
+
+.foto-apoyo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-hu15 .foto-apoyo,
+.info-hu20 .foto-apoyo {
+    margin-top: 20px;
+}
+
+@media screen and (width <= 870px) {
+    .foto-apoyo {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+/* ---------- Testimonios y pie ---------- */
+.testimonio-card {
+    padding: var(--relleno-tarjeta);
+}
+
+.testimonios-lista {
+    display: grid;
+    gap: 16px;
+}
+
+.footer-principal .creditos {
+    font-size: 0.875rem;
+    margin-top: 4px;
+}
+
+/* El marco del Modo Emergencia conserva su panel azul oscuro (informe 5.1). */
+.dispositivo-marco.marco-emergencia {
+    background-color: var(--azul-oscuro);
+}
+
+/* Imágenes del hero y del protocolo: sin marco de color, mismas esquinas. */
+.hero-img,
+.hero-vid {
+    border: none;
+    border-radius: var(--radio);
+}
+
+/* Accesibilidad: texto y foto lado a lado en pantallas anchas. */
+@media screen and (min-width: 871px) {
+    .info-accesibilidad {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        column-gap: var(--separacion);
+        row-gap: 12px;
+        align-items: start;
+    }
+
+    .info-accesibilidad > h2,
+    .info-accesibilidad > p {
+        grid-column: 1;
+    }
+
+    .info-accesibilidad > .foto-apoyo {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        margin: 0;
+        aspect-ratio: 16 / 9;
+    }
+}
+
+/* Preparación: el panel es la tarjeta; su contenedor ya no dibuja otro marco. */
+.columna-hu15,
+.columna-hu20 {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+.columna-hu15 .hu-panel,
+.columna-hu20 .hu-panel {
+    border: none;
+    box-shadow: var(--sombra-suave);
+}
+
+/* Avisos de cierre de sección: tarjeta blanca sin franja lateral. */
+.banner-importancia {
+    border: none;
+    box-shadow: var(--sombra-suave);
+    padding: var(--relleno-tarjeta);
+    margin-top: 0;
+}

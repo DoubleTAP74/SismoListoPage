@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SismoListo — Asistente de preparación y respuesta sísmica</title>
-    <meta name="description" content="SismoListo ayuda a las familias de Lima a armar su plan ante sismos, preparar la mochila, practicar simulacros y avisar cómo están durante una emergencia.">
+    <meta name="description"
+        content="SismoListo ayuda a las familias de Lima a armar su plan ante sismos, preparar la mochila, practicar simulacros y avisar cómo están durante una emergencia.">
     <!-- Tipografía Inter (guía de estilos, sección 4.1.2) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,19 +42,15 @@
                 <a href="#seccion-hero" class="nav-link">Inicio</a>
                 <a href="#seccion-configuracioninicial-gestionhogar" class="nav-link">Configuración</a>
                 <a href="#seccion-logistica-preparacionpreventiva" class="nav-link">Preparación</a>
-                <a href="#seccion-emergencia-respuestainmediata" class="nav-link btn-emergencia-alerta principal">Modo
-                    Emergencia</a>
                 <a href="#seccion-accesibilidad-inclusion" class="nav-link">Accesibilidad</a>
                 <a href="#seccion-contacto-testimonios" class="nav-link">Testimonios</a>
                 <a href="#seccion-contacto-directo" class="nav-link">Contáctenos</a>
 
                 <!-- Nuevo botón desplegable de accesibilidad rápida -->
                 <div class="acc-nav-wrapper">
-                    <button type="button" id="btn-nav-acc-toggle" class="nav-link btn-nav-acc"
-                        aria-expanded="false" aria-controls="menu-nav-acc"
-                        aria-label="Opciones rápidas de accesibilidad">
+                    <button type="button" id="btn-nav-acc-toggle" class="nav-link btn-nav-acc" aria-expanded="false"
+                        aria-controls="menu-nav-acc" aria-label="Opciones rápidas de accesibilidad">
                         <span class="material-symbols-outlined" aria-hidden="true">accessibility_new</span>
-                        <span>Opciones</span>
                     </button>
                     <div id="menu-nav-acc" class="menu-nav-acc" hidden>
                         <button type="button" class="js-acc-ampliado" aria-pressed="false">
@@ -70,6 +67,9 @@
                         </button>
                     </div>
                 </div>
+
+                <a href="#seccion-emergencia-respuestainmediata" class="nav-link btn-emergencia-alerta principal">Modo
+                    Emergencia</a>
             </nav>
         </div>
     </header>
@@ -83,9 +83,11 @@
             <!-- Lado Izquierdo: La Solución -->
             <div class="hero-col solucion-col">
                 <span class="badge badge-solucion">Nuestra solución</span>
-                <h1 id="titulo-principal"><span id="word-sismolisto">SismoListo</span> Tu asistente para prepararte y actuar ante un sismo</h1>
+                <h1 id="titulo-principal"><span id="word-sismolisto">SismoListo</span> Tu asistente para prepararte y
+                    actuar ante un sismo</h1>
                 <p class="parraf-one">
-                    Reunimos en un solo lugar lo que tu familia necesita saber sobre sismos y lo convertimos en un plan con
+                    Reunimos en un solo lugar lo que tu familia necesita saber sobre sismos y lo convertimos en un plan
+                    con
                     pasos cortos y fáciles de seguir, tanto para prepararse con calma como para actuar durante una
                     emergencia.
                 </p>
@@ -101,13 +103,16 @@
                 <span class="badge badge-alerta">El problema</span>
                 <h2>¿Por qué es difícil prepararnos ante un sismo?</h2>
                 <p class="parraf-two">
-                    Lima tiene un alto riesgo sísmico. Muchas familias no tienen un plan acordado ni practican qué hacer, y
+                    Lima tiene un alto riesgo sísmico. Muchas familias no tienen un plan acordado ni practican qué
+                    hacer, y
                     la información disponible suele ser difícil de seguir bajo estrés o cuando no hay internet. Por eso,
                     cuando ocurre un sismo, cuesta reaccionar a tiempo.
                 </p>
                 <h3>Noticias frecuentes:</h3>
                 <div>
-                    <video class="hero-vid" aria-label="Video informativo sobre el riesgo sísmico y la importancia de la preparación" playsinline controls preload="metadata">
+                    <video class="hero-vid"
+                        aria-label="Video informativo sobre el riesgo sísmico y la importancia de la preparación"
+                        playsinline controls preload="metadata">
                         <source src="assets/videos/video_problematica.mp4" type="video/mp4">
                         Tu navegador no soporta la reproducción de video.
                     </video>
@@ -116,13 +121,15 @@
         </section>
 
         <!-- SECCIÓN 1: Configuración Inicial y Gestión del Hogar -->
-        <section id="seccion-configuracioninicial-gestionhogar" aria-labelledby="titulo-sec-1" class="landing-section grid-2-3">
+        <section id="seccion-configuracioninicial-gestionhogar" aria-labelledby="titulo-sec-1"
+            class="landing-section grid-2-3">
             <div class="seccion1 funcionalidad-wrapper">
                 <div class="dispositivo-marco">
 
                     <!-- Barra de progreso superior con los pasos -->
                     <div class="pasos-barra" id="Items" role="tablist" aria-label="Pasos de configuración del hogar">
-                        <button type="button" class="paso-item active" role="tab" aria-selected="true">1. Cuenta</button>
+                        <button type="button" class="paso-item active" role="tab" aria-selected="true">1.
+                            Cuenta</button>
                         <button type="button" class="paso-item" role="tab" aria-selected="false">2. Vivienda</button>
                         <button type="button" class="paso-item" role="tab" aria-selected="false">3. Integrantes</button>
                         <button type="button" class="paso-item" role="tab" aria-selected="false">4. Código</button>
@@ -149,7 +156,9 @@
                                     <label for="reg-pass">Contraseña:</label>
                                     <input type="password" id="reg-pass" placeholder="••••••••" required>
                                 </div>
-                                <p class="nota-sesion"><span class="material-symbols-outlined icono-en-linea" aria-hidden="true">info</span> Tu sesión quedará abierta para que, en una emergencia, puedas
+                                <p class="nota-sesion"><span class="material-symbols-outlined icono-en-linea"
+                                        aria-hidden="true">info</span> Tu sesión quedará abierta para que, en una
+                                    emergencia, puedas
                                     usar la app sin volver a escribir tu contraseña.</p>
                                 <button type="submit" class="btn-enviar">Crear cuenta</button>
                             </form>
@@ -162,9 +171,11 @@
                                 class="form-landing">
                                 <div class="form-group">
                                     <label for="hogar-nombre">Nombre del hogar:</label>
-                                    <input type="text" id="hogar-nombre" placeholder="Ej. Casa de los Huamán" maxlength="40" required>
+                                    <input type="text" id="hogar-nombre" placeholder="Ej. Casa de los Huamán"
+                                        maxlength="40" required>
                                     <label for="hogar-pisos">Número de pisos de la vivienda:</label>
-                                    <input type="number" id="hogar-pisos" min="1" max="10" value="2" inputmode="numeric">
+                                    <input type="number" id="hogar-pisos" min="1" max="10" value="2"
+                                        inputmode="numeric">
                                     <label for="reg-distrito">Distrito donde vives (Lima o Callao):</label>
                                     <select id="reg-distrito" required>
                                         <option value="" disabled selected>Elige tu distrito...</option>
@@ -174,10 +185,17 @@
                                         <option>San Martín de Porres</option>
                                     </select>
                                     <fieldset class="checkbox-group" style="border:none; padding:0; margin-top:8px;">
-                                        <legend style="font-weight:600; margin-bottom:6px;">Marca las características de tu vivienda:</legend>
-                                        <label class="radio-opcion" for="viv-escaleras"><input type="checkbox" id="viv-escaleras" style="width:auto;"><span>Tiene escaleras</span></label>
-                                        <label class="radio-opcion" for="viv-salida"><input type="checkbox" id="viv-salida" style="width:auto;"><span>Tiene una sola salida</span></label>
-                                        <label class="radio-opcion" for="viv-pasadizos"><input type="checkbox" id="viv-pasadizos" style="width:auto;"><span>Tiene pasadizos o pasajes estrechos</span></label>
+                                        <legend style="font-weight:600; margin-bottom:6px;">Marca las características de
+                                            tu vivienda:</legend>
+                                        <label class="radio-opcion" for="viv-escaleras"><input type="checkbox"
+                                                id="viv-escaleras" style="width:auto;"><span>Tiene
+                                                escaleras</span></label>
+                                        <label class="radio-opcion" for="viv-salida"><input type="checkbox"
+                                                id="viv-salida" style="width:auto;"><span>Tiene una sola
+                                                salida</span></label>
+                                        <label class="radio-opcion" for="viv-pasadizos"><input type="checkbox"
+                                                id="viv-pasadizos" style="width:auto;"><span>Tiene pasadizos o pasajes
+                                                estrechos</span></label>
                                     </fieldset>
                                 </div>
                                 <button type="submit" class="btn-enviar">Guardar y continuar</button>
@@ -193,7 +211,8 @@
                             <form id="form-integrantes" class="form-landing" novalidate>
                                 <div class="form-group">
                                     <label for="int-nombre">Nombre del integrante:</label>
-                                    <input type="text" id="int-nombre" placeholder="Ej. Elena Huamán" maxlength="40" required>
+                                    <input type="text" id="int-nombre" placeholder="Ej. Elena Huamán" maxlength="40"
+                                        required>
                                     <label for="parentesco">Parentesco o relación:</label>
                                     <input type="text" id="parentesco" placeholder="Ej. Abuela" maxlength="30" required>
                                     <label for="edad">Rango de edad:</label>
@@ -205,10 +224,12 @@
                                         <option>60 años o más</option>
                                     </select>
                                     <label for="int-celular">Celular (opcional, 9 dígitos):</label>
-                                    <input type="tel" id="int-celular" inputmode="numeric" maxlength="9" placeholder="Déjalo vacío si no tiene celular">
+                                    <input type="tel" id="int-celular" inputmode="numeric" maxlength="9"
+                                        placeholder="Déjalo vacío si no tiene celular">
                                     <p class="int-error" id="int-error" role="alert"></p>
                                 </div>
-                                <button type="submit" class="hu15-btn-agregar" id="int-guardar">Agregar integrante</button>
+                                <button type="submit" class="hu15-btn-agregar" id="int-guardar">Agregar
+                                    integrante</button>
                             </form>
                             <button type="button" class="btn-enviar">Continuar</button>
                         </div>
@@ -226,13 +247,17 @@
                             <!-- HU-006 CA02: compartir por SMS o mensajería (sin la clase btn-enviar,
                                  que la sección 1 usa para avanzar de paso) -->
                             <div class="codigo-compartir" role="group" aria-label="Compartir invitación">
-                                <button type="button" class="btn-compartir-invitacion" data-canal="SMS">Compartir por SMS</button>
-                                <button type="button" class="btn-compartir-invitacion" data-canal="WhatsApp">Compartir por WhatsApp</button>
+                                <button type="button" class="btn-compartir-invitacion" data-canal="SMS">Compartir por
+                                    SMS</button>
+                                <button type="button" class="btn-compartir-invitacion" data-canal="WhatsApp">Compartir
+                                    por WhatsApp</button>
                             </div>
                             <p class="codigo-estado" id="codigo-estado" role="status" aria-live="polite"></p>
                             <!-- HU-006 CA04: quien se une queda vinculado y ve el plan -->
-                            <p class="codigo-unidos"><strong>Ya se unió:</strong> Carlos Huamán; ya ve el plan en su celular.
-                                <strong>Pendiente:</strong> Mateo Huamán (invitado).</p>
+                            <p class="codigo-unidos"><strong>Ya se unió:</strong> Carlos Huamán; ya ve el plan en su
+                                celular.
+                                <strong>Pendiente:</strong> Mateo Huamán (invitado).
+                            </p>
                             <button type="button" class="btn-enviar">Continuar</button>
                         </div>
 
@@ -244,21 +269,24 @@
                             <!-- Integrantes que reciben un rol (Elena requiere asistencia y la acompaña Rosa) -->
                             <div class="integrantes-lista-simulacion">
                                 <button type="button" class="integrante-item" data-integrante="Rosa">
-                                    <span class="material-symbols-outlined" aria-hidden="true" style="margin-right: 5px;">person</span>
+                                    <span class="material-symbols-outlined" aria-hidden="true"
+                                        style="margin-right: 5px;">person</span>
                                     <div>
                                         <strong>Rosa Huamán</strong>
                                         <p>Madre</p>
                                     </div>
                                 </button>
                                 <button type="button" class="integrante-item" data-integrante="Carlos">
-                                    <span class="material-symbols-outlined" aria-hidden="true" style="margin-right: 5px;">person</span>
+                                    <span class="material-symbols-outlined" aria-hidden="true"
+                                        style="margin-right: 5px;">person</span>
                                     <div>
                                         <strong>Carlos Huamán</strong>
                                         <p>Padre</p>
                                     </div>
                                 </button>
                                 <button type="button" class="integrante-item" data-integrante="Mateo">
-                                    <span class="material-symbols-outlined" aria-hidden="true" style="margin-right: 5px;">person</span>
+                                    <span class="material-symbols-outlined" aria-hidden="true"
+                                        style="margin-right: 5px;">person</span>
                                     <div>
                                         <strong>Mateo Huamán</strong>
                                         <p>Hijo</p>
@@ -271,7 +299,8 @@
                                 <form action="/tu-endpoint" method="POST" target="subida_oculta" id="form-rol"
                                     class="form-landing">
                                     <div class="form-group">
-                                        <label for="rol-predefinido" id="rol-etiqueta">Rol durante la emergencia:</label>
+                                        <label for="rol-predefinido" id="rol-etiqueta">Rol durante la
+                                            emergencia:</label>
                                         <select id="rol-predefinido">
                                             <option>Llevar la mochila</option>
                                             <option>Cortar luz y gas</option>
@@ -279,8 +308,10 @@
                                             <option>Abrir la salida</option>
                                             <option value="personalizado">Rol personalizado…</option>
                                         </select>
-                                        <label for="rol-emergencia-input" class="rol-personalizado" hidden>Nombre del rol (máximo 40 caracteres):</label>
-                                        <input type="text" id="rol-emergencia-input" class="rol-personalizado" maxlength="40" placeholder="Ej. Llevar la radio a pilas" hidden>
+                                        <label for="rol-emergencia-input" class="rol-personalizado" hidden>Nombre del
+                                            rol (máximo 40 caracteres):</label>
+                                        <input type="text" id="rol-emergencia-input" class="rol-personalizado"
+                                            maxlength="40" placeholder="Ej. Llevar la radio a pilas" hidden>
                                         <p class="int-error" id="rol-error" role="alert"></p>
                                     </div>
                                     <button type="button" class="hu15-btn-agregar" id="rol-asignar">Asignar rol</button>
@@ -297,7 +328,8 @@
                         <!-- PASO 6: Acciones en caso de sismo dentro/fuera de casa (HU-008) -->
                         <div class="step-form" id="step-6">
                             <h3 class="steps-words">6. Qué hacer según dónde estés</h3>
-                            <p>Escribe qué debe hacer cada integrante si el sismo lo sorprende en casa o fuera de ella.</p>
+                            <p>Escribe qué debe hacer cada integrante si el sismo lo sorprende en casa o fuera de ella.
+                            </p>
 
                             <!-- HU-008: acciones por integrante (CA01 y CA02), ficha (CA03) y pendientes (CA04).
                                  El botón Guardar no usa la clase btn-enviar, que la sección 1 reserva para avanzar. -->
@@ -313,15 +345,18 @@
                                 </div>
                                 <div class="hu15-campo">
                                     <label for="hu8-casa">Si está en casa</label>
-                                    <textarea id="hu8-casa" rows="2" maxlength="120" aria-describedby="hu8-cont-casa"></textarea>
+                                    <textarea id="hu8-casa" rows="2" maxlength="120"
+                                        aria-describedby="hu8-cont-casa"></textarea>
                                     <span class="hu8-contador" id="hu8-cont-casa">0 de 120 caracteres</span>
                                 </div>
                                 <div class="hu15-campo">
                                     <label for="hu8-fuera">Si está fuera</label>
-                                    <textarea id="hu8-fuera" rows="2" maxlength="120" aria-describedby="hu8-cont-fuera"></textarea>
+                                    <textarea id="hu8-fuera" rows="2" maxlength="120"
+                                        aria-describedby="hu8-cont-fuera"></textarea>
                                     <span class="hu8-contador" id="hu8-cont-fuera">0 de 120 caracteres</span>
                                 </div>
-                                <button type="button" class="hu15-btn-agregar" id="hu8-guardar">Guardar acciones</button>
+                                <button type="button" class="hu15-btn-agregar" id="hu8-guardar">Guardar
+                                    acciones</button>
                                 <p class="hu8-estado" id="hu8-estado" role="status" aria-live="polite"></p>
                             </div>
 
@@ -368,13 +403,18 @@
                                     <input type="text" id="encuentro-ref"
                                         placeholder="Ej. Frente a la puerta principal del mercado" required>
                                 </div>
-                                <p class="mapa-ayuda" id="mapa-ayuda">Toca el mapa para marcar la ubicación del punto de encuentro.</p>
-                                <div class="mapa-simulado" id="mapa-encuentro" role="button" tabindex="0" aria-describedby="mapa-ayuda" aria-label="Mapa: marcar la ubicación del punto de encuentro">
+                                <p class="mapa-ayuda" id="mapa-ayuda">Toca el mapa para marcar la ubicación del punto de
+                                    encuentro.</p>
+                                <div class="mapa-simulado" id="mapa-encuentro" role="button" tabindex="0"
+                                    aria-describedby="mapa-ayuda"
+                                    aria-label="Mapa: marcar la ubicación del punto de encuentro">
                                     <img src="assets/images/mapa_referencia.png" loading="lazy"
                                         alt="Mapa con la ubicación del punto de encuentro" class="mapa-img">
-                                    <span class="material-symbols-outlined pin-ubicacion" aria-hidden="true">location_on</span>
+                                    <span class="material-symbols-outlined pin-ubicacion"
+                                        aria-hidden="true">location_on</span>
                                 </div>
-                                <p class="hu8-estado" id="mapa-estado" role="status" aria-live="polite">Se guarda en tu celular para verlo sin internet.</p>
+                                <p class="hu8-estado" id="mapa-estado" role="status" aria-live="polite">Se guarda en tu
+                                    celular para verlo sin internet.</p>
                                 <button type="submit" class="btn-enviar">Guardar y continuar</button>
                             </form>
                         </div>
@@ -386,8 +426,8 @@
                                 class="form-landing">
                                 <div class="form-group">
                                     <label for="zona-desc">¿Dónde está la zona segura dentro de tu casa?</label>
-                                    <input type="text" id="zona-desc"
-                                        placeholder="Ej. Junto a la columna de la sala" required>
+                                    <input type="text" id="zona-desc" placeholder="Ej. Junto a la columna de la sala"
+                                        required>
                                     <label for="zona-asignada">Integrante que se resguarda aquí:</label>
                                     <select id="zona-asignada">
                                         <option>Elena Huamán (requiere asistencia)</option>
@@ -395,7 +435,8 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <p style="font-weight: 600; margin-bottom: 4px;">Foto o croquis de la zona segura:</p>
+                                    <p style="font-weight: 600; margin-bottom: 4px;">Foto o croquis de la zona segura:
+                                    </p>
                                     <div class="upload-simulado">
                                         <img src="assets/images/hogar_seguro.jpg" loading="lazy"
                                             alt="Ilustración de una zona segura dentro de una vivienda"
@@ -411,7 +452,8 @@
                             <h3 class="steps-words">9. Resumen de tu plan familiar</h3>
                             <div class="resumen-dashboard">
                                 <div class="resumen-card">
-                                    <h4><span class="material-symbols-outlined icono-en-linea" aria-hidden="true">group</span> Integrantes y roles</h4>
+                                    <h4><span class="material-symbols-outlined icono-en-linea"
+                                            aria-hidden="true">group</span> Integrantes y roles</h4>
                                     <ul style="list-style-type: none;">
                                         <li><strong>Rosa Huamán:</strong> Asistir a Elena</li>
                                         <li><strong>Carlos Huamán:</strong> Llevar la mochila</li>
@@ -419,10 +461,14 @@
                                     </ul>
                                 </div>
                                 <div class="resumen-card">
-                                    <h4><span class="material-symbols-outlined icono-en-linea" aria-hidden="true">location_on</span> Lugares clave</h4>
-                                    <p><strong>Punto de encuentro:</strong> <span id="resumen-encuentro">Parque frente al mercado</span></p>
-                                    <p><strong>Lugar de resguardo:</strong> <span id="resumen-zona">Junto a la columna de la sala</span></p>
-                                    <p class="resumen-ficha" id="resumen-ficha-elena">Elena Huamán se resguarda: <strong id="resumen-zona-elena">Junto a la columna de la sala</strong></p>
+                                    <h4><span class="material-symbols-outlined icono-en-linea"
+                                            aria-hidden="true">location_on</span> Lugares clave</h4>
+                                    <p><strong>Punto de encuentro:</strong> <span id="resumen-encuentro">Parque frente
+                                            al mercado</span></p>
+                                    <p><strong>Lugar de resguardo:</strong> <span id="resumen-zona">Junto a la columna
+                                            de la sala</span></p>
+                                    <p class="resumen-ficha" id="resumen-ficha-elena">Elena Huamán se resguarda: <strong
+                                            id="resumen-zona-elena">Junto a la columna de la sala</strong></p>
                                     <p class="hu8-estado" id="resumen-aviso" role="status" aria-live="polite"></p>
                                 </div>
                             </div>
@@ -440,13 +486,14 @@
                     Cada paso pide solo lo necesario para que no te abrumes.
                 </p>
                 <figure class="foto-apoyo">
-                    <img src="assets/images/familia_mesa.jpg" alt="Familia conversando alrededor de una mesa" width="900" height="599" loading="lazy" decoding="async">
+                    <img src="assets/images/familia_mesa.jpg" alt="Familia conversando alrededor de una mesa"
+                        width="900" height="599" loading="lazy" decoding="async">
                 </figure>
             </aside>
         </section>
 
         <!-- SECCIÓN 2: Logística y Preparación Preventiva -->
-        <section id="seccion-logistica-preparacionpreventiva" aria-labelledby="titulo-sec-2" class="landing-section">
+        <section id="seccion-logistica-preparacionpreventiva" aria-labelledby="titulo-sec-2" class="landing-section seccion2">
             <div class="title-section2">
                 <h2 id="titulo-sec-2">Logística y preparación preventiva</h2>
             </div>
@@ -458,9 +505,11 @@
                 número de integrantes. <br>
                 Marca con «Lo tengo» lo que ya reuniste: verás cuánto llevas y, si quieres, solo lo que te falta.
                 Si algo vence, vuelve a la lista de faltantes.
-            
+
                 <figure class="foto-apoyo">
-                    <img src="assets/images/mochila_contenido.jpg" alt="Artículos de una mochila de emergencia ordenados sobre una superficie" width="900" height="675" loading="lazy" decoding="async">
+                    <img src="assets/images/mochila_contenido.jpg"
+                        alt="Artículos de una mochila de emergencia ordenados sobre una superficie" width="900"
+                        height="675" loading="lazy" decoding="async">
                 </figure>
             </div>
             <div class="columna-hu15">
@@ -558,9 +607,10 @@
                 registrarlo. <br>
                 Programa un recordatorio mensual para todo el hogar: desde el aviso puedes empezar el simulacro
                 directamente. <br>
-            
+
                 <figure class="foto-apoyo">
-                    <img src="assets/images/senal_salida.jpg" alt="Señal de salida de evacuación" width="900" height="675" loading="lazy" decoding="async">
+                    <img src="assets/images/senal_salida.jpg" alt="Señal de salida de evacuación" width="900"
+                        height="675" loading="lazy" decoding="async">
                 </figure>
             </div>
             <div class="columna-hu20">
@@ -624,14 +674,17 @@
                         <button type="submit" class="hu15-btn-agregar" id="hu23-guardar">Programar recordatorio</button>
                         <p class="hu23-estado" id="hu23-estado" role="status" aria-live="polite"></p>
                         <div class="hu23-acciones" id="hu23-acciones" hidden>
-                            <button type="button" class="hu20-btn-cancelar" id="hu23-vista">Ver cómo llega el aviso</button>
-                            <button type="button" class="hu20-btn-cancelar" id="hu23-desactivar">Desactivar recordatorio</button>
+                            <button type="button" class="hu20-btn-cancelar" id="hu23-vista">Ver cómo llega el
+                                aviso</button>
+                            <button type="button" class="hu20-btn-cancelar" id="hu23-desactivar">Desactivar
+                                recordatorio</button>
                         </div>
                         <div class="hu23-aviso" id="hu23-aviso" hidden>
                             <p class="hu23-aviso-app">SismoListo · ahora</p>
                             <p class="hu23-aviso-texto"><strong>Hoy toca el simulacro mensual.</strong> Toma 4 minutos y
                                 participa todo el hogar.</p>
-                            <button type="button" class="hu23-aviso-btn" id="hu23-iniciar">Iniciar simulacro ahora</button>
+                            <button type="button" class="hu23-aviso-btn" id="hu23-iniciar">Iniciar simulacro
+                                ahora</button>
                         </div>
                     </form>
                 </div>
@@ -653,7 +706,8 @@
         </section>
 
         <!-- SECCIÓN 3: Respuesta Inmediata y Modo Emergencia -->
-        <section id="seccion-emergencia-respuestainmediata" aria-labelledby="titulo-sec-3" class="landing-section grid-1-3">
+        <section id="seccion-emergencia-respuestainmediata" aria-labelledby="titulo-sec-3"
+            class="landing-section grid-1-3">
             <aside class="info-wrapper">
                 <!-- Apartado informativo lateral (1/3) -->
                 <h2 id="titulo-sec-3">Respuesta inmediata y Modo Emergencia</h2>
@@ -674,7 +728,8 @@
                         <!-- PASO 1: Inicio y Activación del Modo Emergencia -->
                         <div class="step-emergencia active" id="emergencia-step-1">
                             <div class="pantalla-activacion">
-                                <span class="material-symbols-outlined icono-alerta-grande" aria-hidden="true">warning</span>
+                                <span class="material-symbols-outlined icono-alerta-grande"
+                                    aria-hidden="true">warning</span>
                                 <h3>Modo Emergencia</h3>
                                 <p>Actívalo solo durante un sismo o ante un peligro inmediato. Te guiará para evacuar y
                                     avisar a tu familia cómo estás.</p>
@@ -683,11 +738,15 @@
                                     Activar Modo Emergencia
                                 </button>
                                 <!-- HU-025 CA03: confirmación para evitar activaciones accidentales -->
-                                <div class="confirmar-emergencia" id="confirmar-emergencia" role="alertdialog" aria-labelledby="confirmar-emergencia-titulo" hidden>
-                                    <p id="confirmar-emergencia-titulo"><strong>¿Activar el Modo Emergencia?</strong> Úsalo solo durante un sismo o ante un peligro inmediato.</p>
+                                <div class="confirmar-emergencia" id="confirmar-emergencia" role="alertdialog"
+                                    aria-labelledby="confirmar-emergencia-titulo" hidden>
+                                    <p id="confirmar-emergencia-titulo"><strong>¿Activar el Modo Emergencia?</strong>
+                                        Úsalo solo durante un sismo o ante un peligro inmediato.</p>
                                     <div class="confirmar-acciones">
-                                        <button type="button" class="btn-estado btn-confirmar-si" id="btn-confirmar-emergencia">Sí, activar</button>
-                                        <button type="button" class="push-ver-ficha" id="btn-cancelar-emergencia">Cancelar</button>
+                                        <button type="button" class="btn-estado btn-confirmar-si"
+                                            id="btn-confirmar-emergencia">Sí, activar</button>
+                                        <button type="button" class="push-ver-ficha"
+                                            id="btn-cancelar-emergencia">Cancelar</button>
                                     </div>
                                 </div>
                             </div>
@@ -725,8 +784,7 @@
                                     <div class="hero-imagen-wrapper">
                                         <div class="upload-simulado">
                                             <img src="assets/images/evacuacion_hogar.jpg" loading="lazy"
-                                                alt="Ilustración: uso de las escaleras para evacuar"
-                                                class="mapa-img">
+                                                alt="Ilustración: uso de las escaleras para evacuar" class="mapa-img">
                                         </div>
                                     </div>
                                     <button type="button" class="btn-enviar completo-ancho"
@@ -808,17 +866,22 @@
                         <div class="step-emergencia" id="emergencia-step-5">
                             <div class="estado-hogar-container">
                                 <h3>Estado del hogar</h3>
-                                <p class="confirmacion-reporte" id="confirmacion-reporte" role="status" aria-live="polite" hidden></p>
+                                <p class="confirmacion-reporte" id="confirmacion-reporte" role="status"
+                                    aria-live="polite" hidden></p>
 
                                 <!-- HU-028 CA03 y HU-035 CA02: reportados sobre el total y tiempo desde el sismo -->
                                 <div class="estado-resumen">
-                                    <p class="estado-contador" id="estado-contador" aria-live="polite"><strong>3 de 4</strong> integrantes reportaron</p>
-                                    <p class="estado-tiempo">Desde el sismo: <strong id="estado-tiempo-sismo">12 min</strong></p>
+                                    <p class="estado-contador" id="estado-contador" aria-live="polite"><strong>3 de
+                                            4</strong> integrantes reportaron</p>
+                                    <p class="estado-tiempo">Desde el sismo: <strong id="estado-tiempo-sismo">12
+                                            min</strong></p>
                                 </div>
 
                                 <!-- HU-034: notificación al llegar el reporte de un integrante -->
-                                <div class="push-integrante" id="push-integrante" role="status" aria-live="assertive" hidden>
-                                    <span class="material-symbols-outlined" aria-hidden="true">notifications_active</span>
+                                <div class="push-integrante" id="push-integrante" role="status" aria-live="assertive"
+                                    hidden>
+                                    <span class="material-symbols-outlined"
+                                        aria-hidden="true">notifications_active</span>
                                     <div>
                                         <strong>SismoListo</strong>
                                         <p id="push-integrante-texto"></p>
@@ -828,71 +891,91 @@
 
                                 <!-- HU-033 CA03: filtro por estado -->
                                 <div class="estado-filtros" role="group" aria-label="Filtrar integrantes por estado">
-                                    <button type="button" class="filtro-estado" data-filtro="todos" aria-pressed="true">Todos</button>
-                                    <button type="button" class="filtro-estado" data-filtro="bien" aria-pressed="false">Están bien</button>
-                                    <button type="button" class="filtro-estado" data-filtro="ayuda" aria-pressed="false">Necesitan ayuda</button>
-                                    <button type="button" class="filtro-estado" data-filtro="sin-reporte" aria-pressed="false">Sin reporte</button>
+                                    <button type="button" class="filtro-estado" data-filtro="todos"
+                                        aria-pressed="true">Todos</button>
+                                    <button type="button" class="filtro-estado" data-filtro="bien"
+                                        aria-pressed="false">Están bien</button>
+                                    <button type="button" class="filtro-estado" data-filtro="ayuda"
+                                        aria-pressed="false">Necesitan ayuda</button>
+                                    <button type="button" class="filtro-estado" data-filtro="sin-reporte"
+                                        aria-pressed="false">Sin reporte</button>
                                 </div>
 
                                 <!-- HU-035 CA01: lista separada de quienes no han reportado -->
                                 <h4 class="estado-grupo-titulo" id="titulo-sin-reporte">Aún sin reporte</h4>
-                                <div class="integrantes-estado-lista" id="lista-sin-reporte" aria-labelledby="titulo-sin-reporte">
-                                    <div class="integrante-estado-item" id="ficha-mateo" data-estado="sin-reporte" data-nombre="Mateo Huamán" tabindex="-1">
+                                <div class="integrantes-estado-lista" id="lista-sin-reporte"
+                                    aria-labelledby="titulo-sin-reporte">
+                                    <div class="integrante-estado-item" id="ficha-mateo" data-estado="sin-reporte"
+                                        data-nombre="Mateo Huamán" tabindex="-1">
                                         <div class="integrante-info">
                                             <strong>Mateo Huamán</strong>
                                             <span>Hijo</span>
                                             <span class="integrante-hora">Sin reporte desde el sismo</span>
                                         </div>
                                         <span class="badge-estado badge-esperando">
-                                            <span class="material-symbols-outlined" aria-hidden="true">hourglass_empty</span> Sin reporte
+                                            <span class="material-symbols-outlined"
+                                                aria-hidden="true">hourglass_empty</span> Sin reporte
                                         </span>
-                                        <div class="marcar-manual" role="group" aria-label="Marcar a mano el estado de Mateo Huamán">
+                                        <div class="marcar-manual" role="group"
+                                            aria-label="Marcar a mano el estado de Mateo Huamán">
                                             <span>¿No puede reportar? Márcalo tú:</span>
-                                            <button type="button" class="btn-marcar-manual" data-marcar="bien">Está bien</button>
-                                            <button type="button" class="btn-marcar-manual" data-marcar="ayuda">Necesita ayuda</button>
-                                            <button type="button" class="push-ver-ficha btn-contactar-ficha">Enviar mensaje</button>
+                                            <button type="button" class="btn-marcar-manual" data-marcar="bien">Está
+                                                bien</button>
+                                            <button type="button" class="btn-marcar-manual" data-marcar="ayuda">Necesita
+                                                ayuda</button>
+                                            <button type="button" class="push-ver-ficha btn-contactar-ficha">Enviar
+                                                mensaje</button>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- HU-028 CA01 y HU-033 CA01-CA02: estado y hora del último reporte -->
                                 <h4 class="estado-grupo-titulo" id="titulo-reportados">Ya reportaron</h4>
-                                <div class="integrantes-estado-lista" id="lista-reportados" aria-labelledby="titulo-reportados">
-                                    <div class="integrante-estado-item" id="ficha-rosa" data-estado="bien" data-nombre="Rosa Huamán" tabindex="-1">
+                                <div class="integrantes-estado-lista" id="lista-reportados"
+                                    aria-labelledby="titulo-reportados">
+                                    <div class="integrante-estado-item" id="ficha-rosa" data-estado="bien"
+                                        data-nombre="Rosa Huamán" tabindex="-1">
                                         <div class="integrante-info">
                                             <strong>Rosa Huamán</strong>
                                             <span>Madre</span>
                                             <span class="integrante-hora">Reportó a las 14:32</span>
                                         </div>
                                         <span class="badge-estado badge-bien">
-                                            <span class="material-symbols-outlined" aria-hidden="true">check</span> Estoy bien
+                                            <span class="material-symbols-outlined" aria-hidden="true">check</span>
+                                            Estoy bien
                                         </span>
                                     </div>
-                                    <div class="integrante-estado-item" id="ficha-elena" data-estado="ayuda" data-nombre="Elena Huamán" tabindex="-1">
+                                    <div class="integrante-estado-item" id="ficha-elena" data-estado="ayuda"
+                                        data-nombre="Elena Huamán" tabindex="-1">
                                         <div class="integrante-info">
                                             <strong>Elena Huamán</strong>
                                             <span>Abuela · caída</span>
                                             <span class="integrante-hora">Reportó a las 14:33</span>
                                         </div>
                                         <span class="badge-estado badge-ayuda">
-                                            <span class="material-symbols-outlined" aria-hidden="true">sos</span> Necesito ayuda
+                                            <span class="material-symbols-outlined" aria-hidden="true">sos</span>
+                                            Necesito ayuda
                                         </span>
                                     </div>
-                                    <div class="integrante-estado-item" id="ficha-carlos" data-estado="bien" data-nombre="Carlos Huamán" tabindex="-1">
+                                    <div class="integrante-estado-item" id="ficha-carlos" data-estado="bien"
+                                        data-nombre="Carlos Huamán" tabindex="-1">
                                         <div class="integrante-info">
                                             <strong>Carlos Huamán</strong>
                                             <span>Padre</span>
                                             <span class="integrante-hora">Reportó a las 14:35</span>
                                         </div>
                                         <span class="badge-estado badge-bien">
-                                            <span class="material-symbols-outlined" aria-hidden="true">check</span> Estoy bien
+                                            <span class="material-symbols-outlined" aria-hidden="true">check</span>
+                                            Estoy bien
                                         </span>
                                     </div>
                                 </div>
-                                <p class="estado-sin-resultados" id="estado-sin-resultados" hidden>Nadie tiene ese estado ahora.</p>
+                                <p class="estado-sin-resultados" id="estado-sin-resultados" hidden>Nadie tiene ese
+                                    estado ahora.</p>
 
                                 <!-- Solo para la demostración: simula que llega el reporte de Mateo -->
-                                <button type="button" class="btn-simular-reporte" id="btn-simular-reporte">Simular que Mateo envía su reporte</button>
+                                <button type="button" class="btn-simular-reporte" id="btn-simular-reporte">Simular que
+                                    Mateo envía su reporte</button>
 
                                 <!-- HU-028 CA04 -->
                                 <p class="estado-offline">
@@ -902,7 +985,8 @@
 
                                 <button type="button" class="btn-enviar btn-contactar-pendiente">
                                     <span class="material-symbols-outlined" aria-hidden="true">sms</span>
-                                    <span class="texto-contactar" style="margin-left: 5px;">Enviar mensaje a Mateo Huamán (sin reporte)</span>
+                                    <span class="texto-contactar" style="margin-left: 5px;">Enviar mensaje a Mateo
+                                        Huamán (sin reporte)</span>
                                 </button>
                             </div>
                         </div>
@@ -921,7 +1005,8 @@
                                         </label>
                                         <label class="radio-opcion">
                                             <input type="radio" name="msg-predefinido" value="2">
-                                            <span><strong>"Ve al punto de encuentro: el parque frente al mercado."</strong></span>
+                                            <span><strong>"Ve al punto de encuentro: el parque frente al
+                                                    mercado."</strong></span>
                                         </label>
                                         <label class="radio-opcion">
                                             <input type="radio" name="msg-predefinido" value="3">
@@ -934,10 +1019,14 @@
 
                                 <!-- Notificación PUSH simulada al enviar -->
                                 <div class="notificacion-push-card" role="status" aria-live="polite">
-                                    <span class="material-symbols-outlined" aria-hidden="true">notifications_active</span>
+                                    <span class="material-symbols-outlined"
+                                        aria-hidden="true">notifications_active</span>
                                     <div>
                                         <strong>SismoListo</strong>
-                                        <p id="mensaje-confirmacion"><span class="material-symbols-outlined icono-en-linea" aria-hidden="true">check_circle</span> Mensaje enviado a Mateo Huamán por SMS.</p>
+                                        <p id="mensaje-confirmacion"><span
+                                                class="material-symbols-outlined icono-en-linea"
+                                                aria-hidden="true">check_circle</span> Mensaje enviado a Mateo Huamán
+                                            por SMS.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1014,7 +1103,9 @@
                     internet.
                 </p>
                 <figure class="foto-apoyo">
-                    <img src="assets/images/abuela_nieta_celular.jpg" alt="Una abuela y su nieta revisan juntas un celular" width="900" height="506" loading="lazy" decoding="async">
+                    <img src="assets/images/abuela_nieta_celular.jpg"
+                        alt="Una abuela y su nieta revisan juntas un celular" width="900" height="506" loading="lazy"
+                        decoding="async">
                 </figure>
             </aside>
 
@@ -1022,7 +1113,8 @@
                 <div class="dispositivo-marco">
 
                     <!-- Barra superior con los 7 botones (uno por función) -->
-                    <div class="pasos-barra" id="Acces" role="tablist" aria-label="Funciones de accesibilidad e inclusión">
+                    <div class="pasos-barra" id="Acces" role="tablist"
+                        aria-label="Funciones de accesibilidad e inclusión">
                         <button type="button" class="paso-item active" role="tab" aria-selected="true">1. Apoyo</button>
                         <button type="button" class="paso-item" role="tab" aria-selected="false">2. Contactos</button>
                         <button type="button" class="paso-item" role="tab" aria-selected="false">3. Resumen</button>
@@ -1036,54 +1128,82 @@
 
                         <!-- FUNCIÓN 1: Integrantes que requieren asistencia (HU-005) -->
                         <div class="step-form active" id="acc-1">
-                        <h3>1. Integrantes que requieren asistencia</h3>
-                        <p>Marca a los integrantes que necesitan ayuda para ponerse a salvo e indica el tipo de
-                            apoyo. Si un integrante no tiene responsable asignado, la app te lo advierte.</p>
-                        <div class="acc-item acc-miembro" data-nombre="Elena Huamán">
-                            <label class="acc-check"><input type="checkbox" class="acc-requiere" checked> <strong>Elena Huamán</strong> (abuela) requiere asistencia</label>
-                            <div class="acc-campos">
-                                <label>Tipo de apoyo
-                                    <select class="acc-tipo"><option selected>Movilidad reducida</option><option>Niño pequeño</option><option>Visión reducida</option><option>Otro</option></select></label>
-                                <label>Responsable
-                                    <select class="acc-responsable"><option value="" selected>Sin asignar</option><option value="Rosa Huamán">Rosa Huamán</option><option value="Carlos Huamán">Carlos Huamán</option></select></label>
+                            <h3>1. Integrantes que requieren asistencia</h3>
+                            <p>Marca a los integrantes que necesitan ayuda para ponerse a salvo e indica el tipo de
+                                apoyo. Si un integrante no tiene responsable asignado, la app te lo advierte.</p>
+                            <div class="acc-item acc-miembro" data-nombre="Elena Huamán">
+                                <label class="acc-check"><input type="checkbox" class="acc-requiere" checked>
+                                    <strong>Elena Huamán</strong> (abuela) requiere asistencia</label>
+                                <div class="acc-campos">
+                                    <label>Tipo de apoyo
+                                        <select class="acc-tipo">
+                                            <option selected>Movilidad reducida</option>
+                                            <option>Niño pequeño</option>
+                                            <option>Visión reducida</option>
+                                            <option>Otro</option>
+                                        </select></label>
+                                    <label>Responsable
+                                        <select class="acc-responsable">
+                                            <option value="" selected>Sin asignar</option>
+                                            <option value="Rosa Huamán">Rosa Huamán</option>
+                                            <option value="Carlos Huamán">Carlos Huamán</option>
+                                        </select></label>
+                                </div>
+                                <p class="acc-miembro-estado" aria-live="polite"></p>
                             </div>
-                            <p class="acc-miembro-estado" aria-live="polite"></p>
-                        </div>
-                        <div class="acc-item acc-miembro" data-nombre="Mateo Huamán">
-                            <label class="acc-check"><input type="checkbox" class="acc-requiere"> <strong>Mateo Huamán</strong> (hijo) requiere asistencia</label>
-                            <div class="acc-campos">
-                                <label>Tipo de apoyo
-                                    <select class="acc-tipo"><option>Movilidad reducida</option><option>Niño pequeño</option><option>Visión reducida</option><option selected>Otro</option></select></label>
-                                <label>Responsable
-                                    <select class="acc-responsable"><option value="">Sin asignar</option><option value="Rosa Huamán" selected>Rosa Huamán</option><option value="Carlos Huamán">Carlos Huamán</option></select></label>
+                            <div class="acc-item acc-miembro" data-nombre="Mateo Huamán">
+                                <label class="acc-check"><input type="checkbox" class="acc-requiere"> <strong>Mateo
+                                        Huamán</strong> (hijo) requiere asistencia</label>
+                                <div class="acc-campos">
+                                    <label>Tipo de apoyo
+                                        <select class="acc-tipo">
+                                            <option>Movilidad reducida</option>
+                                            <option>Niño pequeño</option>
+                                            <option>Visión reducida</option>
+                                            <option selected>Otro</option>
+                                        </select></label>
+                                    <label>Responsable
+                                        <select class="acc-responsable">
+                                            <option value="">Sin asignar</option>
+                                            <option value="Rosa Huamán" selected>Rosa Huamán</option>
+                                            <option value="Carlos Huamán">Carlos Huamán</option>
+                                        </select></label>
+                                </div>
+                                <p class="acc-miembro-estado" aria-live="polite"></p>
                             </div>
-                            <p class="acc-miembro-estado" aria-live="polite"></p>
                         </div>
-                    </div>
 
-                    <!-- FUNCIÓN 2: Contactos de emergencia externos (HU-011) -->
+                        <!-- FUNCIÓN 2: Contactos de emergencia externos (HU-011) -->
                         <div class="step-form" id="acc-2">
-                        <h3>2. Contactos de emergencia externos</h3>
-                        <p>Registra hasta 5 contactos que no viven contigo. Quedan guardados en tu celular y los
-                            puedes ver sin internet.</p>
-                        <ul class="acc-contactos" id="acc-contactos"></ul>
-                        <p class="acc-nota" id="acc-contactos-contador" aria-live="polite"></p>
-                        <form class="acc-form-contacto" id="acc-form-contacto" novalidate>
-                            <label for="acc-c-nombre">Nombre</label>
-                            <input type="text" id="acc-c-nombre" maxlength="40" autocomplete="off" placeholder="Ej. Julio Cárdenas">
-                            <label for="acc-c-celular">Celular (9 dígitos)</label>
-                            <input type="tel" id="acc-c-celular" inputmode="numeric" maxlength="9" placeholder="Ej. 987654321" aria-describedby="acc-c-error">
-                            <label for="acc-c-relacion">Relación</label>
-                            <select id="acc-c-relacion">
-                                <option>Hermano</option><option>Hermana</option><option>Vecino</option><option>Vecina</option><option>Tío o tía</option>
-                                <option>Amigo o amiga</option><option>Otro familiar</option>
-                            </select>
-                            <p class="acc-error" id="acc-c-error" role="alert"></p>
-                            <button type="submit" class="acc-btn-secundario" id="acc-c-guardar">Guardar contacto</button>
-                        </form>
-                    </div>
+                            <h3>2. Contactos de emergencia externos</h3>
+                            <p>Registra hasta 5 contactos que no viven contigo. Quedan guardados en tu celular y los
+                                puedes ver sin internet.</p>
+                            <ul class="acc-contactos" id="acc-contactos"></ul>
+                            <p class="acc-nota" id="acc-contactos-contador" aria-live="polite"></p>
+                            <form class="acc-form-contacto" id="acc-form-contacto" novalidate>
+                                <label for="acc-c-nombre">Nombre</label>
+                                <input type="text" id="acc-c-nombre" maxlength="40" autocomplete="off"
+                                    placeholder="Ej. Julio Cárdenas">
+                                <label for="acc-c-celular">Celular (9 dígitos)</label>
+                                <input type="tel" id="acc-c-celular" inputmode="numeric" maxlength="9"
+                                    placeholder="Ej. 987654321" aria-describedby="acc-c-error">
+                                <label for="acc-c-relacion">Relación</label>
+                                <select id="acc-c-relacion">
+                                    <option>Hermano</option>
+                                    <option>Hermana</option>
+                                    <option>Vecino</option>
+                                    <option>Vecina</option>
+                                    <option>Tío o tía</option>
+                                    <option>Amigo o amiga</option>
+                                    <option>Otro familiar</option>
+                                </select>
+                                <p class="acc-error" id="acc-c-error" role="alert"></p>
+                                <button type="submit" class="acc-btn-secundario" id="acc-c-guardar">Guardar
+                                    contacto</button>
+                            </form>
+                        </div>
 
-                    <!-- FUNCIÓN 3: Resumen del plan familiar (HU-012) -->
+                        <!-- FUNCIÓN 3: Resumen del plan familiar (HU-012) -->
                         <div class="step-form" id="acc-3">
                             <h3>3. Resumen del plan familiar</h3>
                             <p>Todo tu plan en una sola pantalla, con frases cortas. Funciona sin internet y lo puedes
@@ -1103,60 +1223,73 @@
 
                         <!-- FUNCIÓN 4: Progreso del plan familiar (HU-013) -->
                         <div class="step-form" id="acc-4">
-                        <h3>4. Progreso del plan familiar</h3>
-                        <p>Mira cuánto falta y avanza por partes. Cada paso pendiente toma menos de 5 minutos.</p>
-                        <div class="acc-barra" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso del plan familiar">
-                            <div class="acc-barra-avance" id="acc-barra-avance"></div>
-                        </div>
-                        <p class="acc-porcentaje" id="acc-porcentaje" aria-live="polite">50 % completado (3 de 6 secciones)</p>
-                        <ul class="acc-pendientes" id="acc-pendientes">
-                            <li class="acc-item" data-seccion="encuentro">
-                                <label class="acc-check"><input type="checkbox" class="acc-hecho"> Definir el punto de encuentro</label>
-                                <button type="button" class="acc-ir" data-ir="config" data-paso="6">Ir a completarlo · 3 min</button>
-                            </li>
-                            <li class="acc-item" data-seccion="mochila">
-                                <label class="acc-check"><input type="checkbox" class="acc-hecho"> Revisar la lista de la mochila de emergencia</label>
-                                <button type="button" class="acc-ir" data-ir="mochila">Ir a completarlo · 5 min</button>
-                            </li>
-                            <li class="acc-item" data-seccion="zonas">
-                                <label class="acc-check"><input type="checkbox" class="acc-hecho"> Definir la zona segura en casa</label>
-                                <button type="button" class="acc-ir" data-ir="config" data-paso="7">Ir a completarlo · 4 min</button>
-                            </li>
-                        </ul>
-                        <p class="acc-plan-completo" id="acc-plan-completo" role="status" hidden></p>
-                    </div>
-
-                    <!-- FUNCIÓN 5: Modo de ahorro de batería en emergencia (HU-032) -->
-                        <div class="step-form" id="acc-5">
-                        <h3>5. Modo de ahorro de batería</h3>
-                        <p>Si tu celular tiene poca carga, baja el brillo y deja solo lo esencial del Modo
-                            Emergencia. Lo activas o desactivas cuando quieras.</p>
-                        <div class="acc-item acc-bateria" id="acc-bateria">
-                            <button type="button" class="acc-interruptor" id="acc-ahorro" aria-pressed="true">
-                                <span class="acc-interruptor-pista" aria-hidden="true"></span>
-                                Modo de ahorro de batería: <strong id="acc-ahorro-estado">Activado</strong>
-                            </button>
-                            <div id="acc-ahorro-detalle">
-                                <p><strong>Batería estimada restante:</strong> 18 % · alcanza para unas 5 horas</p>
-                                <p>Brillo reducido al 40 % y solo las funciones esenciales del Modo Emergencia.</p>
-                                <p><strong>En pausa:</strong> sincronización de fotos, actualizaciones automáticas y animaciones.</p>
+                            <h3>4. Progreso del plan familiar</h3>
+                            <p>Mira cuánto falta y avanza por partes. Cada paso pendiente toma menos de 5 minutos.</p>
+                            <div class="acc-barra" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                                aria-valuemax="100" aria-label="Progreso del plan familiar">
+                                <div class="acc-barra-avance" id="acc-barra-avance"></div>
                             </div>
-                            <p id="acc-ahorro-apagado" hidden>Brillo y funciones normales. Actívalo si te queda poca carga.</p>
+                            <p class="acc-porcentaje" id="acc-porcentaje" aria-live="polite">50 % completado (3 de 6
+                                secciones)</p>
+                            <ul class="acc-pendientes" id="acc-pendientes">
+                                <li class="acc-item" data-seccion="encuentro">
+                                    <label class="acc-check"><input type="checkbox" class="acc-hecho"> Definir el punto
+                                        de encuentro</label>
+                                    <button type="button" class="acc-ir" data-ir="config" data-paso="6">Ir a completarlo
+                                        · 3 min</button>
+                                </li>
+                                <li class="acc-item" data-seccion="mochila">
+                                    <label class="acc-check"><input type="checkbox" class="acc-hecho"> Revisar la lista
+                                        de la mochila de emergencia</label>
+                                    <button type="button" class="acc-ir" data-ir="mochila">Ir a completarlo · 5
+                                        min</button>
+                                </li>
+                                <li class="acc-item" data-seccion="zonas">
+                                    <label class="acc-check"><input type="checkbox" class="acc-hecho"> Definir la zona
+                                        segura en casa</label>
+                                    <button type="button" class="acc-ir" data-ir="config" data-paso="7">Ir a completarlo
+                                        · 4 min</button>
+                                </li>
+                            </ul>
+                            <p class="acc-plan-completo" id="acc-plan-completo" role="status" hidden></p>
                         </div>
-                    </div>
 
-                    <!-- FUNCIÓN 6: Texto ampliado y alto contraste (HU-042, HU-043) -->
+                        <!-- FUNCIÓN 5: Modo de ahorro de batería en emergencia (HU-032) -->
+                        <div class="step-form" id="acc-5">
+                            <h3>5. Modo de ahorro de batería</h3>
+                            <p>Si tu celular tiene poca carga, baja el brillo y deja solo lo esencial del Modo
+                                Emergencia. Lo activas o desactivas cuando quieras.</p>
+                            <div class="acc-item acc-bateria" id="acc-bateria">
+                                <button type="button" class="acc-interruptor" id="acc-ahorro" aria-pressed="true">
+                                    <span class="acc-interruptor-pista" aria-hidden="true"></span>
+                                    Modo de ahorro de batería: <strong id="acc-ahorro-estado">Activado</strong>
+                                </button>
+                                <div id="acc-ahorro-detalle">
+                                    <p><strong>Batería estimada restante:</strong> 18 % · alcanza para unas 5 horas</p>
+                                    <p>Brillo reducido al 40 % y solo las funciones esenciales del Modo Emergencia.</p>
+                                    <p><strong>En pausa:</strong> sincronización de fotos, actualizaciones automáticas y
+                                        animaciones.</p>
+                                </div>
+                                <p id="acc-ahorro-apagado" hidden>Brillo y funciones normales. Actívalo si te queda poca
+                                    carga.</p>
+                            </div>
+                        </div>
+
+                        <!-- FUNCIÓN 6: Texto ampliado y alto contraste (HU-042, HU-043) -->
                         <div class="step-form" id="acc-6">
                             <h3>6. Texto ampliado y alto contraste</h3>
                             <p>Haz clic en cada opción para probar cómo cambia la lectura en toda la página:</p>
                             <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 12px;">
-                                <button type="button" id="btn-acc-normal" class="acc-muestra acc-muestra-normal" style="cursor: pointer; text-align: left;">
+                                <button type="button" id="btn-acc-normal" class="acc-muestra acc-muestra-normal"
+                                    style="cursor: pointer; text-align: left;">
                                     Normal: Estoy bien (Restablecer)
                                 </button>
-                                <button type="button" id="btn-acc-ampliado" class="acc-muestra acc-muestra-ampliado" aria-pressed="false" style="cursor: pointer; text-align: left;">
+                                <button type="button" id="btn-acc-ampliado" class="acc-muestra acc-muestra-ampliado"
+                                    aria-pressed="false" style="cursor: pointer; text-align: left;">
                                     Texto ampliado: Estoy bien (Activar / Desactivar)
                                 </button>
-                                <button type="button" id="btn-acc-contraste" class="acc-muestra acc-muestra-contraste" aria-pressed="false" style="cursor: pointer; text-align: left;">
+                                <button type="button" id="btn-acc-contraste" class="acc-muestra acc-muestra-contraste"
+                                    aria-pressed="false" style="cursor: pointer; text-align: left;">
                                     Alto contraste: Estoy bien (Activar / Desactivar)
                                 </button>
                             </div>
@@ -1201,7 +1334,8 @@
         </section>
 
         <!-- SECCIÓN PRE-FOOTER: Testimonios y Formulario de Contacto -->
-        <section id="seccion-contacto-testimonios" aria-labelledby="titulo-testimonios" class="landing-section pre-footer-grid">
+        <section id="seccion-contacto-testimonios" aria-labelledby="titulo-testimonios"
+            class="landing-section pre-footer-grid">
             <div class="container-split">
                 <!-- Lado Izquierdo: Testimonios con blockquote -->
                 <div class="testimonios-col">
@@ -1210,13 +1344,15 @@
 
                     <div class="testimonios-lista">
                         <blockquote class="testimonio-card">
-                            <p>“Repartir los roles con mis hijos fue muy sencillo. Ahora cada uno sabe qué hacer durante un
+                            <p>“Repartir los roles con mis hijos fue muy sencillo. Ahora cada uno sabe qué hacer durante
+                                un
                                 temblor, sin gritos ni confusión.”</p>
                             <cite>— Rosa Huamán, Jefa de hogar (44 años)</cite>
                         </blockquote>
 
                         <blockquote class="testimonio-card">
-                            <p>“Temía no entender la app. El botón ‘Estoy bien’ en alto contraste es tan claro que aviso a
+                            <p>“Temía no entender la app. El botón ‘Estoy bien’ en alto contraste es tan claro que aviso
+                                a
                                 mis hijas con un solo toque.”</p>
                             <cite>— Julio Cárdenas, Adulto mayor (68 años)</cite>
                         </blockquote>
@@ -1239,10 +1375,11 @@
                         </div>
                         <div class="form-group">
                             <label for="mensaje">Mensaje:</label>
-                            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje o consulta..."
-                                required></textarea>
+                            <textarea id="mensaje" name="mensaje" rows="4"
+                                placeholder="Escribe tu mensaje o consulta..." required></textarea>
                         </div>
-                        <button type="submit" class="btn-enviar" onclick="setTimeout(()=>{this.form.reset();}, 100);">Enviar
+                        <button type="submit" class="btn-enviar"
+                            onclick="setTimeout(()=>{this.form.reset();}, 100);">Enviar
                             mensaje</button>
                     </form>
                 </div>
@@ -1264,7 +1401,7 @@
                 </div>
                 <div class="info-item">
                     <span class="material-symbols-outlined" aria-hidden="true">school</span>
-                    <span>Proyecto académico UPC — HCI for UX Design</span>
+                    <span>Proyecto académico UPC & HCI for UX Design</span>
                 </div>
             </div>
         </section>
@@ -1274,7 +1411,8 @@
     <!-- PIE DE PÁGINA -->
     <footer class="footer-principal">
         <p>&copy; 2026 SismoListo - Proyecto académico UPC. Todos los derechos reservados.</p>
-        <p class="creditos">Fotografías de apoyo: Unsplash (@jellymarketing, @artemisss666, @theandrewteoh y @silverkblack).</p>
+        <p class="creditos">Fotografías de apoyo: Unsplash (@jellymarketing, @artemisss666, @theandrewteoh y
+            @silverkblack).</p>
     </footer>
 
     <!-- Script principal de JavaScript -->

@@ -179,7 +179,7 @@ body {
 .landing-section {
     width: 100%;
     min-height: 100vh;
-    padding: 5px;
+    padding: 20px;
     background-color: var(--fondo);
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.02);
     scroll-margin-top: 70px;
@@ -2347,7 +2347,7 @@ body {
         width: 100%;
         min-width: 0;
         overflow-x: hidden;
-        padding-inline: 5px;
+        padding-inline: 20px;
     }
 
     #seccion-configuracioninicial-gestionhogar>.info-wrapper {

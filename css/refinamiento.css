@@ -18,7 +18,7 @@ body {
 
 /* ---------- Ritmo de las secciones: mismo margen y más aire ---------- */
 .landing-section {
-    padding: var(--espacio-seccion) var(--margen-lateral);
+    padding: 20px;
     box-shadow: none;
 }
 
@@ -27,6 +27,12 @@ body {
 .grid-1-3 {
     gap: var(--separacion);
     align-items: start;
+}
+
+#seccion-logistica-preparacionpreventiva,
+.seccion2 {
+    display: grid;
+    gap: var(--separacion);
 }
 
 #seccion-logistica-preparacionpreventiva,

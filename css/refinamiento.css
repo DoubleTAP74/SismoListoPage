@@ -220,3 +220,144 @@ body {
     padding: var(--relleno-tarjeta);
     margin-top: 0;
 }
+
+/* ==========================================================================
+   Modo Emergencia: protocolo más legible e imágenes sin marco punteado.
+   Solo cambia la presentación; las clases, los id y el flujo son los mismos.
+   ========================================================================== */
+.marco-emergencia .hu-zone-container {
+    padding: clamp(20px, 2.6vw, 36px);
+}
+
+/* Aviso «Modo Emergencia activado…» como etiqueta discreta */
+.marco-emergencia .emergencia-activado {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    margin-bottom: 20px;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.08);
+    font-size: 0.875rem;
+}
+
+.marco-emergencia .emergencia-activado::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--rojo);
+}
+
+/* Cada paso del protocolo: texto a la izquierda, ilustración a la derecha */
+.marco-emergencia .protocolo-evacuacion {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+        "badge  imagen"
+        "titulo imagen"
+        "texto  imagen"
+        "accion imagen";
+    grid-template-rows: auto auto auto 1fr;
+    column-gap: clamp(24px, 3vw, 48px);
+    row-gap: 14px;
+    align-items: start;
+}
+
+.marco-emergencia .protocolo-evacuacion > .badge {
+    grid-area: badge;
+    justify-self: start;
+}
+
+.marco-emergencia .protocolo-evacuacion > h3 {
+    grid-area: titulo;
+    margin: 0;
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
+    line-height: 1.2;
+    color: var(--blanco);
+}
+
+.marco-emergencia .protocolo-evacuacion > p {
+    grid-area: texto;
+    max-width: 34ch;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--blanco);
+}
+
+.marco-emergencia .protocolo-evacuacion > .hero-imagen-wrapper {
+    grid-area: imagen;
+    margin: 0;
+}
+
+.marco-emergencia .protocolo-evacuacion > button {
+    grid-area: accion;
+    align-self: baseline;
+    padding: 30px;
+}
+
+.marco-emergencia .protocolo-evacuacion .upload-simulado {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: var(--radio);
+    background-color: transparent;
+}
+
+.marco-emergencia .protocolo-evacuacion .mapa-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--radio);
+}
+
+/* Activación y reporte: texto más grande y bloque centrado de ancho cómodo */
+.marco-emergencia .pantalla-activacion h3,
+.marco-emergencia .reporte-estado-inicial h3 {
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
+    line-height: 1.2;
+}
+
+.marco-emergencia .pantalla-activacion p,
+.marco-emergencia .reporte-estado-inicial p {
+    max-width: 46ch;
+    margin-inline: auto;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+}
+
+.marco-emergencia .reporte-estado-inicial {
+    max-width: 560px;
+    margin-inline: auto;
+    padding-top: 12px;
+}
+
+/* El texto lateral acompaña al panel mientras se recorre el flujo */
+@media screen and (min-width: 871px) {
+    #seccion-emergencia-respuestainmediata > .info-wrapper {
+        position: sticky;
+        top: 88px;
+    }
+}
+
+/* Celular y tablet: una sola columna, la ilustración antes del botón */
+@media screen and (width <= 870px) {
+    .marco-emergencia .protocolo-evacuacion {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "badge"
+            "titulo"
+            "texto"
+            "imagen"
+            "accion";
+        grid-template-rows: auto;
+    }
+
+    .marco-emergencia .protocolo-evacuacion .mapa-img {
+        aspect-ratio: 4 / 3;
+    }
+}

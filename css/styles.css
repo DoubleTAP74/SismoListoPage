@@ -2425,6 +2425,21 @@ body {
         min-width: 0;
     }
 
+    /* Las imágenes de los pasos 7 y 8 escalan junto con el ancho disponible. */
+    #step-7 .mapa-simulado,
+    #step-8 .upload-simulado {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    #step-7 .mapa-img,
+    #step-8 .mapa-img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
     #seccion-configuracioninicial-gestionhogar .info-wrapper h1,
     #seccion-configuracioninicial-gestionhogar .info-wrapper p,
     #seccion-configuracioninicial-gestionhogar .step-form {

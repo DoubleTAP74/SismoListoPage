@@ -554,10 +554,8 @@ body {
 }
 
 .mapa-img {
-    width: 100%;
-    height: 140px;
+    height: 50vh;
     object-fit: cover;
-    display: block;
 }
 
 .pin-ubicacion {
@@ -601,6 +599,8 @@ body {
     color: var(--azul-petroleo);
     font-size: 0.875rem;
     overflow: hidden;
+    width: fit-content;
+    align-self: center;
 }
 
 .map-img {
@@ -3490,6 +3490,8 @@ textarea:focus-visible,
 .mapa-simulado {
     position: relative;
     cursor: crosshair;
+    width: fit-content;
+    align-self: center;
 }
 
 .mapa-simulado .pin-ubicacion {
